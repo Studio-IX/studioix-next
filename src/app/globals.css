@@ -77,6 +77,108 @@
 
 /* Buttons */
 
+.primary {
+  z-index: 1;
+  transition: all 0.2s;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.primary:hover {
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+}
+
+.primary-button {
+  display: flex;
+  z-index: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #000000;
+  text-align: center;
+  background-color: #ffffff2a;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  position: relative;
+  transform: translate(0);
+  box-shadow: 1px 1px 1rem rgb(26 26 26 / 15%);
+}
+
+.primary-button:hover {
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+}
+
+.primary-button-backdrop {
+  z-index: -2;
+  background: linear-gradient(20deg, #f8d38e 0%, #4686d9 100%);
+  background-position: 0 0;
+  background-size: cover;
+  border-radius: 4px;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  transform: translate(0.5rem, 0.5rem);
+  pointer-events: none;
+}
+
+.primary-light {
+  z-index: 1;
+  transition: all 0.2s;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.primary-light:hover {
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+}
+
+.primary-light-button {
+  display: flex;
+  z-index: 0;
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  color: #000000;
+  text-align: center;
+  background-color: #ffffff41;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  position: relative;
+  transform: translate(0);
+  box-shadow: 1px 1px 1rem rgb(26 26 26 / 15%);
+}
+
+.primary-light-button:hover {
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+}
+
+.primary-light-button-backdrop {
+  z-index: -2;
+  background: linear-gradient(20deg, #f8d38e 0%, #4686d9 100%);
+  background-position: 0 0;
+  background-size: cover;
+  border-radius: 4px;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  transform: translate(0.5rem, 0.5rem);
+  pointer-events: none;
+}
+
 .pricing {
   z-index: 1;
   transition: all 0.2s;
@@ -145,7 +247,7 @@
 }
 
 .section-button {
-  display: block;
+  display: flex;
   z-index: 0;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -182,3 +284,60 @@
   height: 102%;
 }
 /* End Buttons */
+
+/* Gallery */
+
+.gallery {
+  height: 175vh;
+  background: #E8E8E8;
+  position: relative;
+  display: flex;
+  gap: 2vw;
+  padding: 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gallery .column {
+  position: relative;
+  height: 100%;
+  width: 25%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.gallery .column .imageContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.gallery .column .imageContainer img {
+  object-fit: cover;
+}
+
+.gallery .column:nth-of-type(1) {
+  top: -45%;
+}
+
+.gallery .column:nth-of-type(2) {
+  top: -95%;
+}
+
+.gallery .column:nth-of-type(3) {
+  top: -45%;
+}
+
+.gallery .column:nth-of-type(4) {
+  top: -75%;
+}
+
+.spacer {
+  height: 10vh;
+}
+
+/* End Gallery */

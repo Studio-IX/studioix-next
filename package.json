@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.0.3",
+    "@studio-freight/lenis": "^1.0.33",
     "@vercel/analytics": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -18,14 +19,17 @@
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^4.12.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.160.0",
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.160.0",
     "@types/tinycolor2": "^1.4.6",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
