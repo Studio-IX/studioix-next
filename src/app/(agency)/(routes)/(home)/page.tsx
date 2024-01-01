@@ -3,9 +3,9 @@ import Projects from "@/components/projects/projects";
 
 export default function Home() {
   return (
-    <main>
+    <div className="w-full h-fit">
       <Projects />
       <Pricing />
-    </main>
+    </div>
   );
 }

@@ -1,9 +1,12 @@
 import CompanyLogos from "../common/company-logos";
 import PrimaryButtonLight from "../common/primary-button-light";
+import SliderText from "../common/slider-text";
 import Wrapper from "../wrapper/wrapper";
 import ArrowOne from "./arrow-one";
 import ArrowThree from "./arrow-three";
 import ArrowTwo from "./arrow-two";
+import ServiceFeatureCard from "./service-feature-card";
+import ServiceFeatureCardSmall from "./service-feature-card-small";
 import WebDevelopmentGallery from "./web-development-gallery";
 
 const ServiceHero = () => {
@@ -31,7 +34,7 @@ const ServiceHero = () => {
               </p>
             </div>
           </div>
-          <h1 className="font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-black">
+          <h1 className="font-cabinetGrotesk font-bold text-6xl lg:text-[6.8rem] text-black">
             Evolve your website.
           </h1>
         </div>
@@ -55,6 +58,48 @@ const ServiceHero = () => {
       </Wrapper>
       <WebDevelopmentGallery />
       <CompanyLogos />
+
+      <div className="bg-[#121212] flex flex-col w-full py-40">
+        <div className="pb-[25rem]">
+          <SliderText text="Our Web Development Stack" />
+        </div>
+        <Wrapper className="flex flex-col gap-10 mt-10">
+          <div className="flex flex-row gap-10">
+            <ServiceFeatureCard
+              title="Tech Stack"
+              description="Post directly or import your works (designs, articles, illustrations, git repositories, etc) from other platforms to Tabulio."
+              src="/images/stack.webp"
+              alt="Stack"
+            />
+            <ServiceFeatureCard
+              title="Web Development Team"
+              description="Post directly or import your works (designs, articles, illustrations, git repositories, etc) from other platforms to Tabulio."
+              src="/images/team.png"
+              alt="Team"
+            />
+          </div>
+          <div className="flex flex-row gap-10">
+            <ServiceFeatureCardSmall
+              title="Experience"
+              description="Combined team experience of 8+ years."
+              src="/images/experience.webp"
+              alt="Experience"
+            />
+            <ServiceFeatureCardSmall
+              title="Community"
+              description="We treat clients like partners."
+              src="/images/community.webp"
+              alt="Community"
+            />
+            <ServiceFeatureCardSmall
+              title="Collaboration"
+              description="We work well together for max efficiency."
+              src="/images/collaborate.webp"
+              alt="Collaboration"
+            />
+          </div>
+        </Wrapper>
+      </div>
     </div>
   );
 };

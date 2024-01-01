@@ -1,4 +1,4 @@
-import { Code, Gem, Paintbrush, PenTool } from "lucide-react";
+import { Code, Codesandbox, Gem, Paintbrush, PenTool } from "lucide-react";
 import React from "react";
 
 interface SectionTitleProps {
@@ -10,6 +10,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
   switch (text) {
     case "PRICING":
       sectionIcon = <Gem />;
+      break;
+    case "PREVIOUS WEB DEVELOPMENT PROJECTS":
+      sectionIcon = <Codesandbox />;
       break;
     case "Development":
       sectionIcon = <Code />;
