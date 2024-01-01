@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/common/sticky-cursor.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/common/sticky-cursor.jsx", "src/components/pricing/pricing-info-card.tsx", "src/components/pricing/pricing-book-call.tsx"],
   "exclude": ["node_modules"]
 }

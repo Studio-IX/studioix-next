@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Separator } from "../ui/separator";
 import PricingButton from "./pricing-button";
 import React from "react";
+import PricingBookCall from "./pricing-book-call";
 
 interface InfoProps {
   subtitle: string;
@@ -20,9 +21,10 @@ const PricingInfoCard: React.FC<InfoProps> = ({
   buttonText,
   new: newProp,
 }) => {
+  const isBookFreeCall = buttonText === "Book Free Call";
   return (
     <div className="group relative mx-auto w-full max-w-lg overflow-hidden rounded-[20px] bg-[#121212] p-[3px] transition-all duration-500 ease-in-out select-none hover:scale-[1.025] hover:bg-[#222222]">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white p-8 transition-colors duration-500 group-hover:bg-white">
+      <div className="relative py-10 z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white p-8 transition-colors duration-500 group-hover:bg-white">
         <div className="w-full flex flex-row justify-between items-center">
           <h4 className="relative z-10 w-full text-xl text-black font-cabinetGrotesk font-medium">
             {subtitle}
@@ -44,7 +46,11 @@ const PricingInfoCard: React.FC<InfoProps> = ({
 
         <Separator className="mt-6 mb-6" />
 
-        <PricingButton text={buttonText} link="https://www.studioix.agency" />
+        {isBookFreeCall ? (
+          <PricingBookCall text={buttonText} />
+        ) : (
+          <PricingButton text={buttonText} link="/home" />
+        )}
       </div>
       <motion.div
         initial={{ rotate: "0deg" }}

@@ -6,17 +6,17 @@ import PricingPlanCard from "./pricing-plan-card";
 const Pricing = () => {
   return (
     <div className="bg-[#121212] py-20">
-      <Wrapper className="md:px-[25rem]">
+      <Wrapper className=" 2xl:px-[25rem]">
         <PricingHeader />
-        <div className="flex flex-row justify-between w-full">
+        <div className="flex flex-col lg:flex-row justify-between w-full gap-5 lg:gap-0">
           <PricingPlanCard planType="Flexi-Hours" />
           <PricingPlanCard planType="Basic" />
         </div>
-        <div className="flex flex-row justify-between w-full mt-10">
+        <div className="flex flex-col lg:flex-row justify-between w-full mt-5 lg:mt-10 gap-5 lg:gap-0">
           <PricingPlanCard planType="Long Term" />
           <PricingPlanCard planType="Custom" />
         </div>
-        <div className="flex flex-row justify-between w-full mt-10">
+        <div className="flex flex-col lg:flex-row justify-between w-full mt-5 lg:mt-10 gap-5 lg:gap-0">
           <PricingInfoCard
             subtitle="Confused?"
             title="Book A Call"
