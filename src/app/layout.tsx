@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "antialiased overflow-hidden",
+          "antialiased",
           `${archivo.variable} ${cabinetGrotesk.variable}`
         )}
       >
