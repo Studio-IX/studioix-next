@@ -5,18 +5,18 @@ import PricingPlanCard from "./pricing-plan-card";
 
 const Pricing = () => {
   return (
-    <div className="bg-[#121212] py-20">
-      <Wrapper className=" 2xl:px-[25rem]">
+    <div className="bg-[#121212] py-20 w-full">
+      <Wrapper className="w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[15rem]">
         <PricingHeader />
-        <div className="flex flex-col lg:flex-row justify-between w-full gap-5 lg:gap-0">
+        <div className="flex flex-col lg:flex-row w-full gap-5 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-8 4xl:gap-8 5xl:gap-10 items-center justify-center">
           <PricingPlanCard planType="Flexi-Hours" />
           <PricingPlanCard planType="Basic" />
         </div>
-        <div className="flex flex-col lg:flex-row justify-between w-full mt-5 lg:mt-10 gap-5 lg:gap-0">
+        <div className="flex flex-col lg:flex-row w-full mt-5 lg:mt-4 xl:mt-6 2xl:mt-8 3xl:mt-8 4xl:mt-8 5xl:mt-10 gap-5 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-8 4xl:gap-8 5xl:gap-10 items-center justify-center">
           <PricingPlanCard planType="Long Term" />
           <PricingPlanCard planType="Custom" />
         </div>
-        <div className="flex flex-col lg:flex-row justify-between w-full mt-5 lg:mt-10 gap-5 lg:gap-0">
+        <div className="flex flex-col lg:flex-row w-full mt-5 lg:mt-4 xl:mt-6 2xl:mt-8 3xl:mt-8 4xl:mt-8 5xl:mt-10 gap-5 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-8 4xl:gap-8 5xl:gap-10 items-center justify-center">
           <PricingInfoCard
             subtitle="Confused?"
             title="Book A Call"

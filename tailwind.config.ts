@@ -13,15 +13,17 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     fontFamily: {
       archivo: ["var(--font-archivo)"],
       cabinetGrotesk: ["var(--font-cabinetGrotesk)"],
     },
     extend: {
+      screens: {
+        "3xl": "1600px",
+        "4xl": "1800px",
+        "5xl": "1900px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
