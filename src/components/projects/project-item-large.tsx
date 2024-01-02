@@ -13,19 +13,20 @@ const ProjectItemLarge: React.FC<ProjectItemLargeInterface> = ({
 }) => {
   return (
     <div className="flex flex-col w-full items-start">
-      <div className="relative w-full h-[850px]">
+      <div className="relative w-full h-[600px] lg:h-[850px]">
         <Image
+          quality={100}
           className="rounded-[20px] object-cover object-center"
           fill
           src={src}
           alt="Pclub.io"
         />
       </div>
-      <div className="flex flex-row gap-3 mt-8">
+      <div className="flex flex-row gap-2.5 md:gap-3 mt-8">
         <SectionTitle text="User Experience" />
         <SectionTitle text="Development" />
       </div>
-      <h2 className="font-cabinetGrotesk text-6xl text-white font-semibold mt-8">
+      <h2 className="font-cabinetGrotesk text-5xl lg:text-6xl text-white font-semibold mt-8">
         {projectTitle}
       </h2>
     </div>

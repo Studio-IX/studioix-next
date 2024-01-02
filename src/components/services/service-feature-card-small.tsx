@@ -16,8 +16,14 @@ const ServiceFeatureCardSmall: React.FC<ServiceFeatureCardSmallProps> = ({
 }) => {
   return (
     <div className="feature-card h-fit">
-      <div className="relative w-full h-[350px]">
-        <Image className=" object-cover rounded-t-[18px]" fill src={src} alt={alt} />
+      <div className="relative w-full h-[280px] lg:h-[350px]">
+        <Image
+          quality={100}
+          className="object-cover rounded-t-[18px]"
+          fill
+          src={src}
+          alt={alt}
+        />
       </div>
       <div className="flex flex-col items-center text-center pt-8 pb-16">
         <h4 className=" font-cabinetGrotesk font-semibold text-3xl text-white">

@@ -16,9 +16,10 @@ const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
 }) => {
   return (
     <div className="feature-card h-fit">
-      <div className="relative w-full h-[500px]">
+      <div className="relative w-full h-[300px] lg:h-[500px]">
         <Image
-          className=" object-cover rounded-t-[18px]"
+          quality={100}
+          className="object-cover rounded-t-[18px]"
           fill
           src={src}
           alt={alt}

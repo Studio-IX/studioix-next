@@ -24,7 +24,7 @@ const PricingInfoCard: React.FC<InfoProps> = ({
   const isBookFreeCall = buttonText === "Book Free Call";
   return (
     <div className="group relative w-full max-w-lg overflow-hidden rounded-[20px] bg-[#121212] p-[3px] transition-all duration-500 ease-in-out select-none hover:scale-[1.025] hover:bg-[#222222]">
-      <div className="relative py-10 z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white p-8 transition-colors duration-500 group-hover:bg-white">
+      <div className="relative py-10 z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white p-6 md:p-8 transition-colors duration-500 group-hover:bg-white">
         <div className="w-full flex flex-row justify-between items-center">
           <h4 className="relative z-10 w-full text-xl text-black font-cabinetGrotesk font-medium">
             {subtitle}

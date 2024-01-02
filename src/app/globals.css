@@ -286,6 +286,9 @@
 .section-button:hover {
   text-decoration: none;
   transform: translate(-1px, -1px);
+  background-color: #3d3d3d;
+  transition-duration: 10ms;
+  transition: all;
 }
 
 .section-button-backdrop {

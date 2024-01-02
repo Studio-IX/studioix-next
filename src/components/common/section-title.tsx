@@ -11,13 +11,16 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
     case "PRICING":
       sectionIcon = <Gem />;
       break;
-    case "PREVIOUS WEB DEVELOPMENT PROJECTS":
+    case "PREVIOUS WEB DEV PROJECTS":
       sectionIcon = <Codesandbox />;
       break;
     case "Development":
       sectionIcon = <Code />;
       break;
     case "User Experience":
+      sectionIcon = <Paintbrush />;
+      break;
+    case "UX":
       sectionIcon = <Paintbrush />;
       break;
     case "Branding":
@@ -28,7 +31,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
   }
   return (
     <div className="section">
-      <div className="section-button font-archivo font-normal text-lg select-none gap-3 items-center">
+      <div className="section-button font-archivo font-normal text-base md:text-lg select-none gap-2 md:gap-3 items-center">
         {sectionIcon} {text}
       </div>
       <div className="section-button-backdrop"></div>

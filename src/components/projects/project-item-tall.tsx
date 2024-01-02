@@ -13,20 +13,34 @@ const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
 }) => {
   return (
     <div className="flex flex-col w-full items-start">
-      <div className="relative w-full h-[950px]">
+      <div className="relative w-full h-[600px] lg:h-[950px]">
         <Image
-          className="rounded-[20px] object-cover object-left"
+          quality={100}
+          className="rounded-[20px] object-cover object-left lg:object-center"
           fill
           src={src}
           alt="Pclub.io"
         />
       </div>
-      <div className="flex flex-row gap-3 mt-8">
-        <SectionTitle text="Branding" />
-        <SectionTitle text="Development" />
-        <SectionTitle text="User Experience" />
+      <div className="hidden md:block">
+        <div className="flex flex-row gap-2.5 mt-8 md:gap-3">
+          <SectionTitle text="Branding" />
+          <SectionTitle text="Development" />
+          <SectionTitle text="User Experience" />
+        </div>
       </div>
-      <h2 className="font-cabinetGrotesk text-6xl text-white font-semibold mt-8">
+      <div className="md:hidden">
+        <div className="flex flex-col items-start justify-start mt-8 w-full">
+          <div className="flex flex-row gap-2.5 md:gap-3">
+            <SectionTitle text="Branding" />
+            <SectionTitle text="Development" />
+          </div>
+          <div className="mt-3">
+            <SectionTitle text="UX" />
+          </div>
+        </div>
+      </div>
+      <h2 className="font-cabinetGrotesk text-5xl lg:text-6xl text-white font-semibold mt-8">
         {projectTitle}
       </h2>
     </div>
