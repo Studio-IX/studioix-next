@@ -17,7 +17,7 @@ const Projects = () => {
         </div>
         <div className="w-full">
           <ProjectItemLarge
-            src="/projects/liftinfluence.png"
+            src="/gallery/liftinfluence_showcase.png"
             projectTitle="LiftInfluence"
           />
         </div>

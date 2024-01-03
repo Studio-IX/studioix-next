@@ -23,7 +23,7 @@ const ProjectItem: React.FC<ProjectItemInterface> = ({ src, projectTitle }) => {
         <SectionTitle text="Development" />
         <SectionTitle text="User Experience" />
       </div>
-      <h2 className="font-cabinetGrotesk text-5xl lg:text-6xl text-white font-semibold mt-8">
+      <h2 className="font-cabinetGrotesk text-4xl lg:text-6xl text-white font-semibold mt-6 md:mt-8">
         {projectTitle}
       </h2>
     </div>

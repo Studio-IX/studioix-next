@@ -1,3 +1,5 @@
+"use client";
+
 import CompanyLogos from "../common/company-logos";
 import PrimaryButtonLight from "../common/primary-button-light";
 import SliderText from "../common/slider-text";
@@ -5,6 +7,7 @@ import Wrapper from "../wrapper/wrapper";
 import ArrowOne from "./arrow-one";
 import ArrowThree from "./arrow-three";
 import ArrowTwo from "./arrow-two";
+import ProjectSlider from "./mobile-project-slider";
 import ServiceFeatureCard from "./service-feature-card";
 import ServiceFeatureCardSmall from "./service-feature-card-small";
 import WebDevelopmentGallery from "./web-development-gallery";
@@ -36,11 +39,11 @@ const ServiceHero = () => {
               </div>
             </div>
           </div>
-          <h1 className="font-cabinetGrotesk font-bold text-6xl lg:text-[6.8rem] text-black">
+          <h1 className="font-cabinetGrotesk font-bold text-5xl lg:text-[6.8rem] text-black">
             Evolve your website.
           </h1>
         </div>
-        <h1 className="font-cabinetGrotesk font-bold text-6xl lg:text-[6.8rem] text-black">
+        <h1 className="font-cabinetGrotesk font-bold text-5xl lg:text-[6.8rem] text-black">
           Stay engraved in user&apos;s minds.
         </h1>
 
@@ -58,6 +61,7 @@ const ServiceHero = () => {
           </div>
         </div>
       </Wrapper>
+      <ProjectSlider />
       <WebDevelopmentGallery />
       <CompanyLogos />
 

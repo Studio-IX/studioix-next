@@ -16,7 +16,7 @@ const ProjectItemLarge: React.FC<ProjectItemLargeInterface> = ({
       <div className="relative w-full h-[600px] lg:h-[850px]">
         <Image
           quality={100}
-          className="rounded-[20px] object-cover object-center"
+          className="rounded-[20px] object-cover object-left"
           fill
           src={src}
           alt="Pclub.io"
@@ -26,7 +26,7 @@ const ProjectItemLarge: React.FC<ProjectItemLargeInterface> = ({
         <SectionTitle text="User Experience" />
         <SectionTitle text="Development" />
       </div>
-      <h2 className="font-cabinetGrotesk text-5xl lg:text-6xl text-white font-semibold mt-8">
+      <h2 className="font-cabinetGrotesk text-4xl lg:text-6xl text-white font-semibold mt-6 md:mt-8">
         {projectTitle}
       </h2>
     </div>

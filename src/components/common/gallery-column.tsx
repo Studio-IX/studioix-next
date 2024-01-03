@@ -12,7 +12,12 @@ const Column: React.FC<ColumnProps> = ({ galleryImages, y }) => {
       {galleryImages.map((src, i) => {
         return (
           <div key={i} className="imageContainer">
-            <Image src={`/gallery/${src}`} alt="Sanguine gallery" fill />
+            <Image
+              className="object-cover object-left"
+              src={`/gallery/${src}`}
+              alt="Studio IX gallery"
+              fill
+            />
           </div>
         );
       })}

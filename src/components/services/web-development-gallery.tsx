@@ -51,7 +51,7 @@ const WebDevelopmentGallery: React.FC = () => {
   }, []);
 
   return (
-    <div className="-mt-20">
+    <div className="-mt-20 hidden md:block">
       <div className="spacer"></div>
       <div className="gallery" ref={gallery}>
         <Column
@@ -63,7 +63,6 @@ const WebDevelopmentGallery: React.FC = () => {
           galleryImages={[galleryImages[3], galleryImages[4], galleryImages[5]]}
           y={y2}
         />
-
         <Column
           galleryImages={[galleryImages[6], galleryImages[7], galleryImages[8]]}
           y={y3}

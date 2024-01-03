@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/common/section-title";
 import Projects from "@/components/projects/projects";
+import ServiceClientTestimonials from "@/components/services/service-client-testimonials";
 import ServiceHero from "@/components/services/service-hero";
 
 const WebDevelopmentPage = () => {
@@ -12,6 +13,7 @@ const WebDevelopmentPage = () => {
           Featured Projects
         </h2>
         <Projects />
+        <ServiceClientTestimonials/>
       </div>
     </div>
   );
