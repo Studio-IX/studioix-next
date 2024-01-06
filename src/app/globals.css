@@ -365,7 +365,7 @@
   height: 10vh;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
 }
 
 /* End Gallery */
@@ -432,7 +432,7 @@
 
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   top: -25%;
   height: 690px;
@@ -442,6 +442,7 @@
 
 .card .body {
   display: flex;
+  flex-direction: row;
   height: 100%;
   justify-content: space-between;
 }
@@ -467,6 +468,59 @@
 
 .card .body .imageContainer img {
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 210px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -25%;
+    height: 475px;
+    border-radius: 0px;
+    transform-origin: top;
+  }
+
+  .card .body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .card .body .description {
+    width: 100%;
+    position: relative;
+    top: 10%;
+    align-items: start;
+  }
+
+  .card .body .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .card .body .imageContainer .inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card .body .imageContainer img {
+    object-fit: cover;
+  }
 }
 
 /* Feature Cards End */

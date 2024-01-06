@@ -4,6 +4,7 @@ import { webDevServiceTestimonials } from "@/constants/testimonials";
 import {
   SiAdobe,
   SiAlienware,
+  SiBytedance,
   SiHbo,
   SiMicrosoft,
   SiNike,
@@ -17,39 +18,39 @@ const ServiceClientTestimonials = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <Wrapper className="items-center w-full flex flex-col">
-        <h2 className="text-white text-7xl font-cabinetGrotesk font-bold">
+        <h2 className="text-white text-5xl md:text-7xl font-cabinetGrotesk font-bold">
           We&apos;ve worked with amazing brands
         </h2>
       </Wrapper>
-      <div className="w-full flex flex-row mt-20 mb-[20rem] px-40 gap-8">
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 pb-32 pt-20 md:pt-20 md:pb-52">
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
           <SiNike style={{ fontSize: "5rem", color: "white" }} />
         </div>
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
           <SiMicrosoft style={{ fontSize: "4.5rem", color: "white" }} />
         </div>
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
           <SiAdobe style={{ fontSize: "5rem", color: "white" }} />
         </div>
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
           <SiNvidia style={{ fontSize: "5rem", color: "white" }} />
         </div>
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
           <SiAlienware style={{ fontSize: "5rem", color: "white" }} />
         </div>
-        <div className="w-[20rem] h-[20rem] rounded-full border border-gray-400 flex items-center justify-center">
-          <SiHbo style={{ fontSize: "8rem", color: "white" }} />
+        <div className="w-[12rem] md:w-[16rem] h-[12rem] md:h-[16rem] rounded-full border border-gray-400 flex items-center justify-center">
+          <SiBytedance style={{ fontSize: "5rem", color: "white" }} />
         </div>
       </div>
-      <Wrapper className="mb-40">
+      <Wrapper className="mb-20 md:mb-40">
         <div className="w-full flex flex-row justify-between items-center">
-          <h2 className="text-white text-7xl font-cabinetGrotesk font-bold">
-            Feedback from our clients
+          <h2 className="text-white text-5xl md:text-7xl font-cabinetGrotesk font-bold pr-16 -mt-2 md:pr-0">
+            Feedback <span className="hidden md:block">from our clients</span>
           </h2>
           <Arrow />
         </div>
       </Wrapper>
-      <div className="px-20">
+      <div className="px-3 md:px-20">
         {webDevServiceTestimonials.map((testimonial, i) => {
           return (
             <ServiceTestimonialItem

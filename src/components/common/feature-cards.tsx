@@ -50,22 +50,22 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         className="card w-full"
       >
         <div className={`body text-${textColor}`}>
-          <div className="flex flex-col items-start w-[45%] justify-center -mt-[15rem] ml-20">
+          <div className="flex flex-col items-start w-full md:w-[45%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
             <div className="flex flex-row w-full gap-4">
-              <p className="text-xl font-archivo">{number}</p>
-              <h2 className="text-5xl font-semibold font-cabinetGrotesk">
+              <p className="text-lg md:text-xl font-archivo">{number}</p>
+              <h2 className="text-4xl md:text-5xl font-semibold font-cabinetGrotesk">
                 {title}
               </h2>
             </div>
-            <p className={`mt-6 text-xl font-archivo font-normal opacity-80`}>
+            <p className={`mt-1 md:mt-6 text-lg md:text-xl font-archivo font-normal opacity-80`}>
               {description}
             </p>
-            <div className="mt-10">
+            <div className="mt-10 hidden md:block">
               <PrimaryButton text="Learn More" link="/about-us" />
             </div>
           </div>
 
-          <div className="imageContainer">
+          <div className="imageContainer mt-5 md:mt-0">
             <motion.div className="inner" style={{ scale: imageScale }}>
               <video autoPlay loop muted>
                 <source src={`/videos/${src}`} type="video/mp4" />

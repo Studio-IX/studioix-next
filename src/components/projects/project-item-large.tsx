@@ -16,7 +16,7 @@ const ProjectItemLarge: React.FC<ProjectItemLargeInterface> = ({
       <div className="relative w-full h-[600px] lg:h-[850px]">
         <Image
           quality={100}
-          className="rounded-[20px] object-cover object-left"
+          className="rounded-[20px] object-cover object-left-top"
           fill
           src={src}
           alt="Pclub.io"

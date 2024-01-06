@@ -13,7 +13,7 @@ const ProjectItem: React.FC<ProjectItemInterface> = ({ src, projectTitle }) => {
       <div className="relative w-full h-[350px] lg:h-[650px]">
         <Image
           quality={100}
-          className="rounded-[20px]"
+          className="rounded-[20px] object-cover object-left-top"
           fill
           src={src}
           alt="Pclub.io"
