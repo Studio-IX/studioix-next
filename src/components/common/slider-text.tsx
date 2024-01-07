@@ -47,8 +47,12 @@ const SliderText: React.FC<SliderTextProps> = ({ text }) => {
   return (
     <div className="sliderContainer font-cabinetGrotesk font-bold">
       <div ref={slider} className="slider">
-        <p ref={firstText}>{text}</p>
-        <p ref={secondText}>{text}</p>
+        <p className="" ref={firstText}>
+          {text}
+        </p>
+        <p className="flex flex-row items-center" ref={secondText}>
+          {text}
+        </p>
       </div>
     </div>
   );

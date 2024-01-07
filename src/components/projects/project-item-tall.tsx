@@ -16,7 +16,7 @@ const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
       <div className="relative w-full h-[600px] lg:h-[950px]">
         <Image
           quality={100}
-          className="rounded-[20px] object-cover object-left lg:object-object-left-top"
+          className="rounded-[20px] object-cover object-left lg:object-left-top"
           fill
           src={src}
           alt="Pclub.io"

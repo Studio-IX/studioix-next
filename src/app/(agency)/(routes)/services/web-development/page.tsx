@@ -13,7 +13,7 @@ const WebDevelopmentPage = () => {
           Featured Projects
         </h2>
         <Projects />
-        <ServiceClientTestimonials/>
+        <ServiceClientTestimonials />
       </div>
     </div>
   );
