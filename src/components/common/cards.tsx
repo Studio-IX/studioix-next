@@ -28,6 +28,8 @@ const Cards: React.FC<CardsProps> = () => {
       offset: ["start start", "end end"],
     });
 
+  const isAtBottom = scrollYProgress.get() === 1;
+
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -42,8 +44,20 @@ const Cards: React.FC<CardsProps> = () => {
   return (
     <div
       ref={container}
-      className="flex flex-col items-center bg-[#121212] pt-20"
+      className="flex flex-col items-center bg-[#0A0A0A] pt-20"
     >
+      <div
+        className={`flex flex-col md:flex-row justify-between items-start w-full px-5 md:px-20 sticky pb-12 top-12`}
+      >
+        <h2 className="text-white text-5xl md:text-[52px] font-semibold font-cabinetGrotesk">
+          Our process
+        </h2>
+        <p className="text-white/80 text-lg md:text-2xl font-archivo">
+          Our unique processes are tailored to your unique goals, so you can
+          dominate <br className="hidden md:block" /> your competition and leave
+          a lasting impression on your customers
+        </p>
+      </div>
       {features.map((feature, i) => {
         const targetScale: number = 1 - (features.length - i) * 0.05;
         return (

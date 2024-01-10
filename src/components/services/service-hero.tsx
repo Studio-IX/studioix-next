@@ -65,7 +65,7 @@ const ServiceHero = () => {
       <WebDevelopmentGallery />
       <CompanyLogos />
 
-      <div className="bg-[#121212] flex flex-col w-full py-40">
+      <div className="bg-[#0A0A0A] flex flex-col w-full py-40">
         <div className="pb-[25rem] hidden lg:block">
           <SliderText text="Our Web Development Stack" />
         </div>

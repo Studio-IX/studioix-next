@@ -497,7 +497,7 @@
 /* Feature Cards */
 .cardContainer {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -599,3 +599,45 @@
 }
 
 /* Feature Cards End */
+
+/* Video Showreel */
+
+.modalSlider {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal img {
+  height: auto;
+}
+
+.cursor,
+.cursorLabel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ffab10;
+  color: black;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.cursorLabel {
+  background-color: transparent;
+}
+
+/* End Video Showreel */

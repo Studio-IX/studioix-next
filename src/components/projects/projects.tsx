@@ -6,7 +6,7 @@ import ProjectItemTall from "./project-item-tall";
 
 const Projects = () => {
   return (
-    <div className="bg-[#121212] py-20 w-full pb-[40rem]">
+    <div className="bg-[#0A0A0A] pt-20 md:pt-[8rem] w-full pb-[40rem]">
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20">
         <div className="w-full flex flex-col lg:flex-row gap-10">
           <ProjectItem src="/projects/pclub.png" projectTitle="Pclub.io" />
