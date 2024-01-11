@@ -61,7 +61,7 @@ const PricingPlanCard: React.FC<PricingProps> = ({ planType }) => {
   }
   return (
     <div className="group relative w-full max-w-lg overflow-hidden rounded-[20px] bg-[#121212] p-[3px] transition-all duration-500 ease-in-out select-none hover:scale-[1.025] hover:bg-[#222222]">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white p-6 md:p-8 transition-colors duration-500 group-hover:bg-white">
+      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white px-4 py-6 md:py-8 md:px-8 transition-colors duration-500 group-hover:bg-white">
         <h4 className="relative mb-1 z-10 w-full text-xl text-black font-cabinetGrotesk font-medium">
           {planType}
         </h4>

@@ -11,7 +11,7 @@ const WebDevelopmentPage = () => {
       <ServiceHero />
       <div className="w-full flex flex-col items-center bg-[#0A0A0A] py-32">
         <SectionTitle text="PREVIOUS WEB DEV PROJECTS" />
-        <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-7xl text-white text-center mt-6">
+        <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-7xl text-white text-center md:mt-6">
           Featured Projects
         </h2>
         <Projects />

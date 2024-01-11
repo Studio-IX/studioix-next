@@ -548,7 +548,7 @@
 @media screen and (max-width: 768px) {
   .cardContainer {
     width: 100vw;
-    height: 100dvh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
