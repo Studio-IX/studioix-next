@@ -10,7 +10,7 @@ const PrivacyPreferences = () => {
   return (
     <>
       {isVisible && (
-        <div className="fixed bottom-5 left-5 right-5 bg-[#313131] md:w-[400px] h-fit rounded-2xl p-6 z-[3147483000] md:z-50">
+        <div className="fixed bottom-5 left-5 right-5 bg-[#313131] md:w-[400px] h-fit rounded-2xl p-6 z-[3147483000000000000] md:z-50">
           <p className=" font-archivo text-white text-lg">
             By using this website, you agree with <br />
             our <span className="underline">privacy policy</span>

@@ -1,8 +1,8 @@
 import TerminalContact from "@/components/common/contact-form-terminal";
 import SectionTitle from "@/components/common/section-title";
 import Projects from "@/components/projects/projects";
-import ServiceClientTestimonials from "@/components/services/service-client-testimonials";
-import ServiceHero from "@/components/services/service-hero";
+import ServiceClientTestimonials from "@/components/service/service-client-testimonials";
+import ServiceHero from "@/components/service/service-hero";
 import Wrapper from "@/components/wrapper/wrapper";
 
 const WebDevelopmentPage = () => {

@@ -4,7 +4,7 @@ import Magnetic from "./magnetic";
 
 const Rounded = ({
   children,
-  backgroundColor = "#4686D9",
+  backgroundColor = "#ffab10",
   onClick,
   ...rest
 }: React.HTMLProps<HTMLDivElement> & {

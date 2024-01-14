@@ -19,8 +19,14 @@ const scaleAnimation = {
   },
 };
 
-const Modal = ({ modal }: { modal: { active: boolean } }) => {
-  const { active } = modal;
+const ServicesModal = ({
+  modal,
+  services,
+}: {
+  modal: { active: boolean; index: number };
+  services: any[];
+}) => {
+  const { active, index } = modal;
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -74,26 +80,41 @@ const Modal = ({ modal }: { modal: { active: boolean } }) => {
         initial="initial"
         animate={active ? "enter" : "closed"}
         className="modalContainer"
-      />
+      >
+        <div style={{ top: index * -100 + "%" }} className="modalSlider">
+          {services.map((service, index) => {
+            const { src, color } = service;
+            return (
+              <div
+                className="modal"
+                style={{ backgroundColor: color }}
+                key={`modal_${index}`}
+              >
+                <Image src={`/${src}`} width={300} height={0} alt="image" />
+              </div>
+            );
+          })}
+        </div>
+      </motion.div>
 
       <motion.div
         ref={cursor}
-        className="cursor"
+        className="cursor-services"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-      />
+      ></motion.div>
       <motion.div
         ref={cursorLabel}
-        className="cursorLabel font-archivo text-2xl uppercase font-medium"
+        className="cursorLabel-services font-archivo uppercase text-lg font-medium"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        Play
+        View
       </motion.div>
     </>
   );
 };
 
-export default Modal;
+export default ServicesModal;
