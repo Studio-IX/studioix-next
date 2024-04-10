@@ -7,7 +7,7 @@ import Wrapper from "@/components/wrapper/wrapper";
 const WebDevelopmentPage = () => {
   return (
     <div className="w-full">
-      <ServiceHero />
+      {/* <ServiceHero />
       <div className="w-full flex flex-col items-center bg-black">
         <Projects />
         <ServiceClientTestimonials />
@@ -18,7 +18,7 @@ const WebDevelopmentPage = () => {
           </h2>
           <BentoGridSecondDemo />
         </Wrapper>
-      </div>
+      </div> */}
     </div>
   );
 };
