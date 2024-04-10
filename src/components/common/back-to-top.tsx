@@ -44,9 +44,9 @@ const BackToTop = () => {
         onClick={() => {
           handleScrollToTop();
         }}
-        className="button"
+        className="button text-white hover:text-black"
       >
-        <ArrowUp className={`arrowUp text-white z-10`} />
+        <ArrowUp className={`arrowUp z-10`} />
       </Rounded>
     </div>
   );

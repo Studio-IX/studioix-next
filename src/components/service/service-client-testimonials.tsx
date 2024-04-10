@@ -7,7 +7,7 @@ import {
   SiBytedance,
   SiMicrosoft,
   SiNike,
-  SiNvidia
+  SiNvidia,
 } from "react-icons/si";
 import Wrapper from "../wrapper/wrapper";
 import Arrow from "./arrow";
@@ -15,7 +15,7 @@ import ServiceTestimonialItem from "./service-testimonial-item";
 
 const ServiceClientTestimonials = () => {
   return (
-    <div className="w-full flex flex-col items-center bg-[#0A0A0A]">
+    <div className="w-full flex flex-col items-center bg-black">
       <Wrapper className="items-center w-full flex flex-col">
         <h2 className="text-white text-5xl md:text-7xl font-cabinetGrotesk font-bold">
           We&apos;ve worked with amazing brands

@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
-          "antialiased overflow-x-hidden h-fit",
+          "antialiased overflow-x-hidden bg-black select-none",
           `${archivo.variable} ${cabinetGrotesk.variable}`
         )}
       >

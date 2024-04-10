@@ -42,14 +42,11 @@ const Cards: React.FC<CardsProps> = () => {
   }, []);
 
   return (
-    <div
-      ref={container}
-      className="flex flex-col items-center bg-[#0A0A0A] pt-20"
-    >
+    <div ref={container} className="flex flex-col items-center bg-black pt-20">
       <div
-        className={`flex flex-col md:flex-row justify-between items-start w-full px-5 md:px-20 sticky pb-12 top-12`}
+        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-6 md:top-48`}
       >
-        <h2 className="text-white text-5xl md:text-[52px] font-semibold font-cabinetGrotesk">
+        <h2 className="text-white uppercase text-5xl md:text-6xl font-semibold font-cabinetGrotesk">
           Our process
         </h2>
         <p className="text-white/80 text-lg md:text-2xl font-archivo">

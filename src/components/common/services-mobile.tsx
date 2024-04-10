@@ -21,12 +21,9 @@ const ServiceMobile = ({
 }) => {
   return (
     <Link className="flex w-full" href={href}>
-      <div className="border-t border-b border-t-[#292b3d] border-b-[#292b3d] px-5 py-16 bg-[#0A0A0A]">
+      <div className="border-t border-b border-t-[#292b3d] border-b-[#292b3d] px-3 py-14 bg-black">
         <div className="flex flex-col items-start">
-          <h4 className="text-white/60 text-6xl font-cabinetGrotesk font-medium">
-            {number}
-          </h4>
-          <h2 className="text-start text-white font-cabinetGrotesk font-semibold text-6xl mt-2.5">
+          <h2 className="text-start text-white font-cabinetGrotesk font-semibold text-6xl">
             {title}
           </h2>
           <p className=" font-archivo text-lg text-white/80 text-start mt-2.5">

@@ -1,25 +1,44 @@
+"use client";
+
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import React, { useState } from "react";
 import SectionTitle from "../common/section-title";
-import React from "react";
+import ProjectModal from "./projects-modal";
 
 interface ProjectItemTallInterface {
   src: string;
   projectTitle: string;
+  className?: string;
 }
 
 const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
   src,
   projectTitle,
+  className,
 }) => {
+  const [modal, setModal] = useState({ active: false });
+
   return (
     <div className="flex flex-col w-full items-start">
-      <div className="relative w-full h-[600px] lg:h-[950px]">
+      <div
+        className="relative w-full h-[600px] lg:h-[950px] cursor-none group overflow-hidden rounded-[20px] border border-white/10"
+        onMouseEnter={() => {
+          setModal({ active: true });
+        }}
+        onMouseLeave={() => {
+          setModal({ active: false });
+        }}
+      >
         <Image
           quality={100}
-          className="rounded-[20px] object-cover object-left lg:object-left-top"
+          className={cn(
+            "rounded-[20px] object-cover object-left lg:object-left-top group-hover:scale-110 transition-all ease-in-out duration-500",
+            className
+          )}
           fill
           src={src}
-          alt="Pclub.io"
+          alt={projectTitle}
         />
       </div>
       <div className="hidden md:block">
@@ -43,6 +62,7 @@ const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
       <h2 className="font-cabinetGrotesk text-4xl lg:text-6xl text-white font-semibold mt-6 md:mt-8">
         {projectTitle}
       </h2>
+      <ProjectModal modal={modal} />
     </div>
   );
 };

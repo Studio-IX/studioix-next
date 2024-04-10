@@ -43,11 +43,11 @@ const Service = ({
         <div className="w-full flex flex-col">
           <div className="flex flex-row w-full justify-between items-start px-28">
             <div className="flex flex-row space-x-5 md:space-x-20">
-              <h1 className="text-white text-[14px] md:text-[120px] font-cabinetGrotesk font-semibold">
+              <h1 className="text-white text-[14px] md:text-[120px] font-cabinetGrotesk font-semibold md:-mt-4">
                 {number}
               </h1>
-              <div className="flex flex-col items-start">
-                <h2 className="font-cabinetGrotesk font-semibold">{title}</h2>
+              <div className="flex flex-col items-start text-start md:mb-5">
+                <h2 className="font-cabinetGrotesk font-bold">{title}</h2>
               </div>
             </div>
             <div id="arrow" className="mt-4">
@@ -59,17 +59,20 @@ const Service = ({
 
           <div className="hidden md:block px-60 -mt-8">
             <div className="flex flex-row items-center gap-10 w-full">
-              <div className="flex flex-row items-center gap-4" id="sub">
+              <div
+                className="flex flex-row items-start md:items-center gap-4"
+                id="sub"
+              >
                 <PlusServices />
-                <p className=" font-archivo font-normal">{sub1}</p>
+                <p className=" font-archivo font-normal text-start">{sub1}</p>
               </div>
               <div className="flex flex-row items-center gap-4" id="sub">
                 <PlusServices />
-                <p className=" font-archivo font-normal">{sub2}</p>
+                <p className=" font-archivo font-normal text-start">{sub2}</p>
               </div>
               <div className="flex flex-row items-center gap-4" id="sub">
                 <PlusServices />
-                <p className=" font-archivo font-normal">{sub3}</p>
+                <p className=" font-archivo font-normal text-start">{sub3}</p>
               </div>
             </div>
           </div>

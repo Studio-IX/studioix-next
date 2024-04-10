@@ -86,7 +86,7 @@ const ServicesModal = ({
             const { src, color } = service;
             return (
               <div
-                className="modal"
+                className="modal rounded-2xl"
                 style={{ backgroundColor: color }}
                 key={`modal_${index}`}
               >

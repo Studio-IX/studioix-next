@@ -21,7 +21,7 @@ const TerminalContact = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   return (
-    <section className="md:px-4 py-6 md:py-12 bg-[#0A0A0A]">
+    <section className="md:px-4 py-6 md:py-12 bg-black">
       <div
         ref={containerRef}
         onClick={() => {

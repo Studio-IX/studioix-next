@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ProjectSlider = () => {
   return (
-    <div className="bg-white md:hidden">
+    <div className="bg-black md:hidden">
       <div className="p-4 overflow-x-hidden relative">
         <div className="flex items-center mb-4">
           <ProjectsList list={testimonials.top} duration={100} />

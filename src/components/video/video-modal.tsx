@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const scaleAnimation = {

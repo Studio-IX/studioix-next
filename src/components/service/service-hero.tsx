@@ -14,7 +14,7 @@ import WebDevelopmentGallery from "./web-development-gallery";
 
 const ServiceHero = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       <Wrapper className="py-20">
         <div className="w-full flex flex-row justify-between items-center">
           <div className="hidden md:block">
@@ -65,9 +65,9 @@ const ServiceHero = () => {
       <WebDevelopmentGallery />
       <CompanyLogos />
 
-      <div className="bg-[#0A0A0A] flex flex-col w-full py-40">
+      <div className="bg-black flex flex-col w-full py-40">
         <div className="pb-[25rem] hidden lg:block">
-          <SliderText text="Our Web Development Stack" />
+          <SliderText text="Our Web Development Stack  -" />
         </div>
         <Wrapper className="flex flex-col gap-5 lg:gap-10 mt-10">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">

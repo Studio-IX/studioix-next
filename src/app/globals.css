@@ -79,6 +79,7 @@
   scrollbar-width: none;
   scrollbar-color: white white;
 }
+
 /* Buttons */
 
 .primary {
@@ -404,8 +405,8 @@
 .headerButtonContainer {
   transform: scale(0);
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 80px;
+  right: 0;
   z-index: 20;
 }
 
@@ -499,15 +500,15 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: 165px;
+  top: 300px;
 }
 
 .card {
   display: flex;
   flex-direction: row;
   position: relative;
-  top: -25%;
-  height: 690px;
+  top: -20%;
+  height: 600px;
   border-radius: 0px;
   transform-origin: top;
 }
@@ -634,6 +635,24 @@
 }
 
 .cursorLabel {
+  background-color: transparent;
+}
+.cursor-project,
+.projectCursorLabel {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #ffab10;
+  color: black;
+  position: absolute;
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.projectCursorLabel {
   background-color: transparent;
 }
 
@@ -770,3 +789,99 @@
 }
 
 /* End Services */
+
+.slidingImages {
+  display: flex;
+  flex-direction: column;
+  gap: 0vw;
+  position: relative;
+  margin-top: 200px;
+  background-color: black;
+  z-index: 1;
+}
+.slidingImages .slider {
+  display: flex;
+  position: relative;
+  height: 30vw;
+  gap: 1vw;
+  width: 180vw;
+  left: -10vw;
+}
+.slidingImages .slider .project-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slidingImages .slider .project-item .imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slidingImages .slider .project-item .imageContainer img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.projsButtonContainer {
+  position: absolute;
+  z-index: 50;
+}
+.projsButton {
+  width: 200px;
+  height: 200px;
+  background-color: #455ce9;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.projsButton h4 {
+  margin: 0px;
+  z-index: 2;
+  position: relative;
+}
+.projsButton p {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 300;
+  z-index: 2;
+  position: relative;
+}
+
+.projectCardContainer {
+  height: 90dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 3rem;
+  margin-bottom: 15rem;
+}
+.projectCardContainer .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  transform-origin: top;
+}
+.projectCardContainer .card .body .imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.projectCardContainer .card .body .imageContainer .inner {
+  width: 100%;
+  height: 100%;
+}
+.projectCardContainer .card .body .imageContainer img {
+  object-fit: cover;
+}

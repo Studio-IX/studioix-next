@@ -16,6 +16,9 @@ const PrimaryButtonLight: React.FC<PrimaryButtonLightProps> = ({
     case "Start a project":
       buttonIcon = <ArrowRight />;
       break;
+    case "Subscribe":
+      buttonIcon = <ArrowRight />;
+      break;
     default:
       buttonIcon = [];
   }
