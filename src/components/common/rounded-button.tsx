@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode, MouseEvent, useEffect, useRef } from "react";
 import gsap from "gsap";
 import Magnetic from "./magnetic";
