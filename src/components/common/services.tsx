@@ -3,13 +3,8 @@
 import Service from "./service";
 
 import { services } from "@/constants/services";
-import { useState } from "react";
-import ServicesModal from "./service-modal";
-import ServiceMobile from "./services-mobile";
 
 const AgencyServices = () => {
-  const [modal, setModal] = useState({ active: false, index: 0 });
-
   return (
     <div className="bg-black py-40 md:py-60 flex flex-col items-start justify-center text-center">
       <div className="servicesMain mt-20">
@@ -28,7 +23,6 @@ const AgencyServices = () => {
                       sub3={service.sub3}
                       description={service.description}
                       number={service.number}
-                      setModal={setModal}
                     />
                   </div>
                 </>
@@ -36,7 +30,6 @@ const AgencyServices = () => {
             );
           })}
         </div>
-        <ServicesModal modal={modal} services={services} />
       </div>
     </div>
   );

@@ -84,7 +84,7 @@ const Modal = ({ modal }: { modal: { active: boolean } }) => {
       />
       <motion.div
         ref={cursorLabel}
-        className="cursorLabel font-archivo text-2xl uppercase font-medium"
+        className="cursorLabel font-archivo text-xl uppercase font-medium"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}

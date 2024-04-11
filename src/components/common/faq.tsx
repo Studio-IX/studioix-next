@@ -13,7 +13,7 @@ export const FAQs = () => {
           height={620}
           src="/images/faq-gradient.png"
           alt="Gradient"
-        />
+        />p
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center">
         <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-7xl text-white text-center mt-6">

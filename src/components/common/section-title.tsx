@@ -1,5 +1,6 @@
 import {
   Code,
+  Codepen,
   Codesandbox,
   Gem,
   Paintbrush,
@@ -35,6 +36,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
       break;
     case "Branding":
       sectionIcon = <PenTool />;
+      break;
+    case "Senior Developer":
+      sectionIcon = <Codepen />;
       break;
     default:
       sectionIcon = [];

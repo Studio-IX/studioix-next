@@ -10,7 +10,6 @@ const Service = ({
   index,
   title,
   number,
-  setModal,
   sub1,
   sub2,
   sub3,
@@ -24,17 +23,14 @@ const Service = ({
   sub2: string;
   sub3: string;
   description: string;
-  setModal: (value: any) => void;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
       onMouseEnter={() => {
-        setModal({ active: true, index });
         setIsHovered(true);
       }}
       onMouseLeave={() => {
-        setModal({ active: false, index });
         setIsHovered(false);
       }}
       className="project hover:bg-[#4686d9] transition-all ease-in w-full"

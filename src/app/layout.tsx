@@ -23,7 +23,7 @@ export default function RootLayout({
           "antialiased overflow-x-hidden bg-black select-none",
           `${archivo.variable} ${cabinetGrotesk.variable}`
         )}
-      >
+      > 
         <Analytics />
         {children}
       </body>
