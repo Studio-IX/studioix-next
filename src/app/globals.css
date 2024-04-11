@@ -49,14 +49,37 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+/* Preloader */
+
+.introduction {
+  height: 100dvh;
+  width: 100vw;
+  position: fixed;
+  z-index: 2147483003;
+  background-color: #000000;
+}
+
+.introduction svg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 300px);
+}
+
+.introduction svg path {
+  fill: #000000;
+}
+
+@media screen and (max-width: 450px) {
+  .introduction svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
   }
 }
+
+/* End Preloader */
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
@@ -78,6 +101,15 @@
 * {
   scrollbar-width: none;
   scrollbar-color: white white;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  pointer-events: none;
+  z-index: 99999;
 }
 
 /* Buttons */
@@ -735,12 +767,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 0px 50px 0px;
-  border-top: 1px solid rgb(13, 13, 13);
+  border-top: 1px solid rgb(26, 26, 26);
+  border-bottom: 1px solid rgb(26, 26, 26);
   cursor: pointer;
   transition: all 0.2s;
-}
-.project:last-of-type {
-  border-bottom: 1px solid #4b4b4b;
 }
 
 .project h2 {
@@ -776,16 +806,13 @@
 }
 
 .project:hover p {
-  color: #313131;
+  color: #ffffff;
   transition: all 0.3 ease-in;
 }
 
 .project h3 {
-  color: #ffffff;
+  color: #000000;
   transition: all 0.3 ease-in;
-}
-.project:hover h3 {
-  color: #313131;
 }
 
 /* End Services */
@@ -885,3 +912,30 @@
 .projectCardContainer .card .body .imageContainer img {
   object-fit: cover;
 }
+
+/* MENU */
+
+.svgCurve {
+  position: absolute;
+  top: 0;
+  left: -99px;
+  width: 100px;
+  height: 100%;
+  fill: black;
+  stroke: none;
+}
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: white;
+  z-index: 60;
+}
+
+/* MENU END */

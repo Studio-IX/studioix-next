@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 
 import { archivo, cabinetGrotesk } from "@/lib/customFonts";
+import { Navigation } from "@/components/common/navigation";
 
 export const metadata: Metadata = {
   title: "Studio IX - Creative Agency",
@@ -23,8 +24,9 @@ export default function RootLayout({
           "antialiased overflow-x-hidden bg-black select-none",
           `${archivo.variable} ${cabinetGrotesk.variable}`
         )}
-      > 
+      >
         <Analytics />
+        <Navigation />
         {children}
       </body>
     </html>

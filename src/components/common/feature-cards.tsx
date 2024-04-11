@@ -50,7 +50,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         className="card w-full"
       >
         <div className={`body text-${textColor}`}>
-          <div className="flex flex-col items-start w-full md:w-[80%] lg:[70%] 2xl:w-[65%] 3xl:w-[50%] 4xl:w-[80%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
+          <div className="flex flex-col items-start w-full md:w-[80%] lg:[70%] 2xl:w-[65%] 3xl:w-[50%] 4xl:w-[75%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
             <div className="flex flex-row w-full gap-4">
               <p className="text-lg md:text-xl font-archivo">{number}</p>
               <h2 className="text-4xl md:text-5xl font-semibold font-cabinetGrotesk">

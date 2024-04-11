@@ -33,21 +33,24 @@ const Service = ({
       onMouseLeave={() => {
         setIsHovered(false);
       }}
-      className="project hover:bg-[#4686d9] transition-all ease-in w-full"
+      className="project transition-all ease-in w-full group"
     >
       <Link className="flex w-full" href={href}>
         <div className="w-full flex flex-col">
           <div className="flex flex-row w-full justify-between items-start px-28">
             <div className="flex flex-row space-x-5 md:space-x-20">
-              <h1 className="text-white text-[14px] md:text-[120px] font-cabinetGrotesk font-semibold md:-mt-4">
+              <h2
+                id="sub"
+                className="text-white font-cabinetGrotesk font-bold md:-mt-4"
+              >
                 {number}
-              </h1>
+              </h2>
               <div className="flex flex-col items-start text-start md:mb-5">
                 <h2 className="font-cabinetGrotesk font-bold">{title}</h2>
               </div>
             </div>
             <div id="arrow" className="mt-4">
-              <h3 className="w-[600px] text-start text-[20px] text-xl font-archivo font-medium">
+              <h3 className="w-[600px] text-start text-[20px] text-xl font-archivo font-medium group-hover:text-white">
                 {description}
               </h3>
             </div>

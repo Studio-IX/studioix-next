@@ -6,23 +6,38 @@ import ChatwootWidget from "@/components/common/chatwoot-widget";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
 import { InfiniteMovingCards } from "@/components/common/infinite-moving-cards";
-import { Navigation } from "@/components/common/navigation";
+import Preloader from "@/components/common/preloader";
 import AgencyServices from "@/components/common/services";
+import StickyCursor from "@/components/common/sticky-cursor";
 import Team from "@/components/common/team";
 import Projects from "@/components/projects/projects";
 import SlidingProjects from "@/components/projects/sliding-projects";
 import Video from "@/components/video/video-reel";
 import { clients } from "@/constants/clients";
+import { AnimatePresence } from "framer-motion";
 import { MoveHorizontal } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = "default";
+      document.body.style.overflowY = "visible";
+      window.scrollTo(0, 0);
+    }, 2000);
+  }, []);
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="w-full h-fit">
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
       <BackToTop />
+      <StickyCursor />
       <ChatwootWidget />
-      <Navigation />
       <Hero />
-      <div className="w-full max-w-full px-40 flex items-center justify-between mt-40">
+      <div className="w-full max-w-full px-40 flex items-center justify-between mt-20">
         <h3 className=" text-white text-xl font-archivo">
           Partnered with trailblazers.{" "}
           <span className=" text-[#4686d9]">You&apos;re in good hands.</span>

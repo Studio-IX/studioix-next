@@ -44,9 +44,9 @@ const Cards: React.FC<CardsProps> = () => {
   return (
     <div ref={container} className="flex flex-col items-center bg-black pt-20">
       <div
-        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-6 md:top-48`}
+        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-6 md:top-40`}
       >
-        <h2 className="text-white uppercase text-5xl md:text-6xl font-semibold font-cabinetGrotesk">
+        <h2 className="text-white uppercase text-5xl md:text-7xl font-semibold font-cabinetGrotesk">
           Our process
         </h2>
         <p className="text-white/80 text-lg md:text-2xl font-archivo">

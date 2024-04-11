@@ -1,8 +1,14 @@
 import {
+  Braces,
   Code,
   Codepen,
   Codesandbox,
+  DraftingCompass,
+  FolderKanban,
+  Frame,
   Gem,
+  GitBranchPlus,
+  GitMerge,
   Paintbrush,
   PenTool,
   ShieldQuestion,
@@ -37,8 +43,23 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
     case "Branding":
       sectionIcon = <PenTool />;
       break;
-    case "Senior Developer":
-      sectionIcon = <Codepen />;
+    case "Product Manager":
+      sectionIcon = <FolderKanban />;
+      break;
+    case "Backend Developer":
+      sectionIcon = <Braces />;
+      break;
+    case "Creative Developer":
+      sectionIcon = <GitBranchPlus />;
+      break;
+    case "FrontEnd Developer":
+      sectionIcon = <GitMerge />;
+      break;
+    case "FullStack Developer":
+      sectionIcon = <Frame />;
+      break;
+    case "Product Designer":
+      sectionIcon = <DraftingCompass />;
       break;
     default:
       sectionIcon = [];
