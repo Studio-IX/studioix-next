@@ -8,7 +8,7 @@ export const monthlyPlan = "/ mo";
 
 export const flexiPlanDescription = (
   <>
-    Pay a <span className="font-medium text-black">flat hourly rate</span> for
+    Pay a <span className="font-medium text-white">flat hourly rate</span> for
     the time we spend on your project.
   </>
 );
@@ -16,14 +16,14 @@ export const flexiPlanDescription = (
 export const basicPlanDescription = (
   <>
     Simple and fast websites and landing pages
-    <span className="font-medium text-black"> built within record time.</span>
+    <span className="font-medium text-white"> built within record time.</span>
   </>
 );
 export const longTermPlanDescription = (
   <>
     Perfect for businesses and startups that need
-    <span className="font-medium text-black"> fullstack </span>and{" "}
-    <span className="font-medium text-black"> MVP services </span>.
+    <span className="font-medium text-white"> fullstack </span>and{" "}
+    <span className="font-medium text-white"> MVP services </span>.
   </>
 );
 

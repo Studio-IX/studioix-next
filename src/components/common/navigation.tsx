@@ -59,7 +59,7 @@ export const Navigation = () => {
             duration: 0.2,
           }}
           className={cn(
-            "flex fixed top-0 2xl:top-0 w-full mx-auto px-3 xl:px-10 2xl:px-20 z-[100] bg-gradient-to-b from-black/0 to-black/0 py-3.5 backdrop-blur-md"
+            "flex fixed top-0 2xl:top-0 w-full mx-auto px-3 xl:px-10 2xl:px-20 z-[2147483005] bg-gradient-to-b from-black/0 to-black/0 py-3.5 backdrop-blur-md"
           )}
         >
           <div className="w-full flex flex-row justify-between items-center">

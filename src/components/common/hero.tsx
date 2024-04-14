@@ -15,31 +15,17 @@ interface MouseEvent {
 const people = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
+    name: "Chris Ogbuehi",
+    designation: "Gen Y Solutions",
     image:
       "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
+    name: "Raj Prashanthraj",
+    designation: "Hire1.ai",
     image:
       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
 ];
 
@@ -56,7 +42,7 @@ const Hero = () => {
   // Use the useEffect hook to set the path on component mount
   useEffect(() => {
     setPath(progress);
-  }, []);
+  });
 
   // Define a function to set the path of the SVG element
   const setPath = (progress: number) => {
@@ -159,14 +145,14 @@ const Hero = () => {
   return (
     <div className="w-full h-screen">
       <div className=" mt-32 flex flex-col items-center w-full">
-        <div className="relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+        <div className="z-[2147483002] relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 text-base font-archivo font-medium text-white backdrop-blur-3xl">
             <div className=" aspect-square h-3 w-3 rounded-full bg-white mr-2 animate-pulse" />
             Limited Availability - Only 2 spots left
           </span>
         </div>
-        <div className="flex flex-col items-start mt-8 gap-1">
+        <div className="z-[2147483002] flex flex-col items-start mt-8 gap-1">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
             Full-Service Digital
           </h2>
@@ -182,7 +168,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="w-full flex items-center justify-center">
+        <div className="z-[2147483002] w-full flex items-center justify-center">
           <div className=" w-fit max-w-2xl overflow-hidden px-0 rounded-full bg-[#455CE9] py-5 mt-1">
             <Marquee speed={100} className="w-fit">
               <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
@@ -200,14 +186,14 @@ const Hero = () => {
             </Marquee>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center mt-12 w-full z-50">
+        <div className="flex flex-row items-center justify-center mt-12 w-full z-[2147483003]">
           <AnimatedTooltip items={people} />
         </div>
         {/* <div className="w-fit mt-10">
           <PrimaryButton link="" text="Start My Journey" />
         </div> */}
       </div>
-      <div className="absolute top-[50%] left-20 z-20">
+      <div className="absolute top-[50%] left-20 z-[2147483003]">
         <div className="h-44 w-44 aspect-square relative group cursor-pointer opacity-50 hover:opacity-100 transition-opacity ease-in duration-300">
           <Image
             className=" animate-[spin_7s_linear_infinite]"
@@ -221,7 +207,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 absolute bottom-20 w-full flex flex-col">
+      <div className="px-20 absolute bottom-20 z-[2147483002] w-full flex flex-col">
         <div
           onMouseEnter={() => {
             manageMouseEnter();
@@ -259,7 +245,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#455CE9_100%)]"></div>
+      <div className="absolute inset-0 z-[2147483001] h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#455CE9_100%)]"></div>
     </div>
   );
 };

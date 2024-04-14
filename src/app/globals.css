@@ -55,7 +55,7 @@
   height: 100dvh;
   width: 100vw;
   position: fixed;
-  z-index: 2147483003;
+  z-index: 2147483005;
   background-color: #000000;
 }
 
@@ -109,7 +109,7 @@
   height: 20px;
   border-radius: 100%;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 2147483002;
 }
 
 /* Buttons */
@@ -236,9 +236,9 @@
   z-index: 0;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  color: #ffffff;
+  color: #000000;
   text-align: center;
-  background-color: #131313f1;
+  background-color: #ffffff41;
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
   transition: all 0.2s;
@@ -935,7 +935,7 @@
   left: 0;
   bottom: 0;
   color: white;
-  z-index: 60;
+  z-index: 2147483004;
 }
 
 /* MENU END */

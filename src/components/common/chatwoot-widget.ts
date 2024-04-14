@@ -41,6 +41,14 @@ const ChatwootWidget = forwardRef((props, ref) => {
           websiteToken: "vYLvp9FtejwiFtwXnVhn6Stf",
           baseUrl: BASE_URL,
         } as ChatwootSDKSettings);
+
+        // Override z-index here
+        const widgetBubble = document.querySelector(
+          ".woot-widget-bubble"
+        ) as HTMLElement;
+        if (widgetBubble) {
+          widgetBubble.setAttribute("style", "z-index: 10 !important");
+        }
       };
     })(document, "script");
   }, []);

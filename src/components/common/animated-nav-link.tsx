@@ -18,7 +18,7 @@ const AnimatedNavLink = ({
       opacity: 1,
     },
     closed: {
-      y: -10,
+      y: -20,
 
       opacity: 0,
     },

@@ -1,13 +1,7 @@
 "use client";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
-import React, { useState } from "react";
-import {
-  motion,
-  useTransform,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { useState } from "react";
 
 export const AnimatedTooltip = ({
   items,
@@ -69,10 +63,10 @@ export const AnimatedTooltip = ({
             >
               <div className="absolute inset-x-10 z-50 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-[#57A4E4] to-transparent h-px " />
               <div className="absolute left-10 w-[40%] z-50 -bottom-px bg-gradient-to-r from-transparent via-[#455CE9] to-transparent h-px " />
-              <div className="font-bold text-white relative z-50 text-base font-archivo">
+              <div className="font-semibold text-white relative z-50 text-base font-archivo">
                 {item.name}
               </div>
-              <div className="text-white text-xs font-archivo">
+              <div className="text-white text-sm font-archivo">
                 {item.designation}
               </div>
             </motion.div>

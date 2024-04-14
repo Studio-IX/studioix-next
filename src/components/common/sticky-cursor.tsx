@@ -44,7 +44,7 @@ const StickyCursor = () => {
 
           top: smoothMouse.y,
         }}
-        className="custom-cursor border border-white/50 fon"
+        className="custom-cursor border border-white/50"
       ></motion.div>
     </div>
   );

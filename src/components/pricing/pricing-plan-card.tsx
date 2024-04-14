@@ -61,15 +61,15 @@ const PricingPlanCard: React.FC<PricingProps> = ({ planType }) => {
   }
   return (
     <div className="group relative w-full max-w-lg overflow-hidden rounded-[20px] bg-[#121212] p-[3px] transition-all duration-500 ease-in-out select-none hover:scale-[1.025] hover:bg-[#222222]">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-white px-4 py-6 md:py-8 md:px-8 transition-colors duration-500 group-hover:bg-white">
-        <h4 className="relative mb-1 z-10 w-full text-xl text-black font-cabinetGrotesk font-medium">
+      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[19px] bg-[#0E0E0E] px-4 py-6 md:py-8 md:px-8 transition-colors duration-500">
+        <h4 className="relative mb-1 z-10 w-full text-xl text-white font-cabinetGrotesk font-medium">
           {planType}
         </h4>
-        <h2 className="relative z-10 mb-1 w-full text-5xl text-black font-bold font-cabinetGrotesk">
+        <h2 className="relative z-10 mb-1 w-full text-5xl text-white font-bold font-cabinetGrotesk">
           {planPricing} <span className="text-2xl">{planPeriod}</span>
         </h2>
 
-        <p className="relative z-10 text-black/60 font-archivo text-lg">
+        <p className="relative z-10 text-white/60 font-archivo text-lg">
           {planDescription}
         </p>
 
@@ -84,7 +84,7 @@ const PricingPlanCard: React.FC<PricingProps> = ({ planType }) => {
           {listItems.map((item: any, index: any) => (
             <div key={index} className="flex flex-row items-center gap-2.5">
               <TickSquare />
-              <p className="text-lg font-archivo font-normal text-black">
+              <p className="text-lg font-archivo font-normal text-white">
                 {item}
               </p>
             </div>
@@ -101,7 +101,7 @@ const PricingPlanCard: React.FC<PricingProps> = ({ planType }) => {
           duration: 3.5,
           ease: "linear",
         }}
-        className="absolute inset-0 z-0 bg-gradient-to-br from-[#F8D38E] via-[#A4AEB2] to-[#4686D9] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-0 z-0 bg-gradient-to-br from-[#61C8F6] to-[#3D4AB9] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
     </div>
   );

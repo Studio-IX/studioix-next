@@ -29,8 +29,8 @@ const SideMenu = () => {
       href: "/agency",
     },
     {
-      title: "Reviews",
-      href: "/reviews",
+      title: "Pricing",
+      href: "/pricing",
     },
     {
       title: "Blog",
@@ -51,22 +51,20 @@ const SideMenu = () => {
     >
       <div className="flex flex-row w-full h-full justify-between px-5 md:px-20 pt-8 md:pt-28 pb-10 md:pb-28 items-end">
         <div className="flex flex-col justify-between z-50">
-          <div className="flex flex-row items-end gap-20 fit">
+          <div className="flex flex-row items-end gap-4 fit">
             <div className="flex flex-col items-start">
               <div className="flex flex-col items-start gap-4 mb-20">
-                <div className=" relative w-[450px] h-[280px] group rounded-xl border border-white/20 overflow-hidden">
-                  <Image
-                    fill
-                    quality={100}
-                    src="/projects/5.png"
-                    className=" object-cover object-top rounded-xl group-hover:scale-110 transition-all duration-500 ease-in-out"
-                    alt="Featured Project"
-                  />
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  className="relative w-[450px] h-[280px] object-cover rounded-xl border border-white/20 hover:scale-105 ease-in-out duration-300"
+                >
+                  <source src="/videos/menu-video.mp4" />
+                </video>
                 <div className="flex items-center gap-2.5">
                   <ArrowUp />
                   <p className="text-white text-base uppercase font-archivo font-normal">
-                    Previous Project - Chatly
+                    Previous Projects - Reel
                   </p>
                 </div>
               </div>
