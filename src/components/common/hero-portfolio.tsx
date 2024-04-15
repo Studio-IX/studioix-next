@@ -123,9 +123,9 @@ const PortfolioHero = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen">
-      <div className=" mt-32 flex flex-col items-center w-full">
-        <div className="z-[2147483002] flex flex-col items-start mt-8 gap-0">
+    <div className="w-full h-screen relative">
+      <div className="flex flex-col items-center w-full">
+        <div className="z-[2147483002] flex flex-col items-start gap-0 mt-[8rem]">
           <div className="w-full flex items-center">
             <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
               Projects We&apos;ve
@@ -177,10 +177,6 @@ const PortfolioHero = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className="w-fit mt-10">
-          <PrimaryButton link="" text="Start My Journey" />
-        </div> */}
       </div>
       <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
         <div

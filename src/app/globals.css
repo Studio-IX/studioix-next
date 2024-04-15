@@ -906,3 +906,125 @@
 }
 
 /* MENU END */
+
+:root {
+  --bounciness: 15;
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+
+  > input[type="radio"] {
+    display: none;
+  }
+
+  > label {
+    display: flex;
+    justify-content: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.selection-indicator-wrapper {
+  --transition-duration: 0.3s;
+  --morph-factor: 0;
+  width: 33.33%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: cubic-bezier(
+    0.25,
+    calc(var(--bounciness) / 10),
+    0.5,
+    1
+  );
+
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  transform: translateX(calc(var(--morph-factor) * 10%));
+  scale: calc(1 + var(--morph-factor) * var(--morph-factor) * 0.05)
+    calc(1 - var(--morph-factor) * var(--morph-factor) * 0.1);
+
+  > span {
+    background-color: #455ce9;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    transition-duration: calc(1.25 * var(--transition-duration));
+    transition-timing-function: cubic-bezier(
+      0.95,
+      calc(0.5 * var(--bounciness)),
+      0,
+      1
+    );
+  }
+}
+
+.radio-group
+  input[type="radio"]:nth-of-type(2):checked
+  ~ .selection-indicator-wrapper {
+  left: 33.33%;
+}
+
+.radio-group
+  input[type="radio"]:nth-of-type(3):checked
+  ~ .selection-indicator-wrapper {
+  left: 66.66%;
+}
+
+.radio-group label:hover,
+.radio-group label:focus-visible {
+  ~ input:checked ~ .selection-indicator-wrapper {
+    --morph-factor: -1;
+  }
+  &:active ~ input:checked ~ .selection-indicator-wrapper {
+    --morph-factor: 1;
+  }
+}
+
+.radio-group label:hover,
+.radio-group label:focus-visible {
+  ~ input ~ input:checked ~ .selection-indicator-wrapper {
+    --morph-factor: -2;
+  }
+  &:active ~ input ~ input:checked ~ .selection-indicator-wrapper {
+    --morph-factor: 2;
+  }
+}
+
+.radio-group input:checked ~ input + label:hover,
+.radio-group input:checked ~ input + label:focus-visible {
+  ~ .selection-indicator-wrapper {
+    --morph-factor: 1;
+  }
+  &:active ~ .selection-indicator-wrapper {
+    --morph-factor: -1;
+  }
+}
+
+.radio-group input:checked ~ input ~ input + label:hover,
+.radio-group input:checked ~ input ~ input + label:focus-visible {
+  ~ .selection-indicator-wrapper {
+    --morph-factor: 2;
+  }
+  &:active ~ .selection-indicator-wrapper {
+    --morph-factor: -2;
+  }
+}
+
+.radio-group label:active ~ .selection-indicator-wrapper {
+  --transition-duration: 0.1s;
+  > span {
+    scale: calc(1 + var(--morph-factor) * var(--morph-factor) * 0.05)
+      calc(1 - var(--morph-factor) * var(--morph-factor) * 0.1);
+    transition-timing-function: unset;
+  }
+}

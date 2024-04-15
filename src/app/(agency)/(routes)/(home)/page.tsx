@@ -7,9 +7,7 @@ import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
 import { InfiniteMovingCards } from "@/components/common/infinite-moving-cards";
 import Preloader from "@/components/common/preloader";
-import AgencyServices from "@/components/common/services";
 import StickyCursor from "@/components/common/sticky-cursor";
-import Team from "@/components/common/team";
 import Projects from "@/components/projects/projects";
 import SlidingProjects from "@/components/projects/sliding-projects";
 import Video from "@/components/video/video-reel";
@@ -57,9 +55,9 @@ export default function Home() {
         <Cards />
       </div>
       <Projects />
-      <AgencyServices />
+      {/* <AgencyServices /> */}
       {/* <Pricing /> */}
-      <Team />
+      {/* <Team /> */}
       <FAQs />
       <div className="h-[50vh]" />
     </div>

@@ -6,10 +6,11 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ContractDrawer } from "./contact-drawer";
 import SideMenu from "./menu";
 
 export const Navigation = () => {
@@ -59,7 +60,7 @@ export const Navigation = () => {
             duration: 0.2,
           }}
           className={cn(
-            "flex fixed top-0 2xl:top-0 w-full mx-auto px-3 xl:px-10 2xl:px-20 z-[2147483005] bg-gradient-to-b from-black/0 to-black/0 py-3.5 backdrop-blur-md"
+            "flex fixed top-0 2xl:top-0 w-full mx-auto px-3 xl:px-10 2xl:px-20 z-[2147483005] bg-gradient-to-b from-black/0 to-black/0 py-2 backdrop-blur-md"
           )}
         >
           <div className="w-full flex flex-row justify-between items-center">
@@ -82,16 +83,7 @@ export const Navigation = () => {
             </div>
 
             <aside className="flex items-center gap-4">
-              <Link
-                href="/contact"
-                className="relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
-              >
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#000_100%)]" />
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-3 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-                  Start A Project{" "}
-                  <ArrowRight className="ml-2 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
-                </span>
-              </Link>
+              <ContractDrawer />
 
               <div
                 onClick={() => {

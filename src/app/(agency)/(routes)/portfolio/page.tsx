@@ -6,7 +6,6 @@ import PortfolioHero from "@/components/common/hero-portfolio";
 import Preloader from "@/components/common/preloader";
 import StickyCursor from "@/components/common/sticky-cursor";
 import AllProjects from "@/components/projects/all-projects";
-import Projects from "@/components/projects/projects";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -29,6 +28,7 @@ const PortfolioPage = () => {
       <BackToTop />
       <StickyCursor />
       <PortfolioHero />
+
       <AllProjects />
     </div>
   );
