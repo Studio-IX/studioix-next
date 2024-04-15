@@ -1,35 +1,37 @@
 "use client";
 
-import ProjectCard from "@/components/projects/project-card";
-import { portfolio } from "@/constants/data";
-import { useScroll } from "framer-motion";
-import { useRef } from "react";
+import BackToTop from "@/components/common/back-to-top";
+import ChatwootWidget from "@/components/common/chatwoot-widget";
+import PortfolioHero from "@/components/common/hero-portfolio";
+import Preloader from "@/components/common/preloader";
+import StickyCursor from "@/components/common/sticky-cursor";
+import AllProjects from "@/components/projects/all-projects";
+import Projects from "@/components/projects/projects";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const Portfolio = () => {
-  const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
-
+const PortfolioPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = "default";
+      document.body.style.overflowY = "visible";
+      window.scrollTo(0, 0);
+    }, 2000);
+  }, []);
+  const [isLoading, setIsLoading] = useState(true);
   return (
-    <main className="pb-20">
-      {portfolio.map((project, i) => {
-        const targetScale = 1 - (portfolio.length - i) * 0.05;
-        return (
-          <ProjectCard
-            key={`p_${i}`}
-            i={i}
-            {...project}
-            progress={scrollYProgress}
-            range={[i * 0.25, 2]}
-            targetScale={targetScale}
-          />
-        );
-      })}
-    </main>
+    <div className="w-full h-fit">
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      <ChatwootWidget />
+      <BackToTop />
+      <StickyCursor />
+      <PortfolioHero />
+      <AllProjects />
+    </div>
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;

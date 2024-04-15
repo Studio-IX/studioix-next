@@ -207,7 +207,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 absolute bottom-20 z-[2147483002] w-full flex flex-col">
+      <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
         <div
           onMouseEnter={() => {
             manageMouseEnter();

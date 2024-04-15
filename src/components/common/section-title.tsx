@@ -5,6 +5,7 @@ import {
   Codesandbox,
   DraftingCompass,
   FolderKanban,
+  FolderOpenDot,
   Frame,
   Gem,
   GitBranchPlus,
@@ -24,6 +25,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
   switch (text) {
     case "PRICING":
       sectionIcon = <Gem />;
+      break;
+    case "OUR PORTFOLIO":
+      sectionIcon = <FolderOpenDot />;
       break;
     case "LET'S ANSWER SOME QUESTIONS":
       sectionIcon = <ShieldQuestion />;

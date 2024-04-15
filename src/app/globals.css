@@ -880,39 +880,6 @@
   position: relative;
 }
 
-.projectCardContainer {
-  height: 90dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 3rem;
-  margin-bottom: 15rem;
-}
-.projectCardContainer .card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border-radius: 25px;
-  transform-origin: top;
-}
-.projectCardContainer .card .body .imageContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  overflow: hidden;
-}
-.projectCardContainer .card .body .imageContainer .inner {
-  width: 100%;
-  height: 100%;
-}
-.projectCardContainer .card .body .imageContainer img {
-  object-fit: cover;
-}
-
 /* MENU */
 
 .svgCurve {
