@@ -1,10 +1,11 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import AnimatedNavLink from "./animated-nav-link";
-import AnimatedLink from "./animated-link";
-import MenuSvg from "./menu-svg";
-import { FooterText } from "./footer-text";
 import { Separator } from "../ui/separator";
+import AnimatedLink from "./animated-link";
+import { FooterText } from "./footer-text";
+import MenuSvg from "./menu-svg";
 
 const Footer = () => {
   return (

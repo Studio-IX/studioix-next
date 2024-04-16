@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export const FooterText = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -54,6 +54,7 @@ export const FooterText = () => {
         <span className=" font-normal text-white/70">S:// </span>STUDIOIX
         .AGENCY
       </span>
+
       <div className=" absolute z-50 bottom-36 left-[13.5vw]">
         <svg
           width="900"
