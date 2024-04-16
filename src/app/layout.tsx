@@ -6,6 +6,8 @@ import { Metadata } from "next";
 
 import { archivo, cabinetGrotesk } from "@/lib/customFonts";
 import { Navigation } from "@/components/common/navigation";
+import Footer from "@/components/common/footer";
+import { FooterText } from "@/components/common/footer-text";
 
 export const metadata: Metadata = {
   title: "Studio IX - Creative Agency",
@@ -28,6 +30,7 @@ export default function RootLayout({
         <Analytics />
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
