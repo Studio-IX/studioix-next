@@ -28,10 +28,12 @@ const Projects = () => {
           />
         </div>
         <div className="w-full md:mt-12">
-          <ProjectItemLarge
-            src="/gallery/liftinfluence_showcase.png"
-            projectTitle="LiftInfluence"
-          />
+          <Link href="/portfolio/midas">
+            <ProjectItemLarge
+              src="/gallery/liftinfluence_showcase.png"
+              projectTitle="LiftInfluence"
+            />
+          </Link>
         </div>
         <div className="w-full flex flex-col md:mt-12 lg:flex-row gap-10">
           <ProjectItemTall
@@ -46,7 +48,7 @@ const Projects = () => {
           />
         </div>
         <div className="w-full flex flex-col items-end md:mt-[-16vw] lg:flex-row gap-10">
-          <ProjectItem src="/projects/1.png" projectTitle="QuotaSignal" />
+          <ProjectItem src="/projects/1.png" projectTitle="Midas" />
           <ProjectItemTall
             className=" lg:object-center"
             src="/projects/6.png"

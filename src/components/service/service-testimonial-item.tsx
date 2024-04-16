@@ -17,7 +17,7 @@ const ServiceTestimonialItem: React.FC<ServiceTestimonialItemProps> = ({
   return (
     <div className="w-full flex flex-col-reverse md:flex-row justify-between mb-20 md:mb-28 items-start">
       <div className="flex flex-row items-center gap-8 w-full md:w-[50%] mt-6 md:mt-0">
-        <div className="w-16 md:w-24 h-16 md:h-24 rounded-full relative aspect-square">
+        <div className="w-16 md:w-20 h-16 md:h-20 rounded-full relative aspect-square">
           <Image
             className="rounded-full object-center object-cover"
             fill
@@ -29,7 +29,7 @@ const ServiceTestimonialItem: React.FC<ServiceTestimonialItemProps> = ({
           <h6 className="text-white text-[22px] md:text-[28px]">
             {clientName}
           </h6>
-          <p className="text-white/60 text-white md:text-[22px]">
+          <p className="text-white/60 text-white font-light md:text-[22px]">
             {companyAndPosition}
           </p>
         </div>

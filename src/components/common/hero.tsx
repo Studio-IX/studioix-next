@@ -148,7 +148,7 @@ const Hero = () => {
         <div className="z-[2147483002] relative inline-flex h-12 mt-[8rem] overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-            <div className=" aspect-square h-3 w-3 rounded-full bg-white mr-2 animate-pulse" />
+            <div className=" aspect-square h-3 w-3 rounded-full bg-[#455CE9] mr-2 animate-pulse" />
             Limited Availability - Only 2 spots left
           </span>
         </div>
