@@ -33,7 +33,7 @@ const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
         <Image
           quality={100}
           className={cn(
-            "rounded-[20px] object-cover object-left lg:object-left-top group-hover:scale-110 transition-all ease-in-out duration-500",
+            "rounded-[20px] object-cover object-center lg:object-left-top group-hover:scale-110 transition-all ease-in-out duration-500",
             className
           )}
           fill
@@ -51,11 +51,8 @@ const ProjectItemTall: React.FC<ProjectItemTallInterface> = ({
       <div className="md:hidden">
         <div className="flex flex-col items-start justify-start mt-8 w-full">
           <div className="flex flex-row gap-2.5 md:gap-3">
-            <SectionTitle text="Branding" />
-            <SectionTitle text="Development" />
-          </div>
-          <div className="mt-3">
             <SectionTitle text="UX" />
+            <SectionTitle text="Branding" />
           </div>
         </div>
       </div>

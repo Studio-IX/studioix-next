@@ -32,7 +32,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
     case "LET'S ANSWER SOME QUESTIONS":
       sectionIcon = <ShieldQuestion />;
       break;
-    case "PREVIOUS WEB DEV PROJECTS":
+    case "PREVIOUS PROJECTS":
       sectionIcon = <Codesandbox />;
       break;
     case "Development":

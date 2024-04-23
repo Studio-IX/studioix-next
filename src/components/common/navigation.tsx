@@ -45,7 +45,7 @@ export const Navigation = () => {
   });
 
   return (
-    <div>
+    <div className="w-full">
       <AnimatePresence mode="wait">
         <motion.div
           initial={{
@@ -65,7 +65,16 @@ export const Navigation = () => {
         >
           <div className="w-full flex flex-row justify-between items-center">
             <Link href="/">
-              <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200">
+              <div className=" relative w-[42px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200  md:hidden">
+                <Image
+                  quality={100}
+                  className=" object-contain"
+                  fill
+                  src="/logo/icon.png"
+                  alt="Studio IX logo"
+                />
+              </div>
+              <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block">
                 <Image
                   quality={100}
                   className=" object-contain"
@@ -76,13 +85,13 @@ export const Navigation = () => {
               </div>
             </Link>
 
-            <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">
+            <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
               <p className=" font-archivo text-base text-white uppercase">
                 Studio IX - modern digital agency
               </p>
             </div>
 
-            <aside className="flex items-center gap-4">
+            <aside className="flex items-center gap-2 md:gap-4">
               <ContractDrawer />
 
               <div

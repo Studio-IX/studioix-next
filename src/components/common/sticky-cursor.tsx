@@ -37,7 +37,7 @@ const StickyCursor = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className=" hidden md:block">
       <motion.div
         style={{
           left: smoothMouse.x,

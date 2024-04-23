@@ -41,9 +41,18 @@ const ProjectItem: React.FC<ProjectItemInterface> = ({
           alt="Pclub.io"
         />
       </div>
-      <div className="flex flex-row gap-2.5 md:gap-3 mt-8">
-        <SectionTitle text="Development" />
-        <SectionTitle text="User Experience" />
+      <div className="hidden md:block">
+        <div className="flex flex-row gap-2.5 md:gap-3 mt-8">
+          <SectionTitle text="Development" />
+          <SectionTitle text="User Experience" />
+        </div>
+      </div>
+
+      <div className=" md:hidden">
+        <div className="flex flex-row gap-2.5 md:gap-3 mt-8">
+          <SectionTitle text="UX" />
+          <SectionTitle text="Development" />
+        </div>
       </div>
       <h2 className="font-cabinetGrotesk text-4xl lg:text-6xl text-white font-semibold mt-6 md:mt-8">
         {projectTitle}

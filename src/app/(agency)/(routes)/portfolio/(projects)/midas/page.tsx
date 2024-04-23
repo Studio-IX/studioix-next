@@ -12,9 +12,27 @@ import ProjectReel from "@/components/video/project-reel";
 import Wrapper from "@/components/wrapper/wrapper";
 import { midasTestimonials } from "@/constants/testimonials";
 
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader from "@/components/common/preloader";
+
+
+
 const MidasPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = "default";
+      document.body.style.overflowY = "visible";
+      window.scrollTo(0, 0);
+    }, 2000);
+  }, []);
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="w-full">
+            <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
       <BackToTop />
       <StickyCursor />
       <ChatwootWidget />

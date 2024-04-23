@@ -35,22 +35,24 @@ export default function Home() {
       <StickyCursor />
       <ChatwootWidget />
       <Hero />
-      <div className="w-full max-w-full px-40 flex items-center justify-between mt-20">
-        <h3 className=" text-white text-xl font-archivo">
+      <div className="w-full max-w-full px-3 md:px-40 flex items-center justify-between mt-20">
+        <h3 className=" text-white text-lg md:text-xl font-archivo">
           Partnered with trailblazers.{" "}
           <span className=" text-[#4686d9]">You&apos;re in good hands.</span>
         </h3>
-        <div className="flex text-white/70 items-center gap-4 font-archivo text-lg font-light">
-          <p>Drag horizontally to see our previous partners</p>
-          <MoveHorizontal />
+        <div className="hidden md:block">
+          <div className="flex text-white/70 items-center gap-4 font-archivo text-lg font-light">
+            <p>Drag horizontally to see our previous partners</p>
+            <MoveHorizontal />
+          </div>
         </div>
       </div>
       <InfiniteMovingCards items={clients} direction="right" speed="slow" />
       <SlidingProjects />
-      <div className="h-[30rem] bg-black p-10" />
+      <div className="h-[5rem] md:h-[30rem] bg-black p-10" />
       <Video />
       <div className="h-screen bg-black" />
-      <div className="h-[40rem] bg-black" />
+      <div className="h-[5rem] md:h-[40rem] bg-black" />
       <div>
         <Cards />
       </div>

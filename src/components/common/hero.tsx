@@ -6,6 +6,7 @@ import AnimatedLink from "./animated-link";
 import ArrowSvg from "./arrow-svg";
 import StarSvg from "./star";
 import { AnimatedTooltip } from "./animated-tooltip";
+import { Separator } from "../ui/separator";
 
 interface MouseEvent {
   movementY: number;
@@ -143,57 +144,68 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen relative">
-      <div className="flex flex-col items-center w-full">
-        <div className="z-[2147483002] relative inline-flex h-12 mt-[8rem] overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-            <div className=" aspect-square h-3 w-3 rounded-full bg-[#455CE9] mr-2 animate-pulse" />
-            Limited Availability - Only 2 spots left
-          </span>
+    <div className="w-full h-[100dvh] md:h-screen relative">
+      <div className="flex flex-col items-center w-full px-3 md:px-0">
+        <div className="hidden md:block">
+          <div className="z-[2147483002] relative inline-flex h-10 md:h-12 mt-[6rem] md:mt-[8rem] overflow-hidden rounded-full p-[2px] md:p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-4 md:px-6 text-base font-archivo font-medium text-white backdrop-blur-3xl">
+              <div className=" aspect-square h-3 w-3 rounded-full bg-[#455CE9] mr-2 animate-pulse" />
+              <span className="hidden md:block mr-1.5">
+                {" "}
+                Limited Availability -{" "}
+              </span>{" "}
+              Only 2 spots left
+            </span>
+          </div>
         </div>
-        <div className="z-[2147483002] flex flex-col items-start mt-8 gap-1">
-          <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
-            Full-Service Digital
+        <div className="z-[2147483002] flex flex-col items-center md:items-start mt-[7rem] md:mt-8 gap-1">
+          <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 flex gap-6 ">
+            Full-Service <span className="hidden md:block">Digital</span>
           </h2>
 
           <div className="flex items-center gap-10">
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
-              Agency For
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 flex gap-4 md:gap-6">
+              <span className=" md:hidden">Digital</span> Agency{" "}
+              <span className=" hidden md:block">For</span>
             </h2>
-            <p className=" font-archivo text-base text-white/80 text-start max-w-[36ch] uppercase">
+            <p className=" font-archivo text-base text-white/80 text-start max-w-[36ch] uppercase hidden md:block">
               We design exceptional brands, products, web apps, mobile apps,
               websites for startups.
             </p>
           </div>
         </div>
 
-        <div className="z-[2147483002] w-full flex items-center justify-center">
-          <div className=" w-fit max-w-2xl overflow-hidden px-0 rounded-full bg-[#455CE9] py-5 mt-1">
+        <div className="z-[2147483002] w-full flex items-center justify-center px-3 md:px-0">
+          <div className=" w-fit md:max-w-2xl overflow-hidden md:px-0 rounded-full bg-[#455CE9] py-3 md:py-5 mt-1">
             <Marquee speed={100} className="w-fit">
-              <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
+              <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl lg:text-8xl text-white text-center md:mt-0">
                 SAAS Products
               </h2>
-              <div className="mx-10">
+              <div className="mx-4 md:mx-10">
                 <StarSvg />
               </div>
-              <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
+              <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl lg:text-8xl text-white text-center md:mt-0">
                 Software Solutions
               </h2>
-              <div className="mx-10">
+              <div className="mx-4 md:mx-10">
                 <StarSvg />
               </div>
             </Marquee>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center mt-12 w-full z-[2147483003]">
+        <div className="md:hidden z-[2147483003] w-full mt-4">
+          <p className=" font-archivo text-base text-white/80 text-center w-full uppercase">
+            We design exceptional brands, products, web apps, mobile apps,
+            websites for startups.
+          </p>
+        </div>
+        <div className="flex flex-row items-center justify-center mt-10 md:mt-12 w-full z-[2147483003]">
           <AnimatedTooltip items={people} />
         </div>
-        {/* <div className="w-fit mt-10">
-          <PrimaryButton link="" text="Start My Journey" />
-        </div> */}
       </div>
-      <div className="absolute top-[50%] left-20 z-[2147483003]">
+
+      <div className="absolute top-[50%] left-20 z-[2147483003] hidden md:block">
         <div className="h-44 w-44 aspect-square relative group cursor-pointer opacity-50 hover:opacity-100 transition-opacity ease-in duration-300">
           <Image
             className=" animate-[spin_7s_linear_infinite]"
@@ -207,41 +219,54 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
-        <div
-          onMouseEnter={() => {
-            manageMouseEnter();
-          }}
-          onMouseMove={(e) => {
-            manageMouseMove(e);
-          }}
-          onMouseLeave={() => {
-            manageMouseLeave();
-          }}
-          className="relative z-10 h-10 w-full top-[-40px]"
-        ></div>
-        <svg className="absolute w-[92%] h-[500px] top-[-250px]">
-          <path
-            ref={path}
-            className="stroke-current text-white/40 stroke-[1px] fill-none"
-          ></path>
-        </svg>
-        <div className="w-full flex flex-row justify-between items-start z-20">
-          <div className="flex flex-row items-center gap-4">
-            <div className="h-3 w-3 rounded-full bg-white" />
+      <div className="md:hidden w-full absolute bottom-4 z-[2147483002]">
+        <div className="w-full px-3">
+          <Separator className="w-full" />
+          <div className="flex items-center justify-between w-full py-3">
             <AnimatedLink link="" text="hey@studioix.agency" />
-          </div>
-          <div>
-            <p className="font-archivo text-base text-white text-center max-w-prose uppercase">
-              We&apos;re focused on delivering original digital products to tech
-              startups, global corporations and all companies in between.
-            </p>
-          </div>
-          <div className="flex flex-row items-center gap-4">
             <p className=" font-archivo text-base text-white uppercase">
               {localTime}
             </p>
-            <div className="h-3 w-3 rounded-full bg-white" />
+          </div>
+        </div>
+      </div>
+      <div className="hidden md:block">
+        <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
+          <div
+            onMouseEnter={() => {
+              manageMouseEnter();
+            }}
+            onMouseMove={(e) => {
+              manageMouseMove(e);
+            }}
+            onMouseLeave={() => {
+              manageMouseLeave();
+            }}
+            className="relative z-10 h-10 w-full top-[-40px]"
+          ></div>
+          <svg className="absolute w-[92%] h-[500px] top-[-250px]">
+            <path
+              ref={path}
+              className="stroke-current text-white/40 stroke-[1px] fill-none"
+            ></path>
+          </svg>
+          <div className="w-full flex flex-row justify-between items-start z-20">
+            <div className="flex flex-row items-center gap-4">
+              <div className="h-3 w-3 rounded-full bg-white" />
+              <AnimatedLink link="" text="hey@studioix.agency" />
+            </div>
+            <div>
+              <p className="font-archivo text-base text-white text-center max-w-prose uppercase">
+                We&apos;re focused on delivering original digital products to
+                tech startups, global corporations and all companies in between.
+              </p>
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <p className=" font-archivo text-base text-white uppercase">
+                {localTime}
+              </p>
+              <div className="h-3 w-3 rounded-full bg-white" />
+            </div>
           </div>
         </div>
       </div>

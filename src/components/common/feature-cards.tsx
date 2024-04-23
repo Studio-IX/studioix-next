@@ -10,6 +10,7 @@ interface FeatureCardProps {
   i: number;
   title: string;
   description: string;
+  descriptionMobile?: string;
   src: string;
   color: string;
   progress: MotionValue<number>;
@@ -22,6 +23,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   number,
   title,
   description,
+  descriptionMobile,
   src,
   color,
   textColor,
@@ -58,9 +60,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
               </h2>
             </div>
             <p
-              className={`mt-1 md:mt-6 text-lg md:text-xl font-archivo font-normal opacity-80`}
+              className={`mt-1 md:mt-6 text-lg md:text-xl font-archivo font-normal opacity-80 hidden md:block`}
             >
               {description}
+            </p>
+            <p
+              className={`mt-1 md:mt-6 text-lg md:text-xl font-archivo font-normal opacity-80 md:hidden`}
+            >
+              {descriptionMobile}
             </p>
             <div className="mt-10 hidden md:block">
               <PrimaryButton text="Get Started Now" link="/about-us" />

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import AnimatedLink from "../common/animated-link";
 import Wrapper from "../wrapper/wrapper";
+import Image from "next/image";
 
 const PortfolioInfo = () => {
   return (
@@ -78,10 +79,19 @@ const PortfolioInfo = () => {
         </p>
 
         <div className="w-full flex mt-10">
-          <div className="w-full bg-purple-300 h-[52rem]"></div>
+          <div className="w-full  h-[50rem] relative">
+            <Image
+              fill
+              src="/projects/midas/2.png"
+              className=" object-cover object-center"
+              alt="Midas"
+            />
+          </div>
           <div className="w-full flex flex-col">
             <div className="w-full flex items-center justify-end">
-              <div className=" bg-red-400 w-1/2 h-[25rem]"></div>
+              <div className=" w-1/2 h-[25rem] relative">
+                <Image fill src="/projects/midas/3.png" alt="Midas" />
+              </div>
             </div>
             <div className="w-full mt-20">
               <div className="w-full flex flex-col items-center justify-center">
@@ -121,7 +131,14 @@ const PortfolioInfo = () => {
         </div>
       </Wrapper>
 
-      <div className="w-full h-[60rem] bg-white mt-20"></div>
+      <div className="w-full h-[60rem] bg-white relative mt-20">
+        <Image
+          className=" object-cover object-center"
+          fill
+          src="/projects/midas/1.png"
+          alt="Midas"
+        />
+      </div>
 
       <Wrapper className="w-full max-w-full mt-20">
         <div className="w-full flex items-end gap-20 justify-between mt-20">

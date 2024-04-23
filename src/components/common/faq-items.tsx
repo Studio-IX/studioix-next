@@ -7,7 +7,7 @@ import {
 
 export function FaqItems() {
   return (
-    <Accordion type="multiple" className="w-full max-w-4xl mt-10 mb-20">
+    <Accordion type="multiple" className="w-full md:max-w-4xl mt-10 md:mb-20">
       <AccordionItem value="item-1">
         <AccordionTrigger>
           Why wouldn&apos;t I just hire a designer or developer?

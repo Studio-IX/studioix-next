@@ -66,7 +66,7 @@ const Modal = ({ modal }: { modal: { active: boolean } }) => {
   }, []);
 
   return (
-    <>
+    <div className="hidden md:block">
       <motion.div
         ref={modalContainer}
         variants={scaleAnimation}
@@ -91,7 +91,7 @@ const Modal = ({ modal }: { modal: { active: boolean } }) => {
       >
         Play
       </motion.div>
-    </>
+    </div>
   );
 };
 
