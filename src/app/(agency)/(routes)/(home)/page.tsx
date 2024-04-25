@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
   const [isLoading, setIsLoading] = useState(true);
   return (
-    <div className="w-full h-fit">
+    <div className="w-full max-w-full h-fit overflow-clip">
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
@@ -53,9 +53,7 @@ export default function Home() {
       <Video />
       <div className="h-screen bg-black" />
       <div className="h-[5rem] md:h-[40rem] bg-black" />
-      <div>
-        <Cards />
-      </div>
+      <Cards />
       <Projects />
       {/* <AgencyServices /> */}
       {/* <Pricing /> */}

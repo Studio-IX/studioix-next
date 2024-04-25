@@ -584,7 +584,7 @@
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 280px;
+    top: 140px;
   }
 
   .card {
@@ -592,7 +592,7 @@
     flex-direction: column;
     position: relative;
     top: -25%;
-    height: 475px;
+    height: 488px;
     border-radius: 0px;
     transform-origin: top;
   }
@@ -877,7 +877,6 @@
   position: relative;
 }
 
-
 @media screen and (max-width: 400px) {
   .slidingImages {
     display: flex;
@@ -897,7 +896,6 @@
     left: -80vw;
   }
 }
-
 
 /* MENU */
 
@@ -1047,4 +1045,3 @@
     transition-timing-function: unset;
   }
 }
-

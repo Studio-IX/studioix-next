@@ -44,11 +44,11 @@ export const FooterText = () => {
 
   return (
     <div
-      className="flex h-fit w-full items-center overflow-hidden"
+      className="flex h-fit w-full items-center overflow-hidden mt-20 md:mt-0"
       ref={containerRef}
     >
       <span
-        className="absolute font-bold bottom-28 left-0 mx-auto whitespace-nowrap text-center uppercase text-white font-cabinetGrotesk z-[50]"
+        className="absolute font-bold bottom-40 md:bottom-28 left-0 mx-auto whitespace-nowrap text-center uppercase text-white font-cabinetGrotesk z-[50]"
         ref={textRef}
       >
         <span className=" font-normal text-white/70">S:// </span>STUDIOIX
@@ -59,56 +59,6 @@ export const FooterText = () => {
         <svg
           width="900"
           height="228"
-          viewBox="0 0 849 229"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            x="5.67578"
-            y="5.91016"
-            width="838.761"
-            height="217.776"
-            stroke="#455CE9"
-            stroke-width="2"
-          />
-          <rect
-            x="1.05469"
-            y="219.074"
-            width="9.24169"
-            height="9.222"
-            fill="white"
-            stroke="#455CE9"
-          />
-          <rect
-            x="1.05469"
-            y="1.29688"
-            width="9.24169"
-            height="9.222"
-            fill="white"
-            stroke="#455CE9"
-          />
-          <rect
-            x="838.812"
-            y="219.074"
-            width="9.24169"
-            height="9.222"
-            fill="white"
-            stroke="#455CE9"
-          />
-          <rect
-            x="838.812"
-            y="1.29688"
-            width="9.24169"
-            height="9.222"
-            fill="white"
-            stroke="#455CE9"
-          />
-        </svg>
-      </div>
-      <div className=" absolute z-50 bottom-24 left-[16vw] md:hidden">
-        <svg
-          width="200"
-          height="100"
           viewBox="0 0 849 229"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
