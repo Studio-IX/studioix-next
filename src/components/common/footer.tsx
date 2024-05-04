@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="w-full md:h-screen relative md:max-h-screen overflow-hidden">
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-3 md:pt-20 pb-8 md:pb-10">
         <div className="z-[2147483] flex flex-col items-start gap-0 w-full">
-          <div className="w-full flex flex-col md:flex-row justify-between items-start px-3 md:px-20">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start px-4 md:px-20">
             <div className="w-full hidden md:block">
               <div className="w-full md:w-1/2 flex flex-row md:flex-col justify-between">
                 <Image
@@ -162,7 +162,7 @@ const Footer = () => {
           <FooterText />
         </div>
         <div className="mb-20"></div>
-        <div className="z-[2147483002] w-full px-3 md:px-32">
+        <div className="z-[2147483002] w-full px-4 md:px-32">
           <Separator className=" hidden md:block md:-mt-20" />
           <div className="w-full flex flex-col md:flex-row items-center justify-between mt-10">
             <h4 className=" font-archivo text-white/80 text-base hidden md:block">

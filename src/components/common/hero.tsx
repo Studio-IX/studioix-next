@@ -203,6 +203,21 @@ const Hero = () => {
         <div className="flex flex-row items-center justify-center mt-10 md:mt-12 w-full z-[2147483003]">
           <AnimatedTooltip items={people} />
         </div>
+
+        <div className=" z-[2147483003] md:hidden mt-8">
+          <div className="h-36 w-36 aspect-square relative group cursor-pointer opacity-50 hover:opacity-100 transition-opacity ease-in duration-300">
+            <Image
+              className=" animate-[spin_7s_linear_infinite]"
+              fill
+              src="/images/hero-cta.svg"
+              alt="Cta"
+            />
+
+            <div className="absolute top-[3.6rem] left-[3.2rem] transition-all ease-in-out duration-500 group-hover:-rotate-45">
+              <ArrowSvg />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="absolute top-[50%] left-20 z-[2147483003] hidden md:block">

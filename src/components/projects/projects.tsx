@@ -15,7 +15,7 @@ const Projects = () => {
       className="bg-black pt-[12rem] md:pt-[8rem] lg:pt-[20rem] w-full pb-[15rem] lg:pb-[25rem]"
     >
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12">
-        <SectionTitle text="PREVIOUS PROJECTS" />
+        {/* <SectionTitle text="PREVIOUS PROJECTS" /> */}
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
           Featured Projects
         </h2>

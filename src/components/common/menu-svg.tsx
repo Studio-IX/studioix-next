@@ -37,6 +37,6 @@ const MenuSvg = () => {
       />
     </svg>
   );
-};
+};     
 
 export default MenuSvg;
