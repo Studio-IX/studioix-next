@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUp } from "lucide-react";
 
-import MenuLink from "./menu-link";
-import Image from "next/image";
-import Link from "next/link";
 import { menuSlide } from "@/anim/anim";
-import Curve from "./curve";
 import AnimatedLink from "./animated-link";
+import Curve from "./curve";
+import MenuLink from "./menu-link";
 
 const SideMenu = () => {
   const navItems = [
@@ -80,38 +78,6 @@ const SideMenu = () => {
                     <AnimatedLink link="" text="Twitter/X" />
                     <AnimatedLink link="" text="Behance" />
                     <AnimatedLink link="" text="Calendly" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-full md:hidden">
-                <div className="w-full flex items-end justify-between gap-14">
-                  <div className="flex flex-col w-fit">
-                    <p className="text-white/70 text-base font-archivo font-normal">
-                      Socials
-                    </p>
-                    <div className="flex flex-col items-start mt-3">
-                      <AnimatedLink link="" text="Instagram" />
-                      <AnimatedLink link="" text="Twitter/X" />
-                      <AnimatedLink link="" text="Behance" />
-                      <AnimatedLink link="" text="Calendly" />
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-start gap-4 w-full">
-                    <video
-                      autoPlay
-                      loop
-                      className="relative w-[450px] h-[180px] object-cover rounded-xl border border-white/20 hover:scale-105 ease-in-out duration-300"
-                    >
-                      <source src="/videos/menu-video.mp4" />
-                    </video>
-                    <div className="flex items-center gap-2.5">
-                      <ArrowUp />
-                      <p className="text-white text-base uppercase font-archivo font-normal">
-                        Previous Projects - Reel
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>

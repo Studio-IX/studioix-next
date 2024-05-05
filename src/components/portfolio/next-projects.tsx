@@ -7,7 +7,7 @@ const NextProjects = () => {
     <div className="w-full mt-80 mb-80">
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12">
         <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-7xl text-white text-start w-full md:mt-0">
-          Next Projects
+          More Projects
         </h2>
         <div className="w-full flex flex-col lg:flex-row gap-10">
           <ProjectItemTall

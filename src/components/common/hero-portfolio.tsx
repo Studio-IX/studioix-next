@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import AnimatedLink from "./animated-link";
 import ArrowSvg from "./arrow-svg";
+import { Separator } from "../ui/separator";
 
 interface MouseEvent {
   movementY: number;
@@ -123,47 +124,65 @@ const PortfolioHero = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen relative">
-      <div className="flex flex-col items-center w-full">
-        <div className="z-[2147483002] flex flex-col items-start gap-0 mt-[8rem]">
-          <div className="w-full flex items-center">
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
-              Projects We&apos;ve
+    <div className="w-full h-[100dvh] md:h-screen relative">
+      <div className="flex flex-col items-center w-full px-3 md:px-0">
+        <div className="z-[2147483002] flex flex-col items-center md:items-start gap-0 mt-[6rem] md:mt-[8rem]">
+          <div className="w-full flex items-center md:items-center justify-center md:justify-start">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 flex items-center gap-6">
+              Projects <span className="hidden md:block">We&apos;ve</span>
             </h2>
           </div>
 
-          <div className="flex items-center gap-5">
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
+          <div className="flex items-center gap-2 md:gap-5">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0">
               brought
             </h2>
-            <div className="w-[280px] h-36 overflow-hidden group rounded-full">
+            <div className="w-[120px] md:w-[280px] h-20 md:h-36 overflow-hidden group rounded-full">
               <video
                 autoPlay
                 loop
-                className="relative w-[280px] h-36 object-cover rounded-full group-hover:scale-125 ease-in-out duration-300"
+                className="relative w-[120px] md:w-[280px] h-20 md:h-36 object-cover rounded-full group-hover:scale-125 ease-in-out duration-300"
               >
                 <source src="/videos/menu-video.mp4" />
               </video>
             </div>
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 hidden md:block">
               to
             </h2>
           </div>
-          <div className="flex items-center w-full justify-center gap-5">
+          <div className="flex items-center w-full justify-center gap-2 md:gap-5">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 md:hidden">
+              to
+            </h2>
             <video
               autoPlay
               loop
-              className="relative w-[400px] h-36 object-cover rounded-full hover:scale-105 ease-in-out duration-300"
+              className="relative w-[160px] md:w-[400px] h-20 md:h-36 object-cover rounded-full hover:scale-105 ease-in-out duration-300"
             >
               <source src="/videos/5.mp4" />
             </video>
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center md:mt-0">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0">
               Life
             </h2>
           </div>
         </div>
 
-        <div className="z-[2147483003] mt-20">
+        <div className=" z-[2147483003] md:hidden mt-8">
+          <div className="h-36 w-36 aspect-square relative group cursor-pointer opacity-50 hover:opacity-100 transition-opacity ease-in duration-300">
+            <Image
+              className=" animate-[spin_7s_linear_infinite]"
+              fill
+              src="/images/hero-cta.svg"
+              alt="Cta"
+            />
+
+            <div className="absolute top-[3.6rem] left-[3.2rem] transition-all ease-in-out duration-500 group-hover:-rotate-45">
+              <ArrowSvg />
+            </div>
+          </div>
+        </div>
+
+        <div className="z-[2147483003] mt-20 hidden md:block">
           <div className="h-44 w-44 aspect-square relative group cursor-pointer opacity-50 hover:opacity-100 transition-opacity ease-in duration-300">
             <Image
               className=" animate-[spin_10s_linear_infinite]"
@@ -178,41 +197,54 @@ const PortfolioHero = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
-        <div
-          onMouseEnter={() => {
-            manageMouseEnter();
-          }}
-          onMouseMove={(e) => {
-            manageMouseMove(e);
-          }}
-          onMouseLeave={() => {
-            manageMouseLeave();
-          }}
-          className="relative z-10 h-10 w-full top-[-40px]"
-        ></div>
-        <svg className="absolute w-[92%] h-[500px] top-[-250px]">
-          <path
-            ref={path}
-            className="stroke-current text-white/40 stroke-[1px] fill-none"
-          ></path>
-        </svg>
-        <div className="w-full flex flex-row justify-between items-start z-20">
-          <div className="flex flex-row items-center gap-4">
-            <div className="h-3 w-3 rounded-full bg-white" />
+      <div className="md:hidden w-full absolute bottom-4 z-[2147483002]">
+        <div className="w-full px-3">
+          <Separator className="w-full" />
+          <div className="flex items-center justify-between w-full py-3">
             <AnimatedLink link="" text="hey@studioix.agency" />
-          </div>
-          <div>
-            <p className="font-archivo text-base text-white text-center max-w-prose uppercase">
-              We&apos;re focused on delivering original digital products to tech
-              startups, global corporations and all companies in between.
-            </p>
-          </div>
-          <div className="flex flex-row items-center gap-4">
             <p className=" font-archivo text-base text-white uppercase">
               {localTime}
             </p>
-            <div className="h-3 w-3 rounded-full bg-white" />
+          </div>
+        </div>
+      </div>
+      <div className="hidden md:block">
+        <div className="px-20 absolute bottom-10 z-[2147483002] w-full flex flex-col">
+          <div
+            onMouseEnter={() => {
+              manageMouseEnter();
+            }}
+            onMouseMove={(e) => {
+              manageMouseMove(e);
+            }}
+            onMouseLeave={() => {
+              manageMouseLeave();
+            }}
+            className="relative z-10 h-10 w-full top-[-40px]"
+          ></div>
+          <svg className="absolute w-[92%] h-[500px] top-[-250px]">
+            <path
+              ref={path}
+              className="stroke-current text-white/40 stroke-[1px] fill-none"
+            ></path>
+          </svg>
+          <div className="w-full flex flex-row justify-between items-start z-20">
+            <div className="flex flex-row items-center gap-4">
+              <div className="h-3 w-3 rounded-full bg-white" />
+              <AnimatedLink link="" text="hey@studioix.agency" />
+            </div>
+            <div>
+              <p className="font-archivo text-base text-white text-center max-w-prose uppercase">
+                We&apos;re focused on delivering original digital products to
+                tech startups, global corporations and all companies in between.
+              </p>
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <p className=" font-archivo text-base text-white uppercase">
+                {localTime}
+              </p>
+              <div className="h-3 w-3 rounded-full bg-white" />
+            </div>
           </div>
         </div>
       </div>

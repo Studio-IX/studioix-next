@@ -16,8 +16,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/common/preloader";
 
-
-
 const MidasPage = () => {
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +28,7 @@ const MidasPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="w-full">
-            <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
       <BackToTop />

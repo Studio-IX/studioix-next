@@ -922,6 +922,18 @@
   z-index: 2147483004;
 }
 
+@media screen and (max-width: 400px) {
+  .svgCurve {
+    position: absolute;
+    top: 0;
+    left: -99px;
+    width: 100px;
+    height: 100%;
+    fill: #202a6c;
+    stroke: none;
+  }
+}
+
 /* MENU END */
 
 :root {

@@ -16,8 +16,8 @@ const Footer = () => {
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-3 md:pt-20 pb-8 md:pb-10">
         <div className="z-[2147483] flex flex-col items-start gap-0 w-full">
           <div className="w-full flex flex-col md:flex-row justify-between items-start px-4 md:px-20">
-            <div className="w-full hidden md:block">
-              <div className="w-full md:w-1/2 flex flex-row md:flex-col justify-between">
+            <div className="w-1/2 hidden md:block">
+              <div className="w-full md:w-full flex flex-row md:flex-col justify-between">
                 <Image
                   className="hidden md:block"
                   width={40}
@@ -146,7 +146,7 @@ const Footer = () => {
         </div>
 
         {/* Middle Part */}
-        <div className="z-[50] w-full flex items-center justify-center -mt-8 md:-mt-60">
+        <div className="z-[50] w-full flex items-center justify-center -mt-8 md:-mt-48">
           <video
             autoPlay
             muted

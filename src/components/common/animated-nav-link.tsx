@@ -55,7 +55,7 @@ const AnimatedNavLink = ({
             </svg>
           </motion.div>
 
-          <motion.div className="absolute bottom-[10%] -right-32 rotate-180 h-[1px] md:hidden">
+          <motion.div className="absolute bottom-[10%] -right-28 rotate-180 h-[1px] md:hidden">
             <svg
               width="100"
               height="40"

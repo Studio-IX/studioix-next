@@ -28,7 +28,6 @@ const PortfolioPage = () => {
       <BackToTop />
       <StickyCursor />
       <PortfolioHero />
-
       <AllProjects />
     </div>
   );
