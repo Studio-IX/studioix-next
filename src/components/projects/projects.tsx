@@ -59,7 +59,7 @@ const Projects = () => {
         <motion.div className=" flex flex-col justify-center w-full items-center mt-[8rem] md:mt-[15rem]">
           <Rounded
             backgroundColor={"#334BD3"}
-            className="projsButton w-[160px] h-[160px] md:w-[200px] md:h-[200px]"
+            className="projsButton w-[180px] h-[180px] md:w-[200px] md:h-[200px]"
           >
             <div className="flex flex-col items-center justify-center">
               <p className=" font-archivo uppercase">View Portfolio</p>

@@ -63,7 +63,10 @@ const BouncyComponent: React.FC = () => {
             selectedOption === "Number 3" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-4`}
         >
-          Web Development
+          <span className="flex items-center gap-1 md:gap-2">
+            Web <span className=" hidden md:block">Development</span>
+            <span className="  md:hidden">Dev</span>
+          </span>
         </label>
 
         <div className="selection-indicator-wrapper absolute top-1/2 h-full w-1/3 transform -translate-y-1/2">
