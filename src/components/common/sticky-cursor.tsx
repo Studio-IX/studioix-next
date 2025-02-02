@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 
-const StickyCursor = () => {
+const Cursor = () => {
   const cursorSize = 15;
 
   const mouse = {
@@ -20,7 +20,7 @@ const StickyCursor = () => {
     y: useSpring(mouse.y, smoothOptions),
   };
 
-  const manageMouseMove = (e: any) => {
+  const manageMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
 
     mouse.x.set(clientX - cursorSize / 2);
@@ -34,20 +34,28 @@ const StickyCursor = () => {
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
     };
-  }, []);
+  });
 
   return (
-    <div className=" hidden md:block">
+    <div className="relative z-[1000000000]">
       <motion.div
         style={{
           left: smoothMouse.x,
 
           top: smoothMouse.y,
         }}
-        className="custom-cursor border border-white/50"
+        className="fixed flex w-5 rounded-full h-5 aspect-square items-center pointer-events-none -translate-x-1/2 -translate-y-1/2  justify-center bg-[#455CE9] blur-lg"
+      ></motion.div>
+      <motion.div
+        style={{
+          left: smoothMouse.x,
+
+          top: smoothMouse.y,
+        }}
+        className=" fixed w-3.5 h-3.5 aspect-square pointer-events-none -translate-x-1/2 -translate-y-1/2  rounded-full bg-[#455CE9]"
       ></motion.div>
     </div>
   );
 };
 
-export default StickyCursor;
+export default Cursor;

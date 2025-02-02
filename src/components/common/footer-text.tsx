@@ -69,7 +69,7 @@ export const FooterText = () => {
             width="838.761"
             height="217.776"
             stroke="#455CE9"
-            stroke-width="2"
+            strokeWidth="2"
           />
           <rect
             x="1.05469"

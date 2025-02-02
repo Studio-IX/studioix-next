@@ -5,6 +5,7 @@ import FeatureCard from "./feature-cards";
 import Lenis from "@studio-freight/lenis";
 import { useScroll, MotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Wrapper from "../wrapper/wrapper";
 
 interface Feature {
   number: string;
@@ -46,24 +47,23 @@ const Cards: React.FC<CardsProps> = () => {
       ref={container}
       className="flex flex-col items-center bg-black md:pt-20"
     >
-      <div
-        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-20 md:top-40`}
+      <Wrapper
+        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-20 md:top-40 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]`}
       >
-        <h2 className="text-white uppercase text-5xl md:text-7xl font-semibold font-cabinetGrotesk">
-          Our process
+        <h2 className="text-white uppercase text-nowrap text-5xl md:text-7xl font-semibold font-cabinetGrotesk">
+          Our Services
         </h2>
-        <p className="text-white/80 text-lg md:text-2xl font-archivo hidden md:block">
-          Our unique processes are tailored to your unique goals, so you can
-          dominate <br className="hidden md:block" /> your competition and leave
-          a lasting impression on your customers
+        <p className="text-white/80 max-w-xl text-lg md:text-xl font-archivo hidden md:block">
+          We specialize in turning ideas into high-impact digital products. From
+          strategy to execution, we provide the expertise you need to build,
+          launch, and scale successfully.
         </p>
-      </div>
+      </Wrapper>
       {features.map((feature, i) => {
         const targetScale: number = 1 - (features.length - i) * 0.05;
         return (
           <FeatureCard
             key={`p_${i}`}
-            i={i}
             textColor={feature.text}
             {...feature}
             progress={scrollYProgress}

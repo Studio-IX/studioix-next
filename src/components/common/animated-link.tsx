@@ -22,10 +22,10 @@ const AnimatedLink = ({ text, link }: { text: string; link: string }) => {
       variants={menuLinkVariants}
       rel="nofollow"
       href={link}
-      className="h-[30px] overflow-hidden font-archivo text-base flex items-start gap-2 uppercase"
+      className="h-[30px] overflow-hidden font-archivo text-lg flex items-start gap-2"
     >
       <motion.div whileHover={{ y: -30 }}>
-        <span className="flex items-center h-[30px] text-white">{text}</span>
+        <span className="flex items-center h-[30px] text-white/70">{text}</span>
 
         <span className="flex items-center h-[30px] text-white">{text}</span>
       </motion.div>

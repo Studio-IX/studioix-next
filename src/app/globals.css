@@ -711,7 +711,7 @@
 
 /* Services */
 
-.s {
+.servicesMain {
   width: 100%;
   display: flex;
   align-items: center;
@@ -929,7 +929,7 @@
     left: -99px;
     width: 100px;
     height: 100%;
-    fill: #202a6c;
+    fill: black;
     stroke: none;
   }
 }

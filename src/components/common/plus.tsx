@@ -14,7 +14,7 @@ const PlusServices = () => {
         r="62.5"
         fill="#313131"
         stroke="#455CE9"
-        stroke-width="5"
+        strokeWidth="5"
       />
       <line
         x1="128.793"
@@ -22,7 +22,7 @@ const PlusServices = () => {
         x2="21.3535"
         y2="78.1172"
         stroke="#455CE9"
-        stroke-width="5"
+        strokeWidth="5"
       />
       <line
         x1="76.5742"
@@ -30,7 +30,7 @@ const PlusServices = () => {
         x2="76.5742"
         y2="129.336"
         stroke="#455CE9"
-        stroke-width="5"
+        strokeWidth="5"
       />
     </svg>
   );
