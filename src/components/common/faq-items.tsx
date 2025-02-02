@@ -37,7 +37,7 @@ export function FaqItems() {
         </AccordionTrigger>
         <AccordionContent>
           To begin, we need your project brief, brand guidelines (if available),
-          and content requirements. During our initial consultation, we'll
+          and content requirements. During our initial consultation, we&apos;ll
           discuss your goals, timeline, and budget to ensure we can deliver the
           best possible solution for your needs.
         </AccordionContent>
@@ -47,8 +47,8 @@ export function FaqItems() {
         <AccordionContent>
           Yes, we offer comprehensive post-launch support packages. This
           includes bug fixes, performance monitoring, security updates, and
-          ongoing optimizations. We're committed to ensuring your product's
-          long-term success beyond the initial launch.
+          ongoing optimizations. We&apos;re committed to ensuring your
+          product&apos;s long-term success beyond the initial launch.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-5">
@@ -67,17 +67,17 @@ export function FaqItems() {
         <AccordionContent>
           The timeline starts after project kickoff and receipt of all required
           materials. This includes signed contracts, initial payment, and
-          project assets. We'll provide a detailed schedule during kickoff to
-          ensure clear expectations and milestones.
+          project assets. We&apos;ll provide a detailed schedule during kickoff
+          to ensure clear expectations and milestones.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-7">
         <AccordionTrigger>How do I get started?</AccordionTrigger>
         <AccordionContent>
-          Book a consultation through our website or contact form. We'll
-          schedule a discovery call to discuss your project needs. If we're a
-          good fit, we'll provide a proposal and can typically begin within 1-2
-          weeks after completing the onboarding process.
+          Book a consultation through our website or contact form. We&apos;ll
+          schedule a discovery call to discuss your project needs. If we&apos;re
+          a good fit, we&apos;ll provide a proposal and can typically begin
+          within 1-2 weeks after completing the onboarding process.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
