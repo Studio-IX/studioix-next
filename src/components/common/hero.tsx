@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 import LogoTicker from "./logo-ticker";
 const Hero = () => {
   return (
-    <div className="w-full h-[100dvh] md:h-screen relative">
+    <div className="w-full h-fit md:h-screen relative">
       <div className="flex flex-col gap-20 md:gap-0 justify-between h-full pb-12 items-center w-full px-3 md:px-0 md:pt-32">
         <div className=" w-full flex flex-col items-center">
           <div className=" flex flex-col items-center md:items-start mt-[7rem] md:mt-8 md:gap-1">
