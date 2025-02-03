@@ -17,7 +17,7 @@ export function ContactDrawer() {
         </div>
       </DrawerTrigger>
       <DrawerContent>
-        <div className=" h-[100dvh] md:h-[55dvh] py-5 md:py-0 w-full flex flex-col-reverse md:flex-row justify-between items-start md:items-center px-3 md:px-20">
+        <div className=" h-fit md:h-[55dvh] py-5 md:py-0 w-full flex flex-col md:flex-row justify-between items-start md:items-center px-3 md:px-20">
           <div className="md:w-[65%] flex flex-col items-start">
             <div className="hidden md:block text-start">
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-4xl lg:text-7xl text-black text-start md:mt-0">
@@ -31,13 +31,6 @@ export function ContactDrawer() {
               </h2>
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-4xl lg:text-7xl text-[#455CE9] text-start md:-mt-3">
                 Studio IX®
-              </h2>
-            </div>
-
-            <div className=" md:hidden">
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-4xl lg:text-7xl text-black text-start md:mt-0">
-                We are glad <br /> that you Chose{" "}
-                <span className="text-[#455CE9]">Studio IX®</span>
               </h2>
             </div>
 
@@ -56,6 +49,13 @@ export function ContactDrawer() {
               <div className="w-full flex items-center justify-center">
                 <div className="w-12 h-1.5 bg-black/10 rounded-full" />
               </div>
+            </div>
+
+            <div className=" md:hidden">
+              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-4xl lg:text-7xl text-black text-start md:mt-0">
+                We are glad <br /> that you Chose{" "}
+                <span className="text-[#455CE9]">Studio IX®</span>
+              </h2>
             </div>
 
             <div className="flex items-center justify-between gap-4 md:gap-8 w-full">

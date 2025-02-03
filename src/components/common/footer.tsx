@@ -46,7 +46,7 @@ const Footer = () => {
               </div>
 
               <div className=" w-full mt-6 md:mt-0">
-                <div className="flex flex-wrap md:flex-row gap-y-6 md:gap-y-0 items-start w-full justify-between">
+                <div className="flex flex-wrap md:flex-nowrap md:flex-row gap-y-6 md:gap-y-0 items-start w-full justify-between">
                   <div className=" w-fit md:w-full">
                     <h3 className=" font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl">
                       Navigation

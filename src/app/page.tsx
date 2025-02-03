@@ -6,6 +6,7 @@ import ChatwootWidget from "@/components/common/chatwoot-widget";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
 import Preloader from "@/components/common/preloader";
+import Pricing from "@/components/common/pricing";
 import SocialProof from "@/components/common/social-proof";
 import StickyCursor from "@/components/common/sticky-cursor";
 import Testimonials from "@/components/common/testimonials";
@@ -49,6 +50,8 @@ export default function Home() {
       <SocialProof />
       <div className="h-[3rem] md:h-[8rem] bg-black" />
       <Cards />
+      <div className=" h-[6rem]" />
+      <Pricing />
       <div className=" h-[6rem]" />
       <Testimonials />
       <FAQs />
