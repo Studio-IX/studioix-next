@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
@@ -7,14 +8,13 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Wrapper from "../wrapper/wrapper";
 import { ContactDrawer } from "./contact-drawer";
 import EncryptText from "./encrypt-text";
 import SideMenu from "./menu";
-import Wrapper from "../wrapper/wrapper";
 
 export const Navigation = () => {
   const { scrollYProgress } = useScroll();
@@ -26,7 +26,13 @@ export const Navigation = () => {
 
   useEffect(() => {
     if (isActive) setIsActive(false);
-  }, [isActive]);
+  }, []);
+
+  const [mobileNav, setMobileNav] = useState(false);
+
+  const toggleMobileNav = () => {
+    setMobileNav(!mobileNav);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,9 +80,11 @@ export const Navigation = () => {
             duration: 0.2,
           }}
           className={cn(
-            "flex fixed top-0 2xl:top-0 w-full px-3 xl:px-10 2xl:px-20 z-[2147483005]",
-            scrolled ? "bg-black" : "bg-transparent backdrop-blur-md",
-            "py-2 md:py-2.5"
+            "flex fixed top-0 2xl:top-0 w-full px-3 xl:px-10 2xl:px-20 z-[2147483000]",
+            scrolled
+              ? " bg-black/90 backdrop-blur-sm md:bg-black"
+              : "bg-transparent backdrop-blur-md",
+            "py-3 md:py-2.5"
           )}
         >
           <Wrapper className="w-full flex flex-row justify-between items-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
@@ -113,35 +121,66 @@ export const Navigation = () => {
               </div>
             </div>
 
-            <aside className="flex items-center gap-2">
+            <aside className="flex items-center gap-4">
               <ContactDrawer />
 
               <div className=" md:hidden">
-                <div
-                  onClick={() => {
-                    setIsActive(!isActive);
-                  }}
-                  className="relative group inline-flex h-12 aspect-square overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 hover:scale-105 ease-in-out transition-all duration-200"
-                >
-                  <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
-                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-3 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-                    {isActive ? (
-                      <X className=" group-hover:rotate-90 transition-transform ease-in-out duration-300" />
-                    ) : (
-                      <Menu className=" group-hover:rotate-90 transition-transform ease-in-out duration-500" />
-                    )}
-                  </span>
+                <div>
+                  <motion.button
+                    initial="hide"
+                    animate={mobileNav ? "show" : "hide"}
+                    onClick={() => {
+                      toggleMobileNav();
+                      setIsActive(!isActive);
+                    }}
+                    className="flex flex-col space-y-1.5 relative z-[2147483000]"
+                    aria-label={mobileNav ? "Close menu" : "Open menu"}
+                  >
+                    <motion.span
+                      variants={{
+                        hide: {
+                          rotate: 0,
+                        },
+                        show: {
+                          rotate: 45,
+                          y: 7.5,
+                        },
+                      }}
+                      className="w-6 bg-white rounded-full h-[1.5px] block"
+                    ></motion.span>
+                    <motion.span
+                      variants={{
+                        hide: {
+                          opacity: 1,
+                        },
+                        show: {
+                          opacity: 0,
+                        },
+                      }}
+                      className="w-6 bg-white rounded-full h-[1.5px] block"
+                    ></motion.span>
+                    <motion.span
+                      variants={{
+                        hide: {
+                          rotate: 0,
+                        },
+                        show: {
+                          rotate: -45,
+                          y: -7.5,
+                        },
+                      }}
+                      className="w-6 bg-white rounded-full h-[1.5px] block"
+                    ></motion.span>
+                  </motion.button>
                 </div>
               </div>
             </aside>
           </Wrapper>
         </motion.div>
       </AnimatePresence>
-      <div className="md:hidden">
-        <AnimatePresence mode="wait">
-          {isActive && <SideMenu />}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence mode="wait">
+        {isActive && <SideMenu setIsActive={setIsActive} />}
+      </AnimatePresence>
     </div>
   );
 };

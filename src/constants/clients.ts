@@ -1,3 +1,21 @@
-export const clients = [...new Array(10)].map((client, index) => ({
-  href: `/companies/${index + 1}.png`,
-}));
+export const companyLogo = [
+  "1.png",
+
+  "2.png",
+
+  "3.png",
+
+  "4.png",
+
+  "5.png",
+
+  "6.png",
+
+  "7.png",
+
+  "8.png",
+
+  "9.png",
+
+  "10.png",
+];

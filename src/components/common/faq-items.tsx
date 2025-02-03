@@ -9,7 +9,7 @@ export function FaqItems() {
   return (
     <Accordion
       type="single"
-      className="w-full md:max-w-4xl mt-10 md:mb-20 border border-[#272727] rounded-2xl px-2 py-6 bg-[#090909]"
+      className="w-full md:max-w-4xl mt-10 md:mb-20 border border-[#272727] rounded-2xl px-2 py-2.5 md:py-6 bg-[#090909]"
     >
       <AccordionItem value="item-1">
         <AccordionTrigger>

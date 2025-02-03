@@ -44,7 +44,7 @@ export const FooterText = () => {
 
   return (
     <div
-      className="flex h-fit w-full items-center overflow-hidden mt-20 md:mt-0"
+      className="flex h-fit w-full items-center overflow-hidden"
       ref={containerRef}
     >
       <span

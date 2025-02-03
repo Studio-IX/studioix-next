@@ -10,9 +10,15 @@ interface MenuLinkProps {
   };
   isActive: boolean;
   setSelectedIndicator: (href: string) => void;
+  setIsActive: (value: boolean) => void;
 }
 
-const MenuLink = ({ data, isActive, setSelectedIndicator }: MenuLinkProps) => {
+const MenuLink = ({
+  data,
+  isActive,
+  setSelectedIndicator,
+  setIsActive,
+}: MenuLinkProps) => {
   const { title, href, index } = data;
 
   return (
@@ -31,7 +37,12 @@ const MenuLink = ({ data, isActive, setSelectedIndicator }: MenuLinkProps) => {
         variants={scale}
         animate={isActive ? "open" : "closed"}
       ></motion.div>
-      <AnimatedNavLink isActive={isActive} link={href} text={title} />
+      <AnimatedNavLink
+        setIsActive={setIsActive}
+        isActive={isActive}
+        link={href}
+        text={title}
+      />
     </motion.div>
   );
 };

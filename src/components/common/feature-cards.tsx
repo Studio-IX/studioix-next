@@ -1,10 +1,8 @@
 "use client";
 
 import { MotionValue, motion } from "framer-motion";
-import { useRef } from "react";
-import PrimaryButton from "./primary-button";
 import { ArrowRight } from "lucide-react";
-
+import { useRef } from "react";
 interface FeatureCardProps {
   textColor: string;
   title: string;
@@ -40,11 +38,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
               {title}
             </h2>
             <p
-              className={`mt-1 md:mt-6 text-lg md:text-xl font-archivo font-normal opacity-80 md:max-w-xl`}
+              className={`mt-1 md:mt-6 text-base md:text-xl font-archivo font-normal opacity-80 md:max-w-xl`}
             >
               {description}
             </p>
-            <div className=" mt-8 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+            <div className=" mt-4 md:mt-8 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#000_100%)]" />
               <span
                 style={{
@@ -60,7 +58,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
           <div className="imageContainer mt-5 md:mt-8">
             <motion.div className="inner">
-              <video autoPlay loop muted>
+              <video className=" scale-150 md:scale-100" autoPlay loop muted>
                 <source src={`/videos/${src}`} type="video/mp4" />
               </video>
             </motion.div>

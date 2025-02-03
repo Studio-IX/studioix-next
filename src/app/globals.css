@@ -592,7 +592,7 @@
     flex-direction: column;
     position: relative;
     top: -25%;
-    height: 488px;
+    height: 580px;
     border-radius: 0px;
     transform-origin: top;
   }
@@ -919,7 +919,7 @@
   left: 0;
   bottom: 0;
   color: white;
-  z-index: 2147483004;
+  z-index: 214748301;
 }
 
 @media screen and (max-width: 400px) {

@@ -7,7 +7,11 @@ import { navItems } from "@/constants/data";
 import Curve from "./curve";
 import MenuLink from "./menu-link";
 
-const SideMenu = () => {
+interface SideMenuProps {
+  setIsActive: (value: boolean) => void;
+}
+
+const SideMenu = ({ setIsActive }: SideMenuProps) => {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -20,7 +24,7 @@ const SideMenu = () => {
       className="menu"
     >
       <div className="flex flex-col w-full h-full justify-between px-5 pt-8  pb-10  ">
-        <div className="z-50 mt-20">
+        <div className="z-[2147483000] mt-20">
           <div
             onMouseLeave={() => {
               setSelectedIndicator(pathname);
@@ -34,6 +38,7 @@ const SideMenu = () => {
                   data={{ ...data, index }}
                   isActive={selectedIndicator == data.href}
                   setSelectedIndicator={setSelectedIndicator}
+                  setIsActive={setIsActive}
                 ></MenuLink>
               );
             })}

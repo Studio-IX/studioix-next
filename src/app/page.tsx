@@ -45,13 +45,14 @@ export default function Home() {
       <ChatwootWidget />
       <Hero />
       <Video />
-      <div className="h-[5rem] md:h-[8rem] bg-black" />
+      <div className="md:h-[8rem] bg-black" />
       <SocialProof />
+      <div className="h-[3rem] md:h-[8rem] bg-black" />
       <Cards />
       <div className=" h-[6rem]" />
       <Testimonials />
       <FAQs />
-      <div className="h-[50vh]" />
+      <div className="h-[8rem]" />
     </div>
   );
 }

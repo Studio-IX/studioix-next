@@ -1,7 +1,7 @@
 "use client";
 
 import { navItems } from "@/constants/data";
-import { ArrowRight, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import { FaDribbble, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -13,14 +13,14 @@ import { FooterText } from "./footer-text";
 
 const Footer = () => {
   return (
-    <div className="w-full md:h-screen relative md:max-h-screen overflow-hidden">
-      <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-3 md:pt-12 pb-8 md:pb-10">
+    <div className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden">
+      <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
           <div className="z-[2147483] flex flex-col items-start gap-0 w-full">
             <div className="w-full flex flex-col md:flex-row justify-between items-start">
-              <div className="w-full hidden md:block">
-                <div className="w-full md:w-full flex flex-row md:flex-col justify-between">
-                  <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block">
+              <div className="w-full ">
+                <div className="w-full flex flex-col">
+                  <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200 ">
                     <Image
                       quality={100}
                       className=" object-contain"
@@ -30,9 +30,9 @@ const Footer = () => {
                     />
                   </div>
                   <div className="flex flex-col items-start mt-8">
-                    <h3 className=" font-cabinetGrotesk uppercase text-white font-semibold text-7xl tracking-tighter hidden md:block leading-[0.85]">
-                      Get Your <br /> MVP Off the
-                      <br /> Ground
+                    <h3 className=" font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-7xl tracking-tighter  leading-[0.85]">
+                      Get Your <br className=" hidden md:block" /> MVP Off the
+                      <br className=" hidden md:block" /> Ground
                     </h3>
                   </div>
 
@@ -44,55 +44,10 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className="md:hidden mt-4 w-full">
-                <div className="flex flex-row items-start w-full justify-between">
-                  <div className="w-full">
-                    <h3 className=" font-archivo text-white font-medium mt-3 text-lg">
-                      Navigation
-                    </h3>
-                    <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Agency" />
-                      <AnimatedLink link="" text="Portfolio" />
 
-                      <AnimatedLink link="" text="Pricing" />
-                      <AnimatedLink link="" text="Services" />
-                      <AnimatedLink link="" text="FAQs" />
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <h3 className=" font-archivo text-white font-medium mt-3 text-lg">
-                      Legal Info
-                    </h3>
-                    <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Terms & Conditions" />
-                      <AnimatedLink link="" text="Privacy Policy" />
-                      <AnimatedLink link="" text="Cookie Policy" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-row mt-10 items-start w-full justify-between">
-                  <div className="w-full">
-                    <h3 className=" font-archivo text-white font-medium mt-3 text-lg">
-                      Contact Us
-                    </h3>
-                    <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Via Email" />
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <h3 className=" font-archivo text-white font-medium mt-3 text-lg">
-                      Resources
-                    </h3>
-                    <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Company Deck" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden md:block w-full">
-                <div className="flex flex-row items-start w-full justify-between">
-                  <div className="w-full">
+              <div className=" w-full mt-6 md:mt-0">
+                <div className="flex flex-wrap md:flex-row gap-y-6 md:gap-y-0 items-start w-full justify-between">
+                  <div className=" w-fit md:w-full">
                     <h3 className=" font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl">
                       Navigation
                     </h3>
@@ -108,7 +63,7 @@ const Footer = () => {
                       })}
                     </div>
                   </div>
-                  <div className="w-full">
+                  <div className=" w-fit md:w-full">
                     <h3 className=" font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl">
                       Legal Info
                     </h3>
@@ -119,7 +74,7 @@ const Footer = () => {
                     </div>
                   </div>
 
-                  <div className="w-full">
+                  <div className=" w-fit md:w-full">
                     <h3 className=" font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl">
                       Resources
                     </h3>
@@ -149,32 +104,33 @@ const Footer = () => {
         </Wrapper>
 
         {/* Middle Part */}
-        <div className="z-[50] w-full flex items-center justify-center -mt-8 md:-mt-40">
+        <div className="z-[50] w-full flex items-center justify-center -mt-0 md:-mt-40">
           <video
             autoPlay
             muted
             loop
-            className="md:w-[55%] md:scale-110 rounded-full object-cover"
+            className="md:w-[55%] scale-150 md:scale-110 rounded-full object-cover"
           >
             <source src="/videos/footer.mp4" type="video/mp4" />
           </video>
         </div>
 
         {/* Bottom Part */}
-        <div className="flex flex-col items-start w-full h-fit ">
+        <div className="flex flex-col items-start w-full h-fit mt-20 md:mt-0 z-[50]">
           <FooterText />
         </div>
+
         <div className="mb-20"></div>
         <div className="z-[2147483002] w-full px-4 md:px-32">
-          <Separator className=" hidden md:block md:-mt-20" />
-          <div className="w-full flex flex-col md:flex-row items-center justify-between mt-10">
-            <h4 className=" font-archivo text-white text-base hidden md:block">
+          <Separator className="  md:-mt-20" />
+          <div className="w-full flex flex-col md:flex-row items-center justify-between mt-10 gap-2 md:gap-0">
+            <h4 className=" font-archivo text-white text-base hidden md:block ">
               © Studio IX 2025, All rights reserved.
             </h4>
-            <h4 className=" font-archivo text-white text-base md:hidden">
+            <h4 className=" font-archivo text-white text-lg md:hidden">
               © Studio IX 2025
             </h4>
-            <h4 className=" font-archivo text-white text-base hidden md:block">
+            <h4 className=" font-archivo text-white text-base hidden md:block ">
               1:28 AM GMT
             </h4>
           </div>
