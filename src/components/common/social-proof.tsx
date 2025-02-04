@@ -11,7 +11,7 @@ const SocialProof = () => {
             Build Fast. <br className=" hidden md:block" />
             Validate Smarter.
           </h2>
-          <p className=" font-archivo max-w-[70ch] text-base md:text-xl text-white/80 text-center w-full">
+          <p className=" font-archivo max-w-[70ch] text-lg md:text-xl text-white/80 text-center w-full">
             Startups thrive on speed. To succeed, you need to invest in building
             a product that solves real problems—without wasting time or
             resources. The best way to do that? Rapid iteration and real-world
@@ -68,7 +68,7 @@ const SocialProof = () => {
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             Trusted by founders
           </h2>
-          <p className=" font-archivo text-base md:text-xl text-white/80 text-center w-full">
+          <p className=" font-archivo text-lg md:text-xl text-white/80 text-center w-full">
             Here&apos;s how much impact we&apos;ve made
           </p>
         </div>

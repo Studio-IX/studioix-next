@@ -89,7 +89,7 @@ const ProjectModal = ({ modal }: { modal: { active: boolean } }) => {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        Case Study
+        PREVIEW
       </motion.div>
     </div>
   );

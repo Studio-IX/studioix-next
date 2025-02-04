@@ -50,7 +50,7 @@ const TestimonialCarousel = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="w-full flex gap-4 flex-col-reverse md:flex-col md:h-[32rem] justify-between"
+              className="w-full flex gap-4 flex-col md:h-[32rem] justify-between"
             >
               <div>
                 <h3 className="font-cabinetGrotesk font-medium text-3xl md:text-4xl uppercase text-white">
@@ -75,7 +75,7 @@ const TestimonialCarousel = () => {
           </div>
         </div>
       </AnimatePresence>
-      <div className="flex items-center  justify-center md:justify-between w-full mt-6 md:mt-12 bg-black z-10">
+      <div className="flex items-center justify-between w-full mt-6 md:mt-12 bg-black z-10">
         <div className="flex items-center gap-2">
           <div
             onClick={prevTestimonial}
@@ -91,17 +91,15 @@ const TestimonialCarousel = () => {
           </div>
         </div>
 
-        <div className=" hidden md:block">
-          <div className="flex items-center gap-1">
-            {testimonials.map((_, index) => (
-              <div
-                key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? "w-10 bg-white" : "w-5 bg-[#1E1E1E]"
-                }`}
-              />
-            ))}
-          </div>
+        <div className="flex items-center gap-1">
+          {testimonials.map((_, index) => (
+            <div
+              key={index}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentIndex === index ? "w-10 bg-white" : "w-5 bg-[#1E1E1E]"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </>

@@ -1,14 +1,27 @@
 "use client";
+import { getCalApi } from "@calcom/embed-react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import StarSvg from "./star";
 
 import { motion } from "framer-motion";
 
+import { useEffect } from "react";
 import { Button } from "../ui/button";
 import LogoTicker from "./logo-ticker";
 const Hero = () => {
-  return (
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "discovery-call" });
+      cal("ui", {
+        theme: "dark",
+        styles: { branding: { brandColor: "#0096FA" } },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+return (
     <div className="w-full h-fit md:h-screen relative">
       <div className="flex flex-col gap-20 md:gap-0 justify-between h-full pb-12 items-center w-full px-3 md:px-0 md:pt-32">
         <div className=" w-full flex flex-col items-center">
@@ -62,11 +75,16 @@ const Hero = () => {
               products. Partner with us to bring your vision to life with speed,
               precision, and impact.
             </p>
-            <div className=" w-full flex flex-col gap-2 mt-6">
+            <div
+              data-cal-namespace="discovery-call"
+              data-cal-link="studio-ix-gonodg/discovery-call"
+              data-cal-config='{"layout":"month_view","theme":"dark"}'
+              className=" w-full flex flex-col gap-2 mt-6"
+            >
               <div className="relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-2.5 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-                  Build Your First MVP
+                  Book A Call Now
                 </span>
               </div>
               <Button className="" variant="outline">

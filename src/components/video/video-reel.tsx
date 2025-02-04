@@ -26,6 +26,7 @@ const Video = () => {
         <div className=" inset-0 absolute bg-black/60 z-10" />
         <Image
           fill
+          unoptimized
           src="/gif/showcase.gif"
           className=" object-cover"
           alt="Showcase"

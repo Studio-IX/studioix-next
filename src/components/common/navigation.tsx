@@ -82,7 +82,7 @@ export const Navigation = () => {
           className={cn(
             "flex fixed top-0 2xl:top-0 w-full px-3 xl:px-10 2xl:px-20 z-[2147483000]",
             scrolled
-              ? " bg-black/90 backdrop-blur-sm md:bg-black"
+              ? " bg-black/90 backdrop-blur-sm"
               : "bg-transparent backdrop-blur-md",
             "py-3 md:py-2.5"
           )}

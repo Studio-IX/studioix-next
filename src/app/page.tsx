@@ -5,11 +5,14 @@ import Cards from "@/components/common/cards";
 import ChatwootWidget from "@/components/common/chatwoot-widget";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
+import OurProjcess from "@/components/common/our-process";
 import Preloader from "@/components/common/preloader";
 import Pricing from "@/components/common/pricing";
 import SocialProof from "@/components/common/social-proof";
 import StickyCursor from "@/components/common/sticky-cursor";
 import Testimonials from "@/components/common/testimonials";
+import AllProjects from "@/components/projects/all-projects";
+import AllProjectsMobile from "@/components/projects/all-projects-mobile";
 import Video from "@/components/video/video-reel";
 import Lenis from "@studio-freight/lenis";
 import { AnimatePresence } from "framer-motion";
@@ -49,7 +52,16 @@ export default function Home() {
       <div className="md:h-[8rem] bg-black" />
       <SocialProof />
       <div className="h-[3rem] md:h-[8rem] bg-black" />
+      <div className=" hidden md:block">
+        <AllProjects />
+      </div>
+      <div className="  md:hidden">
+        <AllProjectsMobile />
+      </div>
+      <div className="h-[3rem] md:h-[8rem] bg-black" />
       <Cards />
+      <div className=" h-[6rem]" />
+      <OurProjcess />
       <div className=" h-[6rem]" />
       <Pricing />
       <div className=" h-[6rem]" />

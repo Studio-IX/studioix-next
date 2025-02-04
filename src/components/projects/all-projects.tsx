@@ -1,78 +1,166 @@
-import Link from "next/link";
-import Rounded from "../common/rounded-button";
-import SectionTitle from "../common/section-title";
-import Wrapper from "../wrapper/wrapper";
-import ProjectItem from "./project-item";
-import ProjectItemLarge from "./project-item-large";
-import ProjectItemTall from "./project-item-tall";
+"use client";
 
-import { motion } from "framer-motion";
+import { slideUp2 } from "@/anim/anim";
+import { cn } from "@/lib/utils";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { Code, Figma } from "lucide-react";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import ProjectModal from "./projects-modal";
 
 const AllProjects = () => {
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const containerRef = useRef(null);
+
+  const isInView = useInView(containerRef);
+  const description = "Featured Projects";
+
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+
+  return (
+    <section ref={targetRef} className="relative h-[300vh] w-full">
+      <div className="sticky h-screen justify-center top-0 flex flex-col">
+        <h2
+          ref={containerRef}
+          className="text-white w-full text-center uppercase text-nowrap text-5xl md:text-7xl font-semibold font-cabinetGrotesk"
+        >
+          {description.split(" ").map((word, index) => {
+            return (
+              <span
+                key={index}
+                className=" relative overflow-hidden mr-3 inline-flex"
+              >
+                <motion.span
+                  variants={slideUp2}
+                  custom={index}
+                  animate={isInView ? "open" : "closed"}
+                  key={index}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            );
+          })}
+        </h2>
+        <div className=" flex items-center overflow-hidden pt-8">
+          <motion.div style={{ x }} className="flex gap-12">
+            {cards.map((card) => {
+              return <Card card={card} key={card.id} />;
+            })}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Card = ({ card }: { card: CardType }) => {
+  const [modal, setModal] = useState({ active: false });
+
   return (
     <div
-      id="projects"
-      className="bg-black pt-[12rem] md:pt-[8rem] lg:pt-[10rem] w-full pb-[15rem] lg:pb-[25rem]"
+      className={`group ${card.id === 1 ? " ml-[1rem] md:ml-[8rem]" : ""}`}
+      key={card.id}
     >
-      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12">
-        <SectionTitle text="OUR PORTFOLIO" />
-        <h2 className="uppercase font-cabinetGrotesk font-bold text-6xl lg:text-8xl text-white text-center -mt-6">
-          All Projects
-        </h2>
-        <div className="w-full flex flex-col lg:flex-row gap-10 lg:mt-10">
-          <ProjectItem src="/projects/pclub.png" projectTitle="Pclub.io" />
-          <ProjectItem
-            src="/projects/quotasignal.png"
-            projectTitle="QuotaSignal"
-          />
+      <div
+        onMouseEnter={() => {
+          setModal({ active: true });
+        }}
+        onMouseLeave={() => {
+          setModal({ active: false });
+        }}
+        className="relative w-[680px] h-[350px] lg:h-[520px] group rounded-[20px] overflow-hidden"
+      >
+        <Image
+          quality={100}
+          className={cn(
+            "rounded-[20px] object-cover object-left-top group-hover:scale-110 transition-all ease-in-out duration-500"
+          )}
+          fill
+          src={card.src}
+          alt={card.title}
+        />
+      </div>
+      <div className="mt-8">
+        <div className="flex flex-wrap gap-4">
+          <div className="bg-[#090909] flex items-center text-white font-archivo text-lg md:text-xl border border-[#272727] rounded-full w-fit px-2 md:px-4 py-1 md:py-1.5">
+            <Code className="mr-2" /> MVP Development
+          </div>
+          <div className="bg-[#090909] flex items-center text-white font-archivo text-lg md:text-xl border border-[#272727] rounded-full w-fit px-2 md:px-4 py-1 md:py-1.5">
+            <Figma className="mr-2" /> Design
+          </div>
+          <div className="bg-primary flex items-center text-white font-archivo text-lg md:text-xl rounded-full w-fit px-2 md:px-4 py-1 md:py-1.5">
+            {card.year}
+          </div>
         </div>
-        <div className="w-full md:mt-12">
-          <ProjectItemLarge
-            src="/gallery/liftinfluence_showcase.png"
-            projectTitle="LiftInfluence"
-          />
-        </div>
-        <div className="w-full flex flex-col md:mt-12 lg:flex-row gap-10">
-          <ProjectItemTall
-            src="/projects/5.png"
-            className=" lg:object-left-bottom"
-            projectTitle="Chatly"
-          />
-          <ProjectItem
-            className=" object-center"
-            src="/projects/nova.png"
-            projectTitle="Nova"
-          />
-        </div>
-        <div className="w-full flex flex-col items-end md:mt-[-16vw] lg:flex-row gap-10">
-          <ProjectItem src="/projects/1.png" projectTitle="QuotaSignal" />
-          <ProjectItemTall
-            className=" lg:object-center"
-            src="/projects/6.png"
-            projectTitle="Nixon"
-          />
-        </div>
-        <div className="w-full md:mt-12">
-          <ProjectItemLarge
-            src="/gallery/liftinfluence_showcase.png"
-            projectTitle="LiftInfluence"
-          />
-        </div>
-      </Wrapper>
-      <Link href="/portfolio">
-        <motion.div className=" flex flex-col justify-center w-full items-center mt-[15rem]">
-          <Rounded
-            backgroundColor={"#334BD3"}
-            className="projsButton w-[180px] h-[180px] md:w-[200px] md:h-[200px]"
-          >
-            <div className="flex flex-col items-center justify-center">
-              <p className=" font-archivo uppercase">Start A Project</p>
-            </div>
-          </Rounded>
-        </motion.div>
-      </Link>
+        <h4 className=" mt-4 text-5xl text-white font-cabinetGrotesk uppercase  font-semibold opacity-80 group-hover:opacity-100 transition-opacity ease-in-out duration-75">
+          {card.title}
+        </h4>
+        <p className=" text-lg md:text-xl opacity-80 text-white">
+          {card.description}
+        </p>
+      </div>
+      <ProjectModal modal={modal} />
     </div>
   );
 };
 
 export default AllProjects;
+
+type CardType = {
+  src: string;
+  title: string;
+  description: string;
+  id: number;
+  year: string;
+};
+
+const cards: CardType[] = [
+  {
+    src: "/projects/1.png",
+    title: "Midas Fintech",
+    year: "2022",
+    description: "Save money on transactions over $1000",
+    id: 1,
+  },
+  {
+    src: "/projects/2.png",
+    title: "Fontsnatcher",
+    year: "2020",
+    description: "Earn up to 5% cashback on all debit card purchases.",
+    id: 2,
+  },
+  {
+    src: "/projects/3.png",
+    title: "Astrae",
+    year: "2024",
+    description: "Get instant notifications for every transaction made.",
+    id: 3,
+  },
+  {
+    src: "/projects/4.png",
+    title: "Hire1.ai",
+    year: "2023",
+    description:
+      "Access exclusive investment opportunities with as little as $100.",
+    id: 4,
+  },
+  {
+    src: "/projects/5.png",
+    title: "Nova",
+    year: "2022",
+    description: "Round up your purchases to automatically grow your savings.",
+    id: 5,
+  },
+  {
+    src: "/projects/6.png",
+    title: "Stakenet",
+    year: "2022",
+    description: "Lock and unlock your card instantly for added security.",
+    id: 6,
+  },
+];

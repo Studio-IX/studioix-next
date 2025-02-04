@@ -1,8 +1,10 @@
 "use client";
 
 import { navItems } from "@/constants/data";
+import { getCalApi } from "@calcom/embed-react";
 import { Instagram } from "lucide-react";
 import Image from "next/image";
+import { useEffect } from "react";
 import { FaDribbble, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
@@ -12,13 +14,24 @@ import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
 
 const Footer = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "discovery-call" });
+      cal("ui", {
+        theme: "dark",
+        styles: { branding: { brandColor: "#0096FA" } },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
   return (
     <div className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden">
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
           <div className="z-[2147483] flex flex-col items-start gap-0 w-full">
             <div className="w-full flex flex-col md:flex-row justify-between items-start">
-              <div className="w-full ">
+              <div className="w-full md:w-[80%] ">
                 <div className="w-full flex flex-col">
                   <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200 ">
                     <Image
@@ -36,8 +49,13 @@ const Footer = () => {
                     </h3>
                   </div>
 
-                  <div className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-4">
-                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#000_100%)]" />
+                  <div
+                    data-cal-namespace="discovery-call"
+                    data-cal-link="studio-ix-gonodg/discovery-call"
+                    data-cal-config='{"layout":"month_view","theme":"dark"}'
+                    className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-4"
+                  >
+                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />
                     <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
                       Book A Call Now
                     </span>

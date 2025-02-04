@@ -11,7 +11,7 @@ const Testimonials = () => {
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
           Client Reviews
         </h2>
-        <p className=" font-archivo max-w-[52ch] mx-auto text-base md:text-xl text-white/80 text-center w-full mt-2">
+        <p className=" font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">
           We&apos;ve worked with innovative startups to create impactful MVPs.
           Read about their experiences working with Studio IX.
         </p>

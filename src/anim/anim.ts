@@ -1,3 +1,5 @@
+import { Variants } from "framer-motion";
+
 interface TransitionProps {
   duration: number;
   delay?: number;
@@ -107,4 +109,18 @@ export const slide = {
 export const scale = {
   open: { scale: 1, transition: { duration: 0.3 } },
   closed: { scale: 0, transition: { duration: 10.4 } },
+};
+
+export const slideUp2: Variants = {
+  initial: {
+    y: "100%",
+  },
+  open: (i: number) => ({
+    y: "0%",
+    transition: { duration: 0.5, delay: 0.01 * i },
+  }),
+  closed: {
+    y: "100%",
+    transition: { duration: 0.5 },
+  },
 };
