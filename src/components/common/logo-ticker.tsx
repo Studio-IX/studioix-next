@@ -8,7 +8,7 @@ const LogoTicker = () => {
   return (
     <section>
       <Wrapper className="w-full flex flex-col items-start lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
-        <h2 className=" text-white font-archivo  text-base md:text-lg uppercase">
+        <h2 className=" text-white font-archivo w-full text-center md:text-start  text-base md:text-lg uppercase opacity-80 md:opacity-100">
           Launchpad for Innovation
         </h2>
 

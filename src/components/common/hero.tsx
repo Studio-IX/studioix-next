@@ -7,7 +7,6 @@ import StarSvg from "./star";
 import { motion } from "framer-motion";
 
 import { useEffect } from "react";
-import { Button } from "../ui/button";
 import LogoTicker from "./logo-ticker";
 const Hero = () => {
   useEffect(() => {
@@ -21,7 +20,7 @@ const Hero = () => {
       });
     })();
   }, []);
-return (
+  return (
     <div className="w-full h-fit md:h-screen relative">
       <div className="flex flex-col gap-20 md:gap-0 justify-between h-full pb-12 items-center w-full px-3 md:px-0 md:pt-32">
         <div className=" w-full flex flex-col items-center">
@@ -71,9 +70,8 @@ return (
           </div>
           <div className="md:hidden z-[214748300] w-full mt-4">
             <p className=" font-archivo text-base text-white/80 text-center w-full uppercase">
-              We craft MVPs that transform ideas into scalable, investor-ready
-              products. Partner with us to bring your vision to life with speed,
-              precision, and impact.
+              We build MVPs that turn ideas into scalable products—fast,
+              precise, and investor-ready.
             </p>
             <div
               data-cal-namespace="discovery-call"
@@ -87,9 +85,6 @@ return (
                   Book A Call Now
                 </span>
               </div>
-              <Button className="" variant="outline">
-                Learn More
-              </Button>
             </div>
           </div>
         </div>
