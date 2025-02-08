@@ -82,11 +82,11 @@ export const navItemsMobile = [
 export const testimonials = [
   {
     name: "Daniel Sammut",
-    role: "Founder's Associate @Volup",
+    role: "Founder's Associate @Astrae",
     image: "/images/client-1.png",
     year: "2024",
     review:
-      "Working with Arete has been an incredible experience. Their creativity, technical expertise, & attention to detail consistently deliver outstanding results.",
+      "Working with Studio IX has been an incredible experience. Their creativity, technical expertise, & attention to detail consistently deliver outstanding results.",
   },
   {
     name: "Duke Opoku",
@@ -94,7 +94,7 @@ export const testimonials = [
     image: "/images/client-2.png",
     year: "2022",
     review:
-      "I loved every bit of working with Arete. He is very professional & creative when it comes to web design & understanding user & business needs.",
+      "I loved every bit of working with Studio IX. They are very professional & creative when it comes to web design & understanding user & business needs.",
   },
   {
     name: "Sophia Bennett",
@@ -102,6 +102,6 @@ export const testimonials = [
     image: "/images/client-3.png",
     year: "2022",
     review:
-      "Arete is a skilled & reliable professional who consistently delivers exceptional websites & designs. Truly a pleasure to collaborate with!",
+      "Studio IX is reliable and professional. They consistently deliver exceptional websites & designs. Truly a pleasure to collaborate with!",
   },
 ];

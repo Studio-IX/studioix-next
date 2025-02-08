@@ -39,7 +39,7 @@ const TestimonialCarousel = () => {
                 fill
                 quality={100}
                 src={testimonial.image}
-                className="object-cover rounded-lg grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
+                className="object-cover rounded-xl grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
                 alt={testimonial.name}
               />
             </motion.div>

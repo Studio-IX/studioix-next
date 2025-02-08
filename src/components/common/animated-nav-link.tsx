@@ -46,12 +46,12 @@ const AnimatedNavLink = ({
           <span
             className={`${
               isActive ? " text-primary" : " text-white"
-            } font-semibold flex items-center font-cabinetGrotesk uppercase text-5xl h-[40px]`}
+            } font-semibold flex items-center font-cabinetGrotesk tracking-tighter uppercase text-5xl h-[40px]`}
           >
             {text}
           </span>
 
-          <span className="text-white font-semibold flex items-center font-cabinetGrotesk uppercase text-5xl  h-[40px]">
+          <span className="text-white font-semibold flex items-center tracking-tighter font-cabinetGrotesk uppercase text-5xl  h-[40px]">
             {text}
           </span>
         </motion.div>

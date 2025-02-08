@@ -234,7 +234,7 @@ export async function createLead(values: z.infer<typeof leadFormSchema>) {
         <a href="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738945596/PDF/The%20Ultimate%20Blueprint%20For%20MVP%20Success.pdf" class="button">
           Download Your MVP Blueprint
         </a>
-        <p style="margin-top: 30px; style="color: #ffffff; font-size: 14px;"">If you have any questions or need assistance, feel free to reach out to us.</p>
+        <p style="margin-top: 30px; color: #ffffff; font-size: 14px;">If you have any questions or need assistance, feel free to reach out to us.</p>
       </div>
       <div class="footer">
         © ${new Date().getFullYear()} Studio IX. All rights reserved.

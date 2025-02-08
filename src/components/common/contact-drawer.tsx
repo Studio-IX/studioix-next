@@ -94,7 +94,7 @@ export function ContactDrawer() {
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#000_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-4 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
             Build Your First MVP
-            <ArrowRight className="ml-2 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+            <ArrowRight className="ml-2" />
           </span>
         </div>
       </DrawerTrigger>
@@ -127,7 +127,7 @@ export function ContactDrawer() {
                   {isPending ? (
                     <Loader className="ml-2 animate-spin text-primary" />
                   ) : (
-                    <CornerDownLeft className="ml-2 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+                    <CornerDownLeft className="ml-2" />
                   )}
                 </span>
               </div>
@@ -231,7 +231,7 @@ export function ContactDrawer() {
                     {isPending ? (
                       <Loader className="ml-2 animate-spin text-primary" />
                     ) : (
-                      <CornerDownLeft className="ml-2 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+                      <CornerDownLeft className="ml-2" />
                     )}{" "}
                   </span>
                 </div>
