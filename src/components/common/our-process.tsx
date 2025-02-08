@@ -1,36 +1,36 @@
 import { Timeline } from "@/components/ui/timeline";
-const OurProjcess = () => {
+const OurProcess = () => {
   const data = [
     {
       title: "Discovery & Strategy",
       step: "Step 01",
       description:
-        "We dive deep into your vision, goals, and challenges to craft a tailored strategy that sets the foundation for success.",
+        "We analyze your MVP concept, define core features, and create a lean development strategy that brings your product to market quickly while maximizing impact.",
     },
     {
       title: "Design & Prototyping",
       step: "Step 02",
       description:
-        "Our team creates sleek, high-converting designs and interactive prototypes to bring your ideas to life before development begins.",
+        "Our team crafts intuitive user interfaces and creates interactive prototypes to validate your MVP's core functionality before full development begins.",
     },
     {
       title: "Build & Iterate",
       step: "Step 03",
       description:
-        "We develop scalable, high-performance solutions while continuously refining based on user feedback and data-driven insights.",
+        "We develop your MVP using modern tech stack, focusing on essential features while maintaining flexibility for future scaling and improvements.",
     },
     {
       title: "Launch & Scale",
       step: "Step 04",
       description:
-        "Our team creates sleek, high-converting designs and interactive prototypes to bring your ideas to life before development begins.",
+        "We help launch your MVP to market, gather user feedback, and implement data-driven improvements to prepare your product for growth and expansion.",
     },
   ];
   return (
-    <div className="w-full">
+    <div id="how-it-works" className="w-full">
       <Timeline data={data} />
     </div>
   );
 };
 
-export default OurProjcess;
+export default OurProcess;

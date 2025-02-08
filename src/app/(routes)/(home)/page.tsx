@@ -5,7 +5,7 @@ import Cards from "@/components/common/cards";
 import ChatwootWidget from "@/components/common/chatwoot-widget";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
-import OurProjcess from "@/components/common/our-process";
+import OurProcess from "@/components/common/our-process";
 import Preloader from "@/components/common/preloader";
 import Pricing from "@/components/common/pricing";
 import SocialProof from "@/components/common/social-proof";
@@ -61,7 +61,7 @@ export default function Home() {
       <div className="h-[3rem] md:h-[8rem] bg-black" />
       <Cards />
       <div className=" h-[6rem]" />
-      <OurProjcess />
+      <OurProcess />
       <div className=" h-[6rem]" />
       <Pricing />
       <div className=" h-[6rem]" />

@@ -6,7 +6,6 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Code, Figma } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import ProjectModal from "./projects-modal";
 
 const AllProjects = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +21,11 @@ const AllProjects = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] w-full">
+    <section
+      id="portfolio"
+      ref={targetRef}
+      className="relative h-[300vh] w-full"
+    >
       <div className="sticky h-screen justify-center top-0 flex flex-col">
         <h2
           ref={containerRef}
@@ -59,29 +62,40 @@ const AllProjects = () => {
 };
 
 const Card = ({ card }: { card: CardType }) => {
-  const [modal, setModal] = useState({ active: false });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
+
+  const startImageCycle = () => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) =>
+        prev === card.images.length - 1 ? 0 : prev + 1
+      );
+    }, 400);
+    setIntervalId(interval);
+  };
+
+  const stopImageCycle = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(undefined);
+    }
+    setCurrentImageIndex(0);
+  };
 
   return (
     <div
-      className={`group ${card.id === 1 ? " ml-[1rem] md:ml-[8rem]" : ""}`}
-      key={card.id}
+      onMouseEnter={startImageCycle}
+      onMouseLeave={stopImageCycle}
+      className={`group ${card.id === 1 ? "ml-[1rem] md:ml-[8rem]" : ""}`}
     >
-      <div
-        onMouseEnter={() => {
-          setModal({ active: true });
-        }}
-        onMouseLeave={() => {
-          setModal({ active: false });
-        }}
-        className="relative w-[680px] h-[350px] lg:h-[520px] group rounded-[20px] overflow-hidden"
-      >
+      <div className="relative w-[680px] h-[350px] lg:h-[520px] group rounded-[20px] overflow-hidden">
         <Image
           quality={100}
           className={cn(
             "rounded-[20px] object-cover object-left-top group-hover:scale-110 transition-all ease-in-out duration-500"
           )}
           fill
-          src={card.src}
+          src={card.images[currentImageIndex]}
           alt={card.title}
         />
       </div>
@@ -104,7 +118,6 @@ const Card = ({ card }: { card: CardType }) => {
           {card.description}
         </p>
       </div>
-      <ProjectModal modal={modal} />
     </div>
   );
 };
@@ -112,7 +125,7 @@ const Card = ({ card }: { card: CardType }) => {
 export default AllProjects;
 
 type CardType = {
-  src: string;
+  images: string[];
   title: string;
   description: string;
   id: number;
@@ -121,46 +134,75 @@ type CardType = {
 
 const cards: CardType[] = [
   {
-    src: "/projects/1.png",
-    title: "Midas Fintech",
-    year: "2022",
-    description: "Save money on transactions over $1000",
+    images: [
+      "/projects/astrae/1.png",
+      "/projects/astrae/2.png",
+      "/projects/astrae/3.png",
+    ],
+    title: "Astrae",
+    year: "2024",
+    description:
+      "Beautifully crafted react/next.js templates for stunning and premium websites.",
     id: 1,
   },
   {
-    src: "/projects/2.png",
-    title: "Fontsnatcher",
-    year: "2020",
-    description: "Earn up to 5% cashback on all debit card purchases.",
+    images: [
+      "/projects/midas/1.png",
+      "/projects/midas/2.png",
+      "/projects/midas/3.png",
+    ],
+    title: "Midas Fintech",
+    year: "2023",
+    description:
+      "Midas is the best way to create virtual debit cards powered by mobile money. All in one fin tech app that solves all your card needs.",
     id: 2,
   },
   {
-    src: "/projects/3.png",
-    title: "Astrae",
-    year: "2024",
-    description: "Get instant notifications for every transaction made.",
+    images: [
+      "/projects/stakenet/1.png",
+      "/projects/stakenet/2.png",
+      "/projects/stakenet/3.png",
+    ],
+    title: "Stakenet",
+    year: "2023",
+    description:
+      "Predict, connect and win with Stakenet. Share your predictions, compete with others",
     id: 3,
   },
   {
-    src: "/projects/4.png",
-    title: "Hire1.ai",
-    year: "2023",
+    images: [
+      "/projects/nova/3.png",
+      "/projects/nova/2.png",
+      "/projects/nova/1.png",
+    ],
+    title: "Nova",
+    year: "2022",
     description:
-      "Access exclusive investment opportunities with as little as $100.",
+      "Nova is your personalized AI companion for instant, 24/7 conversations. Craft your AI friend and chat anytime, anywhere.",
     id: 4,
   },
   {
-    src: "/projects/5.png",
-    title: "Nova",
+    images: [
+      "/projects/hire1/3.png",
+      "/projects/hire1/1.png",
+      "/projects/hire1/2.png",
+    ],
+    title: "Hire1.ai",
     year: "2022",
-    description: "Round up your purchases to automatically grow your savings.",
+    description:
+      "Get the best 1% of Google & Adobe Developers, carefully vetted by both AI and people.",
     id: 5,
   },
   {
-    src: "/projects/6.png",
-    title: "Stakenet",
-    year: "2022",
-    description: "Lock and unlock your card instantly for added security.",
+    images: [
+      "/projects/fontsnatcher/1.png",
+      "/projects/fontsnatcher/2.png",
+      "/projects/fontsnatcher/3.png",
+    ],
+    title: "Fontsnatcher",
+    year: "2020",
+    description:
+      "Fontsnatcher is a revolutionary way to discover and find fonts used on your favorite websites and across the whole web.",
     id: 6,
   },
 ];

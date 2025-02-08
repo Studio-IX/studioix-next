@@ -52,6 +52,33 @@ export const navItems = [
   },
 ];
 
+export const navItemsMobile = [
+  {
+    title: "Portfolio",
+    href: "/#portfolio-mobile",
+  },
+  {
+    title: "How It Works",
+    href: "/#how-it-works",
+  },
+  {
+    title: "Services",
+    href: "/#services",
+  },
+  {
+    title: "Pricing",
+    href: "/#pricing",
+  },
+  {
+    title: "FAQs",
+    href: "/#faqs",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+];
+
 export const testimonials = [
   {
     name: "Daniel Sammut",

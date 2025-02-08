@@ -80,14 +80,14 @@ export const Navigation = () => {
             duration: 0.2,
           }}
           className={cn(
-            "flex fixed top-0 2xl:top-0 w-full px-3 xl:px-10 2xl:px-20 z-[2147483000]",
+            "flex fixed top-0 2xl:top-0 w-full px-3  xl:px-10 2xl:px-20 z-[2147483000]",
             scrolled
               ? " bg-black/90 backdrop-blur-sm"
               : "bg-transparent backdrop-blur-md",
             "py-3 md:py-2.5"
           )}
         >
-          <Wrapper className="w-full flex flex-row justify-between items-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
+          <Wrapper className="w-full flex flex-row justify-between items-center md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
             <Link href="/">
               <div className=" relative w-[42px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200  md:hidden">
                 <Image
@@ -179,7 +179,9 @@ export const Navigation = () => {
         </motion.div>
       </AnimatePresence>
       <AnimatePresence mode="wait">
-        {isActive && <SideMenu setIsActive={setIsActive} />}
+        {isActive && (
+          <SideMenu setIsActive={setIsActive} setMobileNav={setMobileNav} />
+        )}
       </AnimatePresence>
     </div>
   );

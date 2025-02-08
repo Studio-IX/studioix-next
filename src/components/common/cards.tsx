@@ -44,8 +44,9 @@ const Cards: React.FC<CardsProps> = () => {
 
   return (
     <div
+      id="services"
       ref={container}
-      className="flex flex-col items-center bg-black md:pt-20"
+      className="flex flex-col items-center bg-black pt-20"
     >
       <Wrapper
         className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-20 sticky pb-12 top-20 md:top-40 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]`}
@@ -74,10 +75,6 @@ const Cards: React.FC<CardsProps> = () => {
       })}
     </div>
   );
-};
-
-Cards.defaultProps = {
-  features: [],
 };
 
 export default Cards;

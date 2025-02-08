@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AllProjectsMobile = () => {
   return (
-    <section className=" w-full px-3">
+    <section id="portfolio-mobile" className=" w-full px-3">
       <h2 className="text-white text-center uppercase text-5xl font-semibold font-cabinetGrotesk">
         Featured Projects
       </h2>
@@ -64,46 +64,51 @@ type CardType = {
 
 const cards: CardType[] = [
   {
-    src: "/projects/1.png",
-    title: "Midas Fintech",
-    year: "2022",
-    description: "Save money on transactions over $1000",
+    src: "/projects/astrae/1.png",
+    title: "Astrae",
+    year: "2024",
+    description:
+      "Beautifully crafted react/next.js templates for stunning and premium websites.",
     id: 1,
   },
   {
-    src: "/projects/2.png",
-    title: "Fontsnatcher",
-    year: "2020",
-    description: "Earn up to 5% cashback on all debit card purchases.",
+    src: "/projects/midas/3.png",
+    title: "Midas Fintech",
+    year: "2023",
+    description:
+      "Midas is the best way to create virtual debit cards powered by mobile money. All in one fin tech app that solves all your card needs.",
     id: 2,
   },
   {
-    src: "/projects/3.png",
-    title: "Astrae",
-    year: "2024",
-    description: "Get instant notifications for every transaction made.",
+    src: "/projects/stakenet/1.png",
+    title: "Stakenet",
+    year: "2023",
+    description:
+      "Predict, connect and win with Stakenet. Share your predictions, compete with others",
     id: 3,
   },
   {
-    src: "/projects/4.png",
-    title: "Hire1.ai",
-    year: "2023",
+    src: "/projects/nova/3.png",
+    title: "Nova",
+    year: "2022",
     description:
-      "Access exclusive investment opportunities with as little as $100.",
+      "Nova is your personalized AI companion for instant, 24/7 conversations. Craft your AI friend and chat anytime, anywhere.",
     id: 4,
   },
   {
-    src: "/projects/5.png",
-    title: "Nova",
+    src: "/projects/hire1/1.png",
+    title: "Hire1.ai",
     year: "2022",
-    description: "Round up your purchases to automatically grow your savings.",
+    description:
+      "Get the best 1% of Google & Adobe Developers, carefully vetted by both AI and people.",
     id: 5,
   },
   {
-    src: "/projects/6.png",
-    title: "Stakenet",
-    year: "2022",
-    description: "Lock and unlock your card instantly for added security.",
+    src: "/projects/fontsnatcher/1.png",
+    title: "Fontsnatcher",
+    year: "2020",
+    description:
+      "Fontsnatcher is a revolutionary way to discover and find fonts used on your favorite websites and across the whole web.",
     id: 6,
   },
 ];

@@ -40,12 +40,12 @@ const Stat = ({ num, decimals = 0, subheading }: Props) => {
 
   return (
     <div className="flex w-fit md:w-72 md:flex-col items-center gap-4 md:gap-0 py-8 relative">
-      <h4 className="mb-2 text-center text-white text-6xl lg:text-8xl font-cabinetGrotesk font-semibold">
+      <h4 className="mb-2 text-center text-white text-7xl lg:text-9xl font-cabinetGrotesk font-semibold">
         <span ref={ref}></span>
       </h4>
       <TrendingUp size={32} className=" text-green-600 md:hidden -mt-12" />
 
-      <p className=" text-start md:text-center text-white text-lg opacity-80 font-archivo ml-4 md:ml-0">
+      <p className=" text-start md:text-center text-white text-lg md:text-xl opacity-80 font-archivo ml-4 md:ml-0">
         {formattedSubheading}
       </p>
       <TrendingUp

@@ -8,6 +8,7 @@ const Video = () => {
   const [modal, setModal] = useState({ active: false });
   return (
     <div
+      id="agency-reel"
       onMouseEnter={() => {
         setModal({ active: true });
       }}

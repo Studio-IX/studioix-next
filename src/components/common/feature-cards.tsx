@@ -7,6 +7,7 @@ interface FeatureCardProps {
   textColor: string;
   title: string;
   description: string;
+  descriptionMobile: string;
   src: string;
   color: string;
   progress: MotionValue<number>;
@@ -17,6 +18,7 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   description,
+  descriptionMobile,
   src,
   color,
   textColor,
@@ -38,9 +40,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
               {title}
             </h2>
             <p
-              className={`mt-1 md:mt-6 text-base md:text-xl font-archivo font-normal opacity-80 md:max-w-xl`}
+              className={`mt-6 text-xl font-archivo font-normal opacity-80 md:max-w-xl hidden md:block`}
             >
               {description}
+            </p>
+            <p
+              className={`mt-1 text-lg font-archivo font-normal opacity-80 w-full  md:hidden`}
+            >
+              {descriptionMobile}
             </p>
             <div className=" mt-4 md:mt-8 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#67DBFF_0%,#393BB2_50%,#67DBFF_100%)]" />

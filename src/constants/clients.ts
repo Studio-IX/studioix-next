@@ -1,8 +1,4 @@
 export const companyLogo = [
-  "1.png",
-
-  "2.png",
-
   "3.png",
 
   "4.png",
@@ -13,9 +9,5 @@ export const companyLogo = [
 
   "7.png",
 
-  "8.png",
-
   "9.png",
-
-  "10.png",
 ];

@@ -4,6 +4,7 @@ import { getCalApi } from "@calcom/embed-react";
 import { Check } from "lucide-react";
 import { useEffect } from "react";
 import { Button } from "../ui/button";
+import { BorderBeam } from "../ui/border-beam";
 
 const Pricing = () => {
   useEffect(() => {
@@ -18,18 +19,19 @@ const Pricing = () => {
     })();
   }, []);
   return (
-    <section className=" w-full px-3">
+    <section id="pricing" className=" w-full px-3">
       <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
-        Simple & Flexible Pricing
+        <span className=" hidden md:block">Simple & Flexible Pricing</span>
+        <span className=" md:hidden">Simple Pricing</span>
       </h2>
       <p className=" font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">
         Design, Development, or both - Whatever you need we&apos;ve got you
         covered to make sure we bring your MVP to life!
       </p>
       <div className=" grid grid-cols-1 md:grid-cols-2 md:max-w-[52rem] gap-4 mx-auto mt-12">
-        <div className="flex flex-col justify-between items-start p-6 w-full h-[32rem] bg-[#090909] border border-[#272727] rounded-3xl">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-[34rem] md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#090909] border border-[#272727] rounded-3xl">
           <div>
-            <h4 className=" font-archivo text-xl md:text-2xl w-full text-primary uppercase">
+            <h4 className=" font-archivo text-xl md:text-2xl w-full text-white uppercase">
               Design-Only
             </h4>
             <p className=" font-archivo text-lg md:text-xl w-full text-white opacity-70 mt-2">
@@ -79,7 +81,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between items-start p-6 w-full h-[32rem] bg-[#090909] border border-[#272727] rounded-3xl relative overflow-clip">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-[34rem] md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#090909] border border-[#272727] rounded-3xl relative overflow-clip">
           <div className=" z-10">
             <h4 className=" font-archivo text-xl md:text-2xl w-full text-primary uppercase">
               MVP in Six-Weeks
@@ -143,6 +145,7 @@ const Pricing = () => {
           </Button>
 
           <div className=" absolute h-60 aspect-square rounded-full bg-primary blur-3xl opacity-50 bottom-0 right-0 z-[1]" />
+          <BorderBeam colorFrom="#76BDFF" colorTo="#455CE9" />
         </div>
       </div>
     </section>

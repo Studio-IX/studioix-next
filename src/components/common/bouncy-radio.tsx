@@ -1,72 +1,81 @@
-// Import necessary dependencies
-import React, { useState } from "react";
+import React from "react";
+import { useFormContext } from "react-hook-form";
 
-// Define the component
-const BouncyComponent: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string>("Number 1");
+interface BouncyComponentProps {
+  disabled?: boolean;
+}
+
+const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
+  const { setValue, watch } = useFormContext();
+  const selectedOption = watch("projectType") || "web-application";
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
+    setValue("projectType", event.target.value, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white text-black">
+    <div
+      className={`flex flex-col items-center justify-center bg-white text-black ${
+        disabled ? "cursor-not-allowed opacity-50" : ""
+      }`}
+    >
       <div className="radio-group relative grid grid-cols-3 w-full">
         <input
           type="radio"
-          id="Number1"
-          name="color"
-          value="Number 1"
-          checked={selectedOption === "Number 1"}
+          id="web-application"
+          name="projectType"
+          value="web-application"
+          checked={selectedOption === "web-application"}
           onChange={handleOptionChange}
           className="hidden"
         />
         <label
-          htmlFor="Number1"
+          htmlFor="web-application"
           className={`${
-            selectedOption === "Number 1" ? "text-white" : "text-black"
-          } hidden z-10 font-archivo font-normal text-xl py-2 px-0`}
+            selectedOption === "web-application" ? "text-white" : "text-black"
+          } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          Branding
+          Web <span className="md:hidden">App</span>{" "}
+          <span className="hidden md:block">Application</span>
         </label>
 
         <input
           type="radio"
-          id="Number2"
-          name="color"
-          value="Number 2"
-          checked={selectedOption === "Number 2"}
+          id="mobile-app"
+          name="projectType"
+          value="mobile-app"
+          checked={selectedOption === "mobile-app"}
           onChange={handleOptionChange}
           className="hidden"
         />
         <label
-          htmlFor="Number2"
+          htmlFor="mobile-app"
           className={`${
-            selectedOption === "Number 2" ? "text-white" : "text-black"
+            selectedOption === "mobile-app" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-0`}
         >
-          UX Design
+          Mobile App
         </label>
 
         <input
           type="radio"
-          id="Number3"
-          name="color"
-          value="Number 3"
-          checked={selectedOption === "Number 3"}
+          id="other"
+          name="projectType"
+          value="other"
+          checked={selectedOption === "other"}
           onChange={handleOptionChange}
           className="hidden"
         />
         <label
-          htmlFor="Number3"
+          htmlFor="other"
           className={`${
-            selectedOption === "Number 3" ? "text-white" : "text-black"
-          } hidden z-10 font-archivo font-normal text-xl py-2 px-4`}
+            selectedOption === "other" ? "text-white" : "text-black"
+          } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          <span className="flex items-center gap-1 md:gap-2">
-            Web <span className=" hidden md:block">Development</span>
-            <span className="  md:hidden">Dev</span>
-          </span>
+          Other
         </label>
 
         <div className="selection-indicator-wrapper absolute top-1/2 h-full w-1/3 transform -translate-y-1/2">

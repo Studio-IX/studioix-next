@@ -33,7 +33,7 @@ const TestimonialCarousel = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="relative w-full md:w-[55%] h-[28rem] md:h-[32rem]"
+              className="relative w-full md:w-[55%] h-[28rem] md:h-[36rem]"
             >
               <Image
                 fill
@@ -61,16 +61,21 @@ const TestimonialCarousel = () => {
                 </h4>
               </div>
 
-              <motion.h2
-                key={`text-${currentIndex}`}
-                initial={{ opacity: 0, y: 80 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -80 }}
-                transition={{ duration: 0.5 }}
-                className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-3xl md:text-5xl md:max-w-3xl text-start "
-              >
-                “ {testimonial.review} ”
-              </motion.h2>
+              <div className="flex flex-col items-start gap-4">
+                <div className=" w-12 md:w-16 h-auto relative aspect-square">
+                  <Image fill src="/images/quotes.svg" alt="Quote" />
+                </div>
+                <motion.h2
+                  key={`text-${currentIndex}`}
+                  initial={{ opacity: 0, y: 80 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -80 }}
+                  transition={{ duration: 0.5 }}
+                  className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-3xl md:text-5xl md:max-w-3xl text-start "
+                >
+                  {testimonial.review}
+                </motion.h2>
+              </div>
             </motion.div>
           </div>
         </div>

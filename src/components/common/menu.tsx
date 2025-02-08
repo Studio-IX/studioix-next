@@ -3,15 +3,16 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { menuSlide } from "@/anim/anim";
-import { navItems } from "@/constants/data";
+import { navItemsMobile } from "@/constants/data";
 import Curve from "./curve";
 import MenuLink from "./menu-link";
 
 interface SideMenuProps {
   setIsActive: (value: boolean) => void;
+  setMobileNav: (value: boolean) => void;
 }
 
-const SideMenu = ({ setIsActive }: SideMenuProps) => {
+const SideMenu = ({ setIsActive, setMobileNav }: SideMenuProps) => {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -31,7 +32,7 @@ const SideMenu = ({ setIsActive }: SideMenuProps) => {
             }}
             className="ml-0"
           >
-            {navItems.map((data, index) => {
+            {navItemsMobile.map((data, index) => {
               return (
                 <MenuLink
                   key={index}
@@ -39,6 +40,7 @@ const SideMenu = ({ setIsActive }: SideMenuProps) => {
                   isActive={selectedIndicator == data.href}
                   setSelectedIndicator={setSelectedIndicator}
                   setIsActive={setIsActive}
+                  setMobileNav={setMobileNav}
                 ></MenuLink>
               );
             })}

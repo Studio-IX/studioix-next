@@ -11,6 +11,7 @@ interface MenuLinkProps {
   isActive: boolean;
   setSelectedIndicator: (href: string) => void;
   setIsActive: (value: boolean) => void;
+  setMobileNav: (value: boolean) => void;
 }
 
 const MenuLink = ({
@@ -18,6 +19,7 @@ const MenuLink = ({
   isActive,
   setSelectedIndicator,
   setIsActive,
+  setMobileNav,
 }: MenuLinkProps) => {
   const { title, href, index } = data;
 
@@ -39,6 +41,7 @@ const MenuLink = ({
       ></motion.div>
       <AnimatedNavLink
         setIsActive={setIsActive}
+        setMobileNav={setMobileNav} 
         isActive={isActive}
         link={href}
         text={title}

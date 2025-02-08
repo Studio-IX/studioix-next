@@ -4,11 +4,14 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import StarSvg from "./star";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import LogoTicker from "./logo-ticker";
+import Link from "next/link";
 const Hero = () => {
+  const sectionRef = useRef(null);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "discovery-call" });
@@ -20,8 +23,27 @@ const Hero = () => {
       });
     })();
   }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300]
+  );
+
   return (
-    <div className="w-full h-fit md:h-screen relative">
+    <motion.section
+      ref={sectionRef}
+      style={{
+        backgroundImage: 'url("/images/stars.png")',
+        backgroundPositionY,
+      }}
+      className="w-full h-fit min-h-screen md:h-screen relative"
+    >
       <div className="flex flex-col gap-20 md:gap-0 justify-between h-full pb-12 items-center w-full px-3 md:px-0 md:pt-32">
         <div className=" w-full flex flex-col items-center">
           <div className=" flex flex-col items-center md:items-start mt-[7rem] md:mt-8 md:gap-1">
@@ -90,40 +112,38 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col-reverse h-full justify-between md:flex-col w-full items-center">
-          <div className="flex items-center gap-4 z-[214748300] mt-12">
-            <div className=" h-12 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                  opacity: [1, 0.3, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className=" w-[2.5px] h-4 mt-2 bg-white rounded-full"
-              />
+          <Link href="/#agency-reel">
+            <div className="flex items-center gap-4 z-[214748300] mt-12">
+              <div className=" h-12 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
+                <motion.div
+                  animate={{
+                    y: [0, 10, 0],
+                    opacity: [1, 0.3, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  }}
+                  className=" w-[2.5px] h-4 mt-2 bg-white rounded-full"
+                />
+              </div>
+              <p className=" uppercase font-archivo text-white hidden md:block md:text-lg font-normal">
+                Learn More
+              </p>
             </div>
-            <p className=" uppercase font-archivo text-white hidden md:block md:text-lg font-normal">
-              Learn More
-            </p>
-          </div>
+          </Link>
+
           <LogoTicker />
         </div>
       </div>
 
       <div className=" absolute inset-0 z-[-1] ">
         <div className=" h-full w-full relative">
-          <Image fill src="/images/stars.png" alt="Stars" />
-        </div>
-      </div>
-      <div className=" absolute inset-0 z-[-1] ">
-        <div className=" h-full w-full relative">
           <Image fill src="/images/bg-gradient.png" alt="Gradient" />
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

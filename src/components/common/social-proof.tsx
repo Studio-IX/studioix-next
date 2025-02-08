@@ -4,20 +4,27 @@ import Stat from "./stats";
 
 const SocialProof = () => {
   return (
-    <section className=" py-12">
+    <section className=" pt-12 pb-12 md:pt-0 md:pb-12">
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 py-20">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             Build Fast. <br className=" hidden md:block" />
             Validate Smarter.
           </h2>
-          <p className=" font-archivo max-w-[70ch] text-lg md:text-xl text-white/80 text-center w-full">
-            Startups thrive on speed. To succeed, you need to invest in building
-            a product that solves real problems—without wasting time or
-            resources. The best way to do that? Rapid iteration and real-world
-            testing. That&apos;s where Studio IX comes in. We deliver your first
-            version in just six weeks, helping you validate your idea quickly
-            and efficiently.
+          <p className="font-archivo md:max-w-[70ch] text-lg md:text-xl text-white/80 text-center w-full">
+            <span className="hidden md:inline">
+              Startups thrive on speed. To succeed, you need to invest in
+              building a product that solves real problems—without wasting time
+              or resources. The best way to do that? Rapid iteration and
+              real-world testing. That&apos;s where Studio IX comes in. We
+              deliver your first version in just six weeks, helping you validate
+              your idea quickly and efficiently.
+            </span>
+            <span className="md:hidden">
+              We help you build and validate MVPs in just six weeks through
+              rapid iteration and real-world testing, saving you time and
+              resources.
+            </span>
           </p>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl">

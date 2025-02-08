@@ -4,7 +4,8 @@ import { navItems } from "@/constants/data";
 import { getCalApi } from "@calcom/embed-react";
 import { Instagram } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaDribbble, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
@@ -14,6 +15,25 @@ import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
 
 const Footer = () => {
+  const [time, setTime] = useState<string>("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const accraTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Africa/Accra",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+      setTime(`${accraTime} GMT`);
+    };
+
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "discovery-call" });
@@ -29,7 +49,7 @@ const Footer = () => {
     <div className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0">
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
-          <div className="z-[2147483] flex flex-col items-start gap-0 w-full">
+          <div className="z-[51] flex flex-col items-start gap-0 w-full">
             <div className="w-full flex flex-col md:flex-row justify-between items-start">
               <div className="w-full md:w-[80%] ">
                 <div className="w-full flex flex-col">
@@ -86,9 +106,18 @@ const Footer = () => {
                       Legal Info
                     </h3>
                     <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Terms & Conditions" />
-                      <AnimatedLink link="" text="Privacy Policy" />
-                      <AnimatedLink link="" text="Cookie Policy" />
+                      <AnimatedLink
+                        link="/legals/terms"
+                        text="Terms & Conditions"
+                      />
+                      <AnimatedLink
+                        link="/legals/privacy-policy"
+                        text="Privacy Policy"
+                      />
+                      <AnimatedLink
+                        link="/legals/cookie-policy"
+                        text="Cookie Policy"
+                      />
                     </div>
                   </div>
 
@@ -97,21 +126,51 @@ const Footer = () => {
                       Resources
                     </h3>
                     <div className="flex flex-col items-start gap-1.5 mt-3">
-                      <AnimatedLink link="" text="Download Company Deck" />
-                      <AnimatedLink link="" text="Free MVP Guide" />
+                      <AnimatedLink
+                        link="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738951199/PDF/Studio%20IX%20Company%20Deck.pdf"
+                        text="Download Company Deck"
+                      />
+                      <AnimatedLink
+                        link="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738945596/PDF/The%20Ultimate%20Blueprint%20For%20MVP%20Success.pdf"
+                        text="Free MVP Guide"
+                      />
                       <div className=" flex items-center gap-4 mt-4">
-                        <Button size="icon">
-                          <FaDribbble className=" scale-150" />
-                        </Button>
-                        <Button size="icon">
-                          <Instagram className=" scale-100" />
-                        </Button>
-                        <Button size="icon">
-                          <FaGithub className=" scale-150" />
-                        </Button>
-                        <Button size="icon">
-                          <FaXTwitter className=" scale-150" />
-                        </Button>
+                        <Link
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href="https://dribbble.com/studioix"
+                        >
+                          <Button size="icon">
+                            <FaDribbble className=" scale-150" />
+                          </Button>
+                        </Link>
+                        <Link
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href="https://instagram.com/studioix.agency"
+                        >
+                          <Button size="icon">
+                            <Instagram className=" scale-100" />
+                          </Button>
+                        </Link>
+                        <Link
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href="https://github.com/Studio-IX"
+                        >
+                          <Button size="icon">
+                            <FaGithub className=" scale-150" />
+                          </Button>
+                        </Link>
+                        <Link
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href="https://twitter.com/studioixagency"
+                        >
+                          <Button size="icon">
+                            <FaXTwitter className=" scale-150" />
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -139,17 +198,17 @@ const Footer = () => {
         </div>
 
         <div className="mb-20"></div>
-        <div className="z-[2147483002] w-full px-4 md:px-32">
+        <div className="z-[50] w-full px-4 md:px-32">
           <Separator className="  md:-mt-20" />
           <div className="w-full flex flex-col md:flex-row items-center justify-between mt-10 gap-2 md:gap-0">
-            <h4 className=" font-archivo text-white text-base hidden md:block ">
+            <h4 className=" font-archivo text-white text-lg hidden md:block ">
               © Studio IX 2025, All rights reserved.
             </h4>
             <h4 className=" font-archivo text-white text-lg md:hidden">
               © Studio IX 2025
             </h4>
-            <h4 className=" font-archivo text-white text-base hidden md:block ">
-              1:28 AM GMT
+            <h4 className=" font-archivo text-white text-lg hidden md:block ">
+              {time}
             </h4>
           </div>
         </div>
@@ -164,7 +223,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="absolute inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#455CE9_100%)]"></div>
+      <div className="absolute inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#23279B_100%)]"></div>
     </div>
   );
 };

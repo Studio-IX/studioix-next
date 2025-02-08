@@ -7,9 +7,16 @@ interface Props {
   link: string;
   isActive: boolean;
   setIsActive: (value: boolean) => void;
+  setMobileNav: (value: boolean) => void;
 }
 
-const AnimatedNavLink = ({ text, link, isActive, setIsActive }: Props) => {
+const AnimatedNavLink = ({
+  text,
+  link,
+  isActive,
+  setIsActive,
+  setMobileNav,
+}: Props) => {
   const menuLinkVariants = {
     open: {
       y: 0,
@@ -29,7 +36,10 @@ const AnimatedNavLink = ({ text, link, isActive, setIsActive }: Props) => {
         variants={menuLinkVariants}
         rel="nofollow"
         href={link}
-        onClick={() => setIsActive(false)}
+        onClick={() => {
+          setIsActive(false);
+          setMobileNav(false);
+        }}
         className="h-[40px] overflow-hidden flex items-start gap-2 uppercase tracking-tighter"
       >
         <motion.div whileHover={{ y: -40 }}>
