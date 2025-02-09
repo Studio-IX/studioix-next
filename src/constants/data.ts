@@ -81,6 +81,14 @@ export const navItemsMobile = [
 
 export const testimonials = [
   {
+    name: "Christopher O.",
+    role: "CEO @GenYSolutions",
+    image: "/images/client-4.png",
+    year: "2023",
+    review:
+      "Studio IX delivered solid work with impressive responsiveness. Their technical capabilities and quick communication made them feel like a true development partner who understood our vision.",
+  },
+  {
     name: "Daniel Sammut",
     role: "Founder's Associate @Astrae",
     image: "/images/client-1.png",
@@ -97,8 +105,8 @@ export const testimonials = [
       "I loved every bit of working with Studio IX. They are very professional & creative when it comes to web design & understanding user & business needs.",
   },
   {
-    name: "Sophia Bennett",
-    role: "Manager @Skillura",
+    name: "Nicholas Wemyss",
+    role: "Experienced Realtor @Intero",
     image: "/images/client-3.png",
     year: "2022",
     review:

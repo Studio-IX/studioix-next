@@ -5,7 +5,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: ["/", "/blog"],
-      disallow: ["/studio"],
+      disallow: [
+        "/studio",
+        "/legals/terms",
+        "/legals/privacy-policy",
+        "/legals/cookie-policy",
+      ],
     },
     sitemap: "https://www.studioix.agency/sitemap.xml",
   };

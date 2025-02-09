@@ -33,13 +33,13 @@ const TestimonialCarousel = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="relative w-full md:w-[55%] h-[28rem] md:h-[36rem]"
+              className="relative w-full md:w-[55%] h-[28rem] md:h-[40rem]"
             >
               <Image
                 fill
                 quality={100}
                 src={testimonial.image}
-                className="object-cover rounded-xl grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
+                className="object-cover object-top rounded-xl grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
                 alt={testimonial.name}
               />
             </motion.div>
@@ -50,7 +50,7 @@ const TestimonialCarousel = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="w-full flex gap-4 flex-col md:h-[32rem] justify-between"
+              className="w-full flex gap-4 flex-col md:h-[40rem] justify-between"
             >
               <div>
                 <h3 className="font-cabinetGrotesk font-medium text-3xl md:text-4xl uppercase text-white">
@@ -71,7 +71,7 @@ const TestimonialCarousel = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -80 }}
                   transition={{ duration: 0.5 }}
-                  className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-3xl md:text-5xl md:max-w-3xl text-start "
+                  className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-4xl md:text-6xl text-start "
                 >
                   {testimonial.review}
                 </motion.h2>
