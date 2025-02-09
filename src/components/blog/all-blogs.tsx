@@ -8,8 +8,8 @@ const AllBlogs = async () => {
   const posts: Post[] = await getPosts();
   return (
     <section id="all-blogs" className=" py-4">
-      {posts.map((post) => (
-        <BlogCard post={post} />
+      {posts.map((post, id) => (
+        <BlogCard key={id} post={post} />
       ))}
     </section>
   );
