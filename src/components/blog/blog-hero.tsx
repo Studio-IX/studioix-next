@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
@@ -38,7 +38,7 @@ const BlogHero = () => {
             Expert insights & advice
           </h2>
 
-          <Link href="/#all-blogs">
+          <Link href="/blog/#all-blogs">
             <div className="flex items-center gap-4 z-[214748300] mt-12">
               <div className=" h-12 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
                 <motion.div
@@ -68,11 +68,11 @@ const BlogHero = () => {
               All Blogs
             </h2>
           </div>
-          <p className=" font-archivo text-base text-white/80 text-center w-full uppercase mt-4 max-w-xs">
+          <p className=" font-archivo text-lg text-white/80 text-center w-full uppercase mt-4 max-w-xs">
             From idea to launch — Expert insights & advice
           </p>
 
-          <Link href="/#all-blogs">
+          <Link href="/blog/#all-blogs">
             <div className="flex items-center gap-4 z-[214748300] mt-8">
               <div className=" h-12 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
                 <motion.div

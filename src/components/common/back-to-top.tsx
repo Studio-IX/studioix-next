@@ -1,8 +1,10 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Rounded from "./rounded-button";
+"use client";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUp } from "lucide-react";
+import { useLayoutEffect, useRef } from "react";
+import Rounded from "./rounded-button";
 
 const BackToTop = () => {
   const button = useRef(null);

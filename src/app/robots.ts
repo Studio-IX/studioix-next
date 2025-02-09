@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: ["/", "/blog"],
-      disallow: [],
+      disallow: ["/studio"],
     },
     sitemap: "https://www.studioix.agency/sitemap.xml",
   };
