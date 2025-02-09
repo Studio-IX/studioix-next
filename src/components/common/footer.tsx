@@ -46,7 +46,12 @@ const Footer = () => {
     })();
   }, []);
   return (
-    <div className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0">
+    <div
+      style={{
+        backgroundImage: 'url("/images/stars.png")',
+      }}
+      className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0"
+    >
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
           <div className="z-[51] flex flex-col items-start gap-0 w-full">
@@ -186,7 +191,7 @@ const Footer = () => {
             autoPlay
             muted
             loop
-            className="md:w-[55%] scale-150 md:scale-110 rounded-full object-cover"
+            className="md:w-[55%] scale-[1.8] md:scale-110 rounded-full object-cover"
           >
             <source src="/videos/footer.mp4" type="video/mp4" />
           </video>
@@ -213,17 +218,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" absolute inset-0 z-[1] ">
-        <div className=" h-full w-full relative">
-          <Image
-            fill
-            src="/images/stars.png"
-            className=" object-cover"
-            alt="Stars"
-          />
-        </div>
-      </div>
-      <div className="absolute inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#23279B_100%)]"></div>
+      <div className="absolute hidden md:block inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#23279B_100%)]"></div>
     </div>
   );
 };

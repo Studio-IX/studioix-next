@@ -73,7 +73,7 @@ const Hero = () => {
             </div>
           </div>
           <div className=" w-full flex items-center justify-center px-3 md:px-0">
-            <div className=" w-fit md:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#455CE9] py-3 md:py-5 mt-1 md:mt-3">
+            <div className=" w-fit md:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#455CE9] py-3 md:py-4 mt-1 md:mt-3">
               <Marquee speed={100} className="w-fit">
                 <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-center md:mt-0 tracking-tighter">
                   Within your budget

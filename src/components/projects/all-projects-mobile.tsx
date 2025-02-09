@@ -6,7 +6,7 @@ const AllProjectsMobile = () => {
   return (
     <section id="portfolio-mobile" className=" w-full px-3">
       <h2 className="text-white text-center uppercase text-5xl font-semibold font-cabinetGrotesk">
-        Featured Projects
+        Our Projects
       </h2>
       <div className="flex flex-col gap-6 mt-8">
         {cards.map((card) => {

@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/lib/db";
-import { leadFormSchema, prospectFormSchema } from "@/schema";
+import { ctaFormSchema, leadFormSchema, prospectFormSchema } from "@/schema";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
@@ -267,6 +267,132 @@ If you have any questions or need assistance, feel free to reach out to us.
     });
 
     return { success: true, data: lead };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return { success: false, error: error.errors };
+    }
+
+    console.log(error);
+    return { success: false, error: "Something went wrong." };
+  }
+}
+
+export async function createCtaProspect(values: z.infer<typeof ctaFormSchema>) {
+  try {
+    const validatedFields = ctaFormSchema.parse(values);
+
+    const existingLead = await prisma.prospects.findUnique({
+      where: {
+        email: validatedFields.email,
+      },
+    });
+
+    if (existingLead) {
+      return {
+        success: false,
+        error: "Email already exists",
+      };
+    }
+
+    const prospect = await prisma.prospects.create({
+      data: {
+        name: validatedFields.name,
+        email: validatedFields.email,
+        projectType: "Other",
+        projectBrief: validatedFields.projectBrief,
+      },
+    });
+
+    // Send email notification
+    const emailHtml = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <style>
+            body {
+              background-color: #000000;
+              color: #ffffff;
+              font-family: Arial, sans-serif;
+              padding: 20px;
+            }
+            .container {
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: #111111;
+              padding: 30px;
+              border-radius: 20px;
+            }
+            .logo {
+              text-align: center;
+              margin-bottom: 30px;
+            }
+            .logo img {
+              width: 150px;
+            }
+            .prospect-details {
+              background-color: #1a1a1a;
+              padding: 20px;
+              border-radius: 12px;
+              margin-top: 24px;
+            }
+            .title {
+              text-align: center;
+              font-size: 20px;
+              color: #ffffff;
+            }
+            .label {
+              color: #888888;
+              font-size: 14px;
+            }
+            .value {
+              font-size: 16px;
+              color: #ffffff;
+              margin-bottom: 20px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="logo">
+              <img src="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738942418/rgdt8nhv2xdpe9rkpmg1.png" alt="Studio IX Logo">
+            </div>
+            <h2 class="title">New Project Inquiry</h2>
+            <div class="prospect-details">
+              <p class="label">Name</p>
+              <p class="value">${prospect.name}</p>
+              
+              <p class="label">Email</p>
+              <p class="value">${prospect.email}</p>
+              
+              <p class="label">Project Type</p>
+              <p class="value">${prospect.projectType}</p>
+              
+              <p class="label">Project Brief</p>
+              <p class="value">${prospect.projectBrief}</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+    const plainText = `
+    New Project Inquiry
+    
+    Name: ${prospect.name}
+    Email: ${prospect.email}
+    Project Type: ${prospect.projectType}
+    Project Brief: ${prospect.projectBrief}
+    `;
+
+    await gmailTransporter.sendMail({
+      from: '"Studio IX" <studioix.agency@gmail.com>',
+      to: "braimahabiola5@gmail.com, jojoamankwa@gmail.com",
+      subject: `New Project Inquiry from ${prospect.name}`,
+      text: plainText,
+      html: emailHtml,
+    });
+
+    return { success: true, data: prospect };
   } catch (error) {
     if (error instanceof z.ZodError) {
       return { success: false, error: error.errors };
