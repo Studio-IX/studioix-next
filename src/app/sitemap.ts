@@ -1,5 +1,17 @@
+import { getPosts } from "@/hooks/get-blogs";
+import { Post } from "@/lib/interface";
+
 export default async function sitemap() {
   const baseUrl = "https://www.studioix.agency";
+
+  const response: Post[] = await getPosts();
+  const blogPosts = response?.map((post) => {
+    return {
+      url: `${baseUrl}/blog/${post?.slug?.current}`,
+      lastModified: post?.publishedAt,
+      priority: 0.8
+    };
+  });
   return [
     {
       url: baseUrl,
@@ -11,7 +23,7 @@ export default async function sitemap() {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.5,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/legals/terms`,
@@ -31,5 +43,6 @@ export default async function sitemap() {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...blogPosts,
   ];
 }
