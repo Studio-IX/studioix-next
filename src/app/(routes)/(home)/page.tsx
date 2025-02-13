@@ -36,7 +36,6 @@ export default function Home() {
       setIsLoading(false);
       document.body.style.cursor = "default";
       document.body.style.overflowY = "visible";
-      window.scrollTo(0, 0);
     }, 2000);
   }, []);
   const [isLoading, setIsLoading] = useState(true);
