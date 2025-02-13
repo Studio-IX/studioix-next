@@ -13,6 +13,8 @@ import { Separator } from "../ui/separator";
 import Wrapper from "../wrapper/wrapper";
 import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
+import { useRef } from "react";
+import { useTransform, motion, useScroll } from "framer-motion";
 
 const Footer = () => {
   const [time, setTime] = useState<string>("");
@@ -45,10 +47,33 @@ const Footer = () => {
       });
     })();
   }, []);
+
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300]
+  );
+
   return (
-    <div
+    <motion.section
+      ref={sectionRef}
+      animate={{
+        backgroundPositionX: "800px",
+      }}
+      transition={{
+        repeat: Infinity,
+        ease: "linear",
+        duration: 120,
+      }}
       style={{
         backgroundImage: 'url("/images/stars.png")',
+        backgroundPositionY,
       }}
       className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0"
     >
@@ -219,7 +244,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="absolute hidden md:block inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#23279B_100%)]"></div>
-    </div>
+    </motion.section>
   );
 };
 

@@ -11,6 +11,10 @@ import LogoTicker from "./logo-ticker";
 import Link from "next/link";
 const Hero = () => {
   const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
 
   useEffect(() => {
     (async function () {
@@ -24,11 +28,6 @@ const Hero = () => {
     })();
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
   const backgroundPositionY = useTransform(
     scrollYProgress,
     [0, 1],
@@ -41,6 +40,14 @@ const Hero = () => {
       style={{
         backgroundImage: 'url("/images/stars.png")',
         backgroundPositionY,
+      }}
+      animate={{
+        backgroundPositionX: "800px",
+      }}
+      transition={{
+        repeat: Infinity,
+        ease: "linear",
+        duration: 120,
       }}
       className="w-full h-fit min-h-screen md:h-screen relative"
     >
