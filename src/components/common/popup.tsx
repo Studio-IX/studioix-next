@@ -73,12 +73,7 @@ const Popup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent
-        onInteractOutside={(e) => {
-          e.preventDefault();
-        }}
-        className=" h-fit overflow-y-clip overflow-x-clip w-full flex justify-between gap-12 md:gap-28"
-      >
+      <DialogContent className=" h-fit overflow-y-clip overflow-x-clip w-full flex justify-between gap-12 md:gap-28">
         <div className=" w-full md:w-fit">
           <DialogHeader>
             <DialogTitle>
