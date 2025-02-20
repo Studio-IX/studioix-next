@@ -7,7 +7,6 @@ import Cta from "@/components/common/cta";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
 import OurProcess from "@/components/common/our-process";
-import Preloader from "@/components/common/preloader";
 import Pricing from "@/components/common/pricing";
 import SocialProof from "@/components/common/social-proof";
 import StickyCursor from "@/components/common/sticky-cursor";
@@ -16,8 +15,7 @@ import AllProjects from "@/components/projects/all-projects";
 import AllProjectsMobile from "@/components/projects/all-projects-mobile";
 import Video from "@/components/video/video-reel";
 import Lenis from "@studio-freight/lenis";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -31,19 +29,8 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = "default";
-      document.body.style.overflowY = "visible";
-    }, 2000);
-  }, []);
-  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="w-full max-w-full h-fit overflow-clip">
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
       <BackToTop />
       <StickyCursor />
       <ChatwootWidget />
