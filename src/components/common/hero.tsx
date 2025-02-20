@@ -9,6 +9,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import LogoTicker from "./logo-ticker";
 import Link from "next/link";
+
 const Hero = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({

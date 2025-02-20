@@ -39,7 +39,7 @@ const Popup = () => {
     if (!hasSubmitted) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 15000);
+      }, 30000);
 
       return () => clearTimeout(timer);
     }

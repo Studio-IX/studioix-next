@@ -22,7 +22,7 @@ const LogoTicker = () => {
                     <Image
                       width={220}
                       height={10}
-                      quality={100}
+                      quality={10}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       src={`/companies/${logo}`}
                       alt="Company logo"
@@ -52,7 +52,7 @@ const LogoTicker = () => {
                     <Image
                       width={180}
                       height={10}
-                      quality={100}
+                      quality={10}
                       src={`/companies/${logo}`}
                       alt="Company logo"
                       className={`object-contain filter brightness-0 invert ${
